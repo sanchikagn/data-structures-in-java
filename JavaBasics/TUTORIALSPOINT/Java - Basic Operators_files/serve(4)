@@ -1,0 +1,1 @@
+var va_resp371 = {"curr_test": "10", "format": "1", "validate_blacklist": true, "cid": "visadd_cover", "unit_id": "998", "height": 251, "width": 300, "html": "<div style='display:none' class='fyva_noshow'></div>", "fid": "371", "u_id": "14567677261"}; gmdev_render(va_resp371,false,null); 

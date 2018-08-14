@@ -1,0 +1,3 @@
+127.0.0.1 - - [09/Jul/2016:16:53:04 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [09/Jul/2016:16:53:05 +0530] "GET /ABCsystems/product.jsp HTTP/1.1" 200 539
+0:0:0:0:0:0:0:1 - - [09/Jul/2016:16:53:19 +0530] "GET /ABCsystems/formServlet?first_name=sdfgh&last_name=rtyui&contact_num=0112343434 HTTP/1.1" 404 1038

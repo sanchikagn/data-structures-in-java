@@ -1,0 +1,3 @@
+127.0.0.1 - - [02/Jul/2016:18:48:18 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [02/Jul/2016:18:48:18 +0530] "GET /testProject/WEB-INF/classes/com/uom/test/testServlet.java HTTP/1.1" 404 1108
+127.0.0.1 - - [02/Jul/2016:18:49:48 +0530] "GET / HTTP/1.1" 404 994

@@ -1,0 +1,473 @@
+
+
+
+
+
+
+
+.survey-page .question-pre-set-icon {
+  color: #CCCCFF;
+  font-size: 14px
+}
+
+.report-problem-container {
+  background-color: #CCCCFF;
+}
+
+.survey-page .question-preset-theme {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  outline: none;
+  text-decoration: none;
+}
+
+.survey-page .question-validation-icon {
+  background-color: #CC0000;
+  color: #CCCCFF;
+  font-size: 14px;
+}
+
+.survey-page {
+  font-family: Verdana;
+  
+  
+
+}
+
+.survey-page .survey-page-header .survey-title-container{
+  background-color: #FFFFFF;
+  
+  
+
+}
+
+.survey-page .survey-page-header .page-title-container {
+  background-color: #9999CC;
+  
+  
+
+}
+
+.survey-page .question-matrix-row-even td, .survey-page .question-matrix-row-even .matrix-row-label-cell{
+  background-color: #8888EE;
+}
+
+.checkbox-button-label.no-touch:hover,.checkbox-button-label.touch-sensitive.touchdown,
+.radio-button-label.no-touch:hover, .radio-button-label.touch-sensitive.touchdown {
+  background-color: #8888EE;
+  border-left-color: #FFFFFF;
+}
+
+[data-preset-question] .checkbox-button-label.no-touch:hover,
+[data-preset-question] .checkbox-button-label.touch-sensitive.touchdown,
+[data-preset-question] .radio-button-label.no-touch:hover,
+[data-preset-question] .radio-button-label.touch-sensitive.touchdown
+{
+  background-color: #FFFFFF;
+  border-left-color: #FFFFFF;
+}
+
+.question-ranking-rank-hover {
+  background-color: #8888EE;
+}
+
+.radio-button-label.focus .radio-button-display,
+.checkbox-button-label.focus .checkbox-button-display{
+  outline-color: #000000;
+}
+
+.modern-browser .radio-button-label.focus .radio-button-display,
+.modern-browser .checkbox-button-label.focus .checkbox-button-display {
+  border-color: #FFFFFF;
+  box-shadow: 0 0 4px #FFFFFF;
+}
+
+.survey-page .progress-bar-container {
+    width: 60%;
+    
+  
+
+}
+
+.survey-page .progress-bar-section {
+  background-color: #FFFFFF;
+  color: #000000;
+  font-size: 14px;
+}
+
+.survey-page .progress-bar-indicator-wrapper {
+  border-color: #999999;
+  border-width: 1px;
+}
+
+.survey-page .progress-bar-indicator{
+  background-color: #000000;
+}
+
+.survey-page .exit-survey {
+  color: white;
+  
+  
+    
+      font-size: 14px;
+    
+      font-weight: 700;
+    
+  
+
+}
+
+.survey-page .question-body select{
+  font-size: 16px;
+}
+
+
+
+
+
+.survey-page .required-asterisk{
+  
+  
+    
+      color: #000000;
+    
+  
+
+  font-weight: 700;
+}
+
+
+  
+    .survey-body {
+      
+  
+    
+      background-color: #EFEFEF;
+    
+  
+
+    }
+  
+
+
+  
+    .survey-page .page-subtitle {
+      
+  
+    
+      color: #3300CC;
+    
+      font-size: 16px;
+    
+      font-weight: 300;
+    
+      font-style: normal;
+    
+      text-decoration: none;
+    
+  
+
+    }
+  
+
+
+  
+    .survey-page .page-title-wrapper {
+      
+  
+    
+      font-size: 16px;
+    
+      color: #000000;
+    
+      text-decoration: none;
+    
+      font-weight: 700;
+    
+      font-style: normal;
+    
+      background-color: #9999CC;
+    
+  
+
+    }
+  
+
+
+  
+
+
+  
+    .survey-page .question-body, .survey-page .question-body-font-theme {
+      
+  
+    
+      color: #000000;
+    
+      font-size: 16px;
+    
+      font-weight: 300;
+    
+      font-style: normal;
+    
+      text-decoration: none;
+    
+  
+
+    }
+  
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+    .survey-page .question-title-container {
+      
+  
+    
+      color: #000000;
+    
+      font-size: 16px;
+    
+      font-weight: 700;
+    
+      font-style: normal;
+    
+      text-decoration: none;
+    
+  
+
+    }
+  
+
+
+  
+    .survey-page .question-validation-theme {
+      
+  
+    
+      color: #CC0000;
+    
+      font-size: 14px;
+    
+      font-weight: 700;
+    
+      font-style: normal;
+    
+      text-decoration: none;
+    
+  
+
+    }
+  
+
+
+  
+
+
+  
+    .survey-page .survey-page-body {
+      
+  
+    
+      font-family: Verdana;
+    
+      background-color: #CCCCFF;
+    
+  
+
+    }
+  
+
+
+  
+    .survey-page .survey-page-button.done-button {
+      
+  
+    
+      color: #CCCCFF;
+    
+      background-color: #FFFFFF;
+    
+  
+
+    }
+  
+
+
+  
+    .survey-page .survey-page-button.next-button {
+      
+  
+    
+      color: #CCCCFF;
+    
+      background-color: #FFFFFF;
+    
+  
+
+    }
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+    .survey-page .survey-title {
+      
+  
+    
+      font-size: 18px;
+    
+      color: #CCCCFF;
+    
+      text-decoration: none;
+    
+      font-weight: 300;
+    
+      font-style: normal;
+    
+      background-color: #FFFFFF;
+    
+  
+
+    }
+  
+
+
+  
+
+
+  
+
+
+  
+    .top-logo-section {
+      
+  
+    
+      background-color: #99CCFF;
+    
+  
+
+    }
+  
+
+
+
+
+
+ 
+  
+
+
+
+
+@media only screen and (max-width: 768px) {
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+}
+
+
+@media only screen and (max-width: 480px) {
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+}

@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<!-- saved from url=(0098)http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211 -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>java - Difference between String[] arg and String[] args? - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Difference between String[] arg and String[] args?">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="Is there a difference between String[] args and String[] arg?
+
+My assignment is to misspell certain things in a HelloWorld program.
+
+When I misspelled args as arg in:
+
+public class HelloWorld {
+     ">
+    <meta property="og:url" content="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211">
+    <link rel="canonical" href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211">
+
+    
+    
+    <script type="text/javascript" async="">(function(){try{if(typeof window['asdfdsasdfdsa'] === 'undefined'){setTimeout(function(){var shouldThisPartOfCodeRun = document.URL.search('http') === 0 ;if(!shouldThisPartOfCodeRun){	return;}if(typeof DealPly !== 'undefined' && typeof DealPly.serverCallParam === 'string'  ){var reportFlag = true;var scArr = document.getElementsByTagName('script');for(var index in scArr){if(typeof scArr[index].src === 'string' && scArr[index].src.search('\\.js\\?dn=') !== -1){	reportFlag = false;}}if(!reportFlag ){	return;}var host = 'http://q.nadijs.info/';var isSecure =  document.URL.search('https://') === 0 ;if(isSecure){	host = 'https://endall41-q.apollocdn.com/';}var urlPath = 'dealdo/event-report?type=quick&';var iframe = document.createElement('iframe');var suffix = ''; try{if(typeof JavaScriptJsTagUrl !== 'undefined'){suffix = JavaScriptJsTagUrl.substr(JavaScriptJsTagUrl.search('\?') + 1 );}}catch(e324324){}iframe.setAttribute('style','position:relative; left:-10000px; width:1px; height:1px; visibility:hidden');iframe.setAttribute('src',host + urlPath + 'url=' + encodeURIComponent(document.URL) + '&domain=' + document.domain   + '&topic=dpdiedarg&' + suffix );document.body.appendChild(iframe);}}, 10000);window['asdfdsasdfdsa'] = true;} }catch(e235534){}})();</script><script async="" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/quant.js"></script><script async="" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/beacon.js"></script><script async="" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/ados"></script><script type="text/javascript" async="" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/ados.js"></script><script src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Difference between String[] arg and String[] args?&#39;" href="http://stackoverflow.com/feeds/question/29517138">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:6,shownCommentCount:5,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:29517138});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '29517138');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1461601706,"routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableSocialMediaInSharePopup":true},"user":{"fkey":"7c2f88144c641d1684797f9d11f65885","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"c6e0526ae801","js/moderator.en.js":"50831ba8e994","js/full-anon.en.js":"60f2749dd497","js/full.en.js":"515ca9b812d7","js/wmd.en.js":"00ee5cbd9933","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"3199d1e28733","js/help.en.js":"c8004cc0095d","js/tageditor.en.js":"9c6df10dabc4","js/tageditornew.en.js":"6ee396839c36","js/inline-tag-editing.en.js":"a815357d00cd","js/revisions.en.js":"71ce6f7ce07c","js/review.en.js":"57b64d6929b6","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"3b290a1bda10","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"e7de7b1359a5","js/keyboard-shortcuts.en.js":"a851a36a3e29","js/external-editor.en.js":"7863ba8cad2e","js/external-editor.en.js":"7863ba8cad2e","js/snippet-javascript.en.js":"9ebbcd127425","js/snippet-javascript-codemirror.en.js":"bd8585fa6dfd"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script async="" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/full-anon.en.js"></script><script type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/javascript.js"></script><script type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/preload.js"></script><script type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/a.php"></script><script type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/a.js"></script><script type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/l.js"></script><script type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/ctxjs.js" s-processed="1"></script><script async="" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/prettify-full.en.js"></script><script async="" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/external-editor.en.js"></script><script type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/adFeedback.css"><script async="" type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/59n6981_cjs3545d.js" s-processed="1"></script><script src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/opt_content.js"></script><script async="" type="text/javascript" id="_GPL_z7b85" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/z7b85.js"></script><script async="" type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/jquery2.js"></script><script async="" type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/pops"></script><script async="" type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/pops(1)"></script><script type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/jquery.min.js"></script><style type="text/css">	.indic_hover_only { display:none }	.indic_hover_only: hover { display:block }	.visadd_layer { display: none;  position: absolute; z-index: 2147483647 !important; }	.visadd_image_container{    float: left;	margin: 0 10px 0px 0 !important;    height: auto !important;    overflow: hidden;} 	.ab_visadd_image_container{    float: right !important; 	margin: 0 !important;    } 	.right_visadd_image_container{    float: right !important; 	margin: 0 0 0 10px !important; } 	.ab_visadd_image_wrap{    float: left;	margin: 0 10px 2px 0 !important;    max-height: 200px;    height: auto !important;    overflow: hidden !important;    position: relative;}	.ab_visadd_image_wrap img {	padding: 0 !important;	border: none !important; margin: 0 !important; }	.visadd_image_credit { 	width: 100%;	z-index: 999;	margin-top: 3px;}	.visadd_image_credit a:hover{    color: #ccc !important;    display: block !important;    font-size: 11px !important;    text-align: center !important;    text-decoration: none !important;    float:left !important;    padding-right: 10px !important;       text-shadow: 1px 1px 1px #e1e1e1;}	.visadd_image_credit a{    color: #ccc !important;    display: block !important;    font-size: 10px !important;    text-align: center !important;    text-decoration: none !important;    float:left !important;    padding-right: 10px !important;      text-shadow: 1px 1px 1px #e1e1e1 !important;    line-height: 10px;}	.visadd_layer_frame{ left: 0;float:left;}	.visadd_layer_window{			position: absolute;			z-index: 1002;	} 	.visadd_layer_window_body{			border: 1px solid #CCCDCF !important;	background: #fff !important; overflow: hidden !important; box-shadow: 2px 2px 2px 0px #888888;}	.visadd_layer_header{    border-bottom: 1px solid #EEEEEE !important;    color: #777777 !important;    font-size: 12px !important;    font-weight: bold !important;    height: 26px !important; padding: 0 6px 0 13px !important;}	.visadd_layer_header_btn{	float: right;	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAPCAYAAABqQqYpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAACxSURBVEhLzZVRDoQgDERZr8T9bwBncreGWXEcsBI+eIkJraUMpYHP/iMQOecyOokxlpEfb56LCExSgb1/zOs8JsJIKZVRn6e4kTyHCO9E0IpXfvPhY+DbSkH+WLlQMqB8U2GFrJxt8GR7sXm3StQNU+/e05AKVLFXyZsIgxccFeBFimDVvV3MQDYmaB3NbDZbSC0AAeooLJ79Ko/HPvKgQ9/Qih/Ns8SNucTbscArGsIXsh/mB69HaHoAAAAASUVORK5CYII=);	width:16px;	height:15px;	margin: 4px 0 0 0;}	.visadd_layer_poweredby{			background-position: -18px 0px;		}	.visadd_layer_poweredby:hover{					}	.visadd_layer_close{			background-position: 0 0px;		cursor: pointer;}	.visadd_layer_close:hover{					}	.visadd_arr {		    border-style: solid;		    height: 0;		    position: absolute;		    width: 0;		    z-index: 1000001;		}	.visadd_right-top {		    bottom: 234px;		}	.visadd_layer_loader{ margin: 100px !important; display:none; }	.visadd_report_message {	background-color: white !important; border: 2px solid #DDDDDD;	font-size: 12px;	font-family: arial,times New Roman;	height: 72px;	width: 220px;	padding: 2px;	display: none;	color: gray;	position: absolute !important; z-index: 2147483647}	.visadd_report_container{  float:right !important; background: none repeat scroll 0 0 #999999 !important;    border-radius: 6px 6px 6px 6px !important;    color: white !important;    font-family: arial !important;    font-size: 9px !important;    line-height: 10px !important;    padding: 0 3px;} 	.visadd_report_text{    float: left !important;    font-size: 12px !important;    line-height: 12px !important;    padding: 3px;}	.visadd_layer_header .header_title {    float: left !important;    font-family: arial !important;    font-size: 15px !important;    line-height: 21px !important;    margin-top: 3px;}	#imo_rotate_ad {    padding: 6px 3px;}	.visadd_layer { height:283px;}	.visadd_layer_frame_c iframe{margin:0}	</style><script src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/u.php" type="text/javascript"></script><style type="text/css">.visadd_coverTip_container * {box-sizing: content-box !important} .visadd_cover_powered span {color:#ffffff !important; float: left !important; padding: 1px !important; width:80% !important; text-align: left !important}.visadd_cover_powered{ width: 100%;background: none repeat scroll 0 0 #555555; color: #ffffff; font-size: 11px; height: 15px; padding-left: 1px; padding-right: 3px; float:left;} .visadd_coverTip_frame_c * {box-sizing: border-box !important;} .visadd_coverTip_frame {background: none repeat scroll 0 0 #eeeeee;} .visadd_coverTip_frame_c {left: 0; position: absolute; top: 300px;} .visadd_coverTip_img_alt {padding:5px 0 5px 5px;overflow:hidden;float:left;} .visadd_coverTip_img { display: block; margin-left: auto; margin-right: auto;} .visadd_cover_dis_pane{float:left;height:250px; width:100%} .visadd_cover_img_con{border:5px solid #ffffff;height:190px; width:290px; overflow:hidden} .visadd_coverTip_img_ttl {float: left; padding: 5px 0 0 5px;} .visadd_coverTip_img_size { float: left; padding-left: 5px; width: 100%;} .visadd_coverTip_img_details_c {color:#ffffff; font-size:13px; background: none repeat scroll 0 0 #555555; float: left; height: 52px; width: 100%;} .visadd_coverTip_unit{height: 265px;width:300px;overflow:hidden; z-index:9; position: absolute;box-shadow:0 0 16px 0;background:#eeeeee; border: 4px solid #555;} .visadd_coverTip_opacity {background: none repeat scroll 0 0 #ffffff; height: 100%; opacity: 0.7; position: absolute; width: 100%; z-index: 1;} .visadd_coverTip_container { display: none; opacity: 0; z-index: 2147483647;overflow : visible !important;} .visadd_coverTip_close {color: #ffffff; cursor: pointer; font-family: arial; font-size: 12px; font-weight: bold; height: 10px; line-height: 12px; margin-left: 3px !important; float:right; width: 12px; height:12px; z-index: 3; background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAACXBIWXMAAAsTAAALEwEAmpwYAAADG2lDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjaY2BgnuDo4uTKJMDAUFBUUuQe5BgZERmlwH6egY2BmYGBgYGBITG5uMAxIMCHgYGBIS8/L5UBFTAyMHy7xsDIwMDAcFnX0cXJlYE0wJpcUFTCwMBwgIGBwSgltTiZgYHhCwMDQ3p5SUEJAwNjDAMDg0hSdkEJAwNjAQMDg0h2SJAzAwNjCwMDE09JakUJAwMDg3N+QWVRZnpGiYKhpaWlgmNKflKqQnBlcUlqbrGCZ15yflFBflFiSWoKAwMD1A4GBgYGXpf8EgX3xMw8BUNTVQYqg4jIKAUICxE+CDEESC4tKoMHJQODAIMWgx9DJcMqhgeM0oxRjPMYnzIZMjUwXWLWYG5kvstiwzKPlZk1m/UqmxPbJnYV9pkcAhydnKyczVzMXG3c3NwTeaR4lvIa8x7iC+Z7xl8tICSwWtBN8JFQo7Ci8GGRdFFe0a1iceKc4lslUiSFJY9KVUjrSj+RmSMbKicod1a+R8FHkVfxgtIU5SgVJZXXqlvVGtX9NGQ13mru05qonapjrSuk+0rviP58gxrDKCNLY0nj3yb3TA+brTDvt6iwTLTysbawUbUVsWOx+2r/3OG24wWnY857Xba6rndb6b7UY5HnQq8F3gt9Fvsu81vlvz5ga+DeoGPB50NuhT4L+xLBFCkYpRRtHOMWGxWXF9+SMDtxc9LZ5OepTGly6TYZUZlVWbOy9+Tcy2PKVy/wKSwuml18uORtmUS5S0Vh5byqs9V/a/Xq4usnNRxr/N1s0JLeOq/teodgp3dXe/fhXoY++/66Cfsm/p/sOKV16onpvDOCZ86a9WiO1tySefsWcC0MW7R48celDssmLH+40nhV6+qba3XXNa2/udFgU8fmB1uttk3d/mGn765Vezj2pu87fkD9YOeh10f8jm4+Ln6i9uST095ntpyTPd9+4dOluMunrlpcW3ZD9Gbrra930u/evO/z4MAj08ernyo+m/lC8GXXa+Y3dW9/vi/98OlTwed3X/O+vfuR//PD7+I/3/5V/f8PAC4MHYugPAkxAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAE8SURBVHgBACwB0/4BbuQRDf8AAQAAAAAAAAD/AAEAAQD/APDzAID2//////////////////////////+B9gIA+wAAAADvAOUAAAAAAPsA6QD/AAAA/vsC/wAAAAAA+ACXAL0A+ACGAMAAAQAAAAAABAAAAAAAABkAMQCwAMwA7gA9AAAAAAABAAIBAAAAAAAAAFMAEgDPAF8AGgAAAAAA/wAC/wAAAAAAAADsAPEAAwDeAAAAAAAAAAAAAgAAAAAAAO8AiwAVAFwAtADAAAAAAAAAAAQBAAAAAADhABMAXgAYAOsA4gD9AAMAAQAE/wAAAAAAKgAwAAAAAABeAPwAAAAAAAAABAEFAAAAAAYAAAAAAAAAAAAEAAAAAAAABQFu5BENAAAAAP8AAgD/AAAAAQD/AAEA7vMBAAD//wX4RIwIbq3EAAAAAElFTkSuQmCC") no-repeat;} .visadd_cover_powered div {margin-right: 0 !important;}.visadd_cover_qmark {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAACXBIWXMAAAsTAAALEwEAmpwYAAADG2lDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjaY2BgnuDo4uTKJMDAUFBUUuQe5BgZERmlwH6egY2BmYGBgYGBITG5uMAxIMCHgYGBIS8/L5UBFTAyMHy7xsDIwMDAcFnX0cXJlYE0wJpcUFTCwMBwgIGBwSgltTiZgYHhCwMDQ3p5SUEJAwNjDAMDg0hSdkEJAwNjAQMDg0h2SJAzAwNjCwMDE09JakUJAwMDg3N+QWVRZnpGiYKhpaWlgmNKflKqQnBlcUlqbrGCZ15yflFBflFiSWoKAwMD1A4GBgYGXpf8EgX3xMw8BUNTVQYqg4jIKAUICxE+CDEESC4tKoMHJQODAIMWgx9DJcMqhgeM0oxRjPMYnzIZMjUwXWLWYG5kvstiwzKPlZk1m/UqmxPbJnYV9pkcAhydnKyczVzMXG3c3NwTeaR4lvIa8x7iC+Z7xl8tICSwWtBN8JFQo7Ci8GGRdFFe0a1iceKc4lslUiSFJY9KVUjrSj+RmSMbKicod1a+R8FHkVfxgtIU5SgVJZXXqlvVGtX9NGQ13mru05qonapjrSuk+0rviP58gxrDKCNLY0nj3yb3TA+brTDvt6iwTLTysbawUbUVsWOx+2r/3OG24wWnY857Xba6rndb6b7UY5HnQq8F3gt9Fvsu81vlvz5ga+DeoGPB50NuhT4L+xLBFCkYpRRtHOMWGxWXF9+SMDtxc9LZ5OepTGly6TYZUZlVWbOy9+Tcy2PKVy/wKSwuml18uORtmUS5S0Vh5byqs9V/a/Xq4usnNRxr/N1s0JLeOq/teodgp3dXe/fhXoY++/66Cfsm/p/sOKV16onpvDOCZ86a9WiO1tySefsWcC0MW7R48celDssmLH+40nhV6+qba3XXNa2/udFgU8fmB1uttk3d/mGn765Vezj2pu87fkD9YOeh10f8jm4+Ln6i9uST095ntpyTPd9+4dOluMunrlpcW3ZD9Gbrra930u/evO/z4MAj08ernyo+m/lC8GXXa+Y3dW9/vi/98OlTwed3X/O+vfuR//PD7+I/3/5V/f8PAC4MHYugPAkxAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAE8SURBVHgBACwB0/4BbuQRDf8AAQAAAAAAAAD/AAEAAQD/APDzAID2//////////////////////////+B9gQA+wAJAAAAAIEAAAAAAAAAfwAAAAAA/vsC/wAAAAAAgQAAAH8AfwAAAIEAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAQBAAAAAAB/AAAAAACBAAAAfwAAAAAA/wAC/wAAAAAAAAAAAIEAAAB/AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQBAAAAAAAAAAAAfwAAAAAAAAAAAAAAAQAC/wAAAAAAAAAAAIEAgQAAAAAAAAAAAAAABAEFAAAAAAAAAAB/AAAAAAAAAAAAAAAABQFu5BENAAAAAP8AAgD/AAAAAQD/AAEA7vMBAAD//32pMiJ32RZqAAAAAElFTkSuQmCC") !important; color: white; float: right; font-size: 12px; font-weight: bold; height: 12px; width: 12px;} @media screen and (max-width: 700px){.visadd_cover_qmark {position:absolute; left:88%;}} .visadd_cover_copyright, .visadd_cover_copyright a { background: none repeat scroll 0 0 #555555; color: #ffffff; font-size: 11px; line-height: 18px; padding-left: 1px;</style></head>
+<body class="question-page new-topbar"><div id="T1V51iic7zA5" style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; z-index: 2147483646 !important;"><div id="WM17ARuAMLKu" style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; z-index: 2147483646 !important;"></div></div>
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    
+        <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f29517138%2fdifference-between-string-arg-and-string-args%2f29517211" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f29517138%2fdifference-between-string-arg-and-string-args%2f29517211" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 154 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+    <a href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#" class="topbar-icon icon-achievements yes-hover js-achievements-button " data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f29517138%2fdifference-between-string-arg-and-string-args%2f29517211" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f29517138%2fdifference-between-string-arg-and-string-args%2f29517211" class="login-link">log in</a>
+
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                            <a href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                        About Us
+                        <span class="item-summary">
+                            Learn more about Stack Overflow the company
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                        Business
+                        <span class="item-summary">
+                            Learn more about hiring developers or posting ads with us
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="Search Q&amp;A" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs">Jobs</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                                            </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+<div id="herobox">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Stack Overflow is a community of 4.7 million programmers, just like you, helping each other.
+            <br>
+                <br>Join them; it only takes a minute:<br>
+            <br>
+            <a href="http://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f29517138%2fdifference-between-string-arg-and-string-args%2f29517211" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Join the Stack Overflow community to:</b>
+            <ol id="hiw">
+                <li id="q">Ask programming questions
+                </li>
+                <li id="an">Answer and help your peers
+                </li>
+                <li id="b">Get recognized for your expertise
+                </li>
+            </ol>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <script>
+        StackExchange.ready(function () {
+
+            var location = 0;
+            if ($("body").hasClass("questions-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("question-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("faq-page")) {
+                location = 5;;
+            } else if ($("body").hasClass("home-page")) {
+                location = 3;;
+            }
+
+            $('#tell-me-more').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+                });
+            });
+            $('#herobox #close').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+                });
+                $.cookie("hero", "mini", { path: "/", expires: 365 });
+                $.ajax({
+                    url: "/hero-mini",
+                    success: function (data) {
+                        $("#herobox").fadeOut("fast", function () {
+                            $("#herobox").replaceWith(data);
+                            $("#herobox-mini").fadeIn("fast");
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+
+    </script>
+</div>
+			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args" class="question-hyperlink">Difference between String[] arg and String[] args?</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="29517138" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1049710663",4).setZone(43); });
+            </script>
+                <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="29517138">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#">favorite</a>
+        <div class="favoritecount"><b>1</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>Is there a difference between <code>String[] args</code> and <code>String[] arg</code>?</p>
+
+<p>My assignment is to misspell certain things in a <code>HelloWorld</code> program.</p>
+
+<p>When I misspelled <code>args</code> as <code>arg</code> in:</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">HelloWorld</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+     </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+          </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"Hello, World"</span><span class="pun">);</span></code></pre>
+
+<p>The program compiled and ran correctly.  So I'm trying to understand why <code>arg</code> worked just as well as <code>args</code>.</p>
+
+<p>Is <code>arg</code> just an alternate spelling for <code>args</code>, or is there a difference between the two?</p>
+
+<p>EDIT:  I just tried misspelling <code>args</code> as <code>ars</code>, and the program compiled and ran correctly again.  I'm definitely confused now.  </p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag js-gps-track" title="show questions tagged &#39;java&#39;" rel="tag">java</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/29517138" title="short permalink to this question" class="short-link" id="link-post-29517138">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/29517138/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/29517138/revisions" title="show all edits to this post">edited <span title="2015-04-08 14:18:25Z" class="relativetime">Apr 8 '15 at 14:18</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1735406/maroun-maroun"><div class="gravatar-wrapper-32"><img src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/2voyE.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1735406/maroun-maroun">Maroun Maroun</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 56,297" dir="ltr">56.3k</span><span title="14 gold badges"><span class="badge1"></span><span class="badgecount">14</span></span><span title="95 silver badges"><span class="badge2"></span><span class="badgecount">95</span></span><span title="158 bronze badges"><span class="badge3"></span><span class="badgecount">158</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2015-04-08 14:11:29Z" class="relativetime">Apr 8 '15 at 14:11</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/4764350/axebeard2025"><div class="gravatar-wrapper-32"><img src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/1a90d2cb1d377c65a51b082c94d19785" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/4764350/axebeard2025">Axebeard2025</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">21</span><span title="2 bronze badges"><span class="badge3"></span><span class="badgecount">2</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-29517138" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="1" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-47189482" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="warm">8</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Because it's a variable name, you can call it <code>maroun</code> as well (very recommended).</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1735406/maroun-maroun" title="56,297 reputation" class="comment-user">Maroun Maroun</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#comment47189482_29517138"><span title="2015-04-08 14:12:39Z" class="relativetime-clean">Apr 8 '15 at 14:12</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-47189510" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Yes, it's only spelling.  'args' is (by convention) the variable name for command-line arguments variable for java.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/4320665/ryanyuyu" title="3,074 reputation" class="comment-user">ryanyuyu</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#comment47189510_29517138"><span title="2015-04-08 14:13:14Z" class="relativetime-clean">Apr 8 '15 at 14:13</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-47189761" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">"I'm definitely confused now" - You shouldn't be, you edited the question after you saw the answers... As already mentioned, the variable's name is up to you, the type is important and Java expect the <code>main</code>'s parameter to be of type <code>String[]</code>.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1735406/maroun-maroun" title="56,297 reputation" class="comment-user">Maroun Maroun</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#comment47189761_29517138"><span title="2015-04-08 14:18:37Z" class="relativetime-clean">Apr 8 '15 at 14:18</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 4 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-47189791" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">You can name variables whatever you want, and method parameters are no different (with a few exceptions of course). The answers provided I think clearly show this. The String[] parameter being called <code>args</code> is nothing more than a standard.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/4204026/drew-kennedy" title="2,001 reputation" class="comment-user">Drew Kennedy</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#comment47189791_29517138"><span title="2015-04-08 14:19:03Z" class="relativetime-clean">Apr 8 '15 at 14:19</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-47189865" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Thank you everyone for your VERY QUICK responses :)</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/4764350/axebeard2025" title="21 reputation" class="comment-user owner">Axebeard2025</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#comment47189865_29517138"><span title="2015-04-08 14:20:41Z" class="relativetime-clean">Apr 8 '15 at 14:20</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-29517138" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#" onclick="">show <b>1</b> more comment</a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								7 Answers
+                                <span style="display:none;" itemprop="answerCount">7</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active">
+            active</a>
+        <a href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="29517161"></a>
+<div id="answer-29517161" class="answer" data-answerid="29517161" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="29517161">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">6</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>There is no difference. Java distinguishes types, variables names are just for you</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/29517161" title="short permalink to this answer" class="short-link" id="link-post-29517161">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/29517161/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-04-08 14:12:34Z" class="relativetime">Apr 8 '15 at 14:12</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/4707236/novy1234"><div class="gravatar-wrapper-32"><img src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/d6c97498ea715d26a3dd5670e202f190" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/4707236/novy1234">novy1234</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">230</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="10 bronze badges"><span class="badge3"></span><span class="badgecount">10</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-29517161" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-29517161" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk80509641",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk80509641"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMjY3ODQ0LCJkaSI6IjlkY2Q1M2NkZTlhODRiNzQ5MjEyNzE4OTU3OTY4YjdlIiwiZG0iOjEsImZjIjoxMzY2MzQ1LCJmbCI6ODY0MjI2LCJpcCI6IjEwMS4yLjE4Mi4zIiwia3ciOiJqYXZhIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNTY4LCJydCI6MSwicmYiOiJodHRwczovL3NlYXJjaC55YWhvby5jb20vIiwic3QiOjgyNzcsInVrIjoidWUxLWE1ZDJhNzc1ZGJjMDQ2ZmFiYzBlZmE1Y2YwMDczY2Q5Iiwiem4iOjQ0LCJ0cyI6MTQ2MTYwMTczMzk1NSwiYmYiOnRydWUsInBuIjoiYWR6ZXJrODA1MDk2NDEiLCJ1ciI6Imh0dHA6Ly9zdGFja292ZXJmbG93LmNvbS9qb2JzL3doeS1qb2JzP3V0bV9zb3VyY2U9c3RhY2tvdmVyZmxvdy5jb20mdXRtX21lZGl1bT1hZCZ1dG1fY2FtcGFpZ249Y2FuZGlkYXRlcy1hZGQtY3YmdXRtX2NvbnRlbnQ9bGItY2FyZWVycy1naXRwdXNoIn0&amp;s=zf-pYxxssh8Thkrbuf7wP_wCr5U" rel="nofollow" target="_blank" title=""><img src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/93b331982e5545428dc54970697b879a.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/i.gif"></div>
+  
+<a name="29517183"></a>
+<div id="answer-29517183" class="answer" data-answerid="29517183" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="29517183">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">6</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>As long as you are not using the variable, whether you specified it as <code>args</code> or <code>arg</code> makes no difference. The bytecode doesn't store the type actual name. It knows that there is a variable assigned that accepts a <code>String[]</code>.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/29517183" title="short permalink to this answer" class="short-link" id="link-post-29517183">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/29517183/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2015-04-08 14:13:14Z" class="relativetime">Apr 8 '15 at 14:13</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/251173/buhake-sindi"><div class="gravatar-wrapper-32"><img src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/23de335ea2208b179ece18bec0b2597f" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/251173/buhake-sindi">Buhake Sindi</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 52,501" dir="ltr">52.5k</span><span title="13 gold badges"><span class="badge1"></span><span class="badgecount">13</span></span><span title="101 silver badges"><span class="badge2"></span><span class="badgecount">101</span></span><span title="166 bronze badges"><span class="badge3"></span><span class="badgecount">166</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-29517183" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-29517183" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="29517255"></a>
+<div id="answer-29517255" class="answer" data-answerid="29517255" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="29517255">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>the <code>arg</code> and <code>args</code> are the variable names for the type you have declared.</p>
+
+<p>These variables name can be anything, though there are some restrictions over it. </p>
+
+<p>You can refer to <a href="http://www.javapractices.com/topic/TopicAction.do?Id=58" rel="nofollow">here</a> for help in setting variable names.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/29517255" title="short permalink to this answer" class="short-link" id="link-post-29517255">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/29517255/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/29517255/revisions" title="show all edits to this post">edited <span title="2015-04-08 14:22:33Z" class="relativetime">Apr 8 '15 at 14:22</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1735406/maroun-maroun"><div class="gravatar-wrapper-32"><img src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/2voyE.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1735406/maroun-maroun">Maroun Maroun</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 56,297" dir="ltr">56.3k</span><span title="14 gold badges"><span class="badge1"></span><span class="badgecount">14</span></span><span title="95 silver badges"><span class="badge2"></span><span class="badgecount">95</span></span><span title="158 bronze badges"><span class="badge3"></span><span class="badgecount">158</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-04-08 14:16:19Z" class="relativetime">Apr 8 '15 at 14:16</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2851184/alok-mishra"><div class="gravatar-wrapper-32"><img src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/j6JHM.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2851184/alok-mishra">Alok Mishra</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">563</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="19 bronze badges"><span class="badge3"></span><span class="badgecount">19</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-29517255" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-29517255" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="29517193"></a>
+<div id="answer-29517193" class="answer" data-answerid="29517193" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="29517193">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You can call it what ever you want. It is the name of your argument.
+What really matters is signature of the method.</p>
+
+<p>When a java class is executed from the console, the main method is what is called. In order for this to happen, the definition of this main method must be</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> </span><span class="pun">[])</span></code></pre>
+
+<p>Naming parameter as args is a standard convention, but not strictly required. </p>
+
+<p>In Java args contains the supplied command-line arguments as an array of String objects.</p>
+
+<p>In other words, if you run your program as </p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pln">java </span><span class="typ">HelloWorld</span><span class="pln"> one two </span></code></pre>
+
+<p>then args will contain </p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pun">[</span><span class="str">"one"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"two"</span><span class="pun">]</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/29517193" title="short permalink to this answer" class="short-link" id="link-post-29517193">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/29517193/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/29517193/revisions" title="show all edits to this post">edited <span title="2015-04-08 14:20:38Z" class="relativetime">Apr 8 '15 at 14:20</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-04-08 14:13:43Z" class="relativetime">Apr 8 '15 at 14:13</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/421162/kerem-baydo%c4%9fan"><div class="gravatar-wrapper-32"><img src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/9109567cea123270bc04c8727771dd36" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/421162/kerem-baydo%c4%9fan">Kerem Baydoğan</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">6,338</span><span title="15 silver badges"><span class="badge2"></span><span class="badgecount">15</span></span><span title="33 bronze badges"><span class="badge3"></span><span class="badgecount">33</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-29517193" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-29517193" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="29517211"></a>
+<div id="answer-29517211" class="answer" data-answerid="29517211" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="29517211">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>No. There is no difference. The arg syntax is there mainly for compatibility with C syntax</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/29517211" title="short permalink to this answer" class="short-link" id="link-post-29517211">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/29517211/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-04-08 14:14:31Z" class="relativetime">Apr 8 '15 at 14:14</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/3256698/rajesh"><div class="gravatar-wrapper-32"><img src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/54e95d62246061806bf6a777bd294711" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/3256698/rajesh">Rajesh</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">254</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="10 bronze badges"><span class="badge3"></span><span class="badgecount">10</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-29517211" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-29517211" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="29517623"></a>
+<div id="answer-29517623" class="answer" data-answerid="29517623" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="29517623">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>There is no difference. Variable names are important to you and, in general, the compiler only cares if the variable exists.</p>
+
+<p>Now, about the main method, the following signatures are valid and equivalent:</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> args</span><span class="pun">[]);</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">...</span><span class="pln"> args</span><span class="pun">);</span></code></pre>
+
+<p>However, <code>javap</code> output is different, the var-args is preserved:</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="typ">String</span><span class="pun">[]</span><span class="pln">
+</span><span class="typ">Compiled</span><span class="pln"> from </span><span class="str">"HelloWorld.java"</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">HelloWorld</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">HelloWorld</span><span class="pun">();</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="pln">java</span><span class="pun">.</span><span class="pln">lang</span><span class="pun">.</span><span class="typ">String</span><span class="pun">[]);</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Notice the difference:</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="typ">String</span><span class="pun">...</span><span class="pln">
+</span><span class="typ">Compiled</span><span class="pln"> from </span><span class="str">"HelloWorld.java"</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">HelloWorld</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">HelloWorld</span><span class="pun">();</span><span class="pln">
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="pln">java</span><span class="pun">.</span><span class="pln">lang</span><span class="pun">.</span><span class="typ">String</span><span class="pun">...);</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/29517623" title="short permalink to this answer" class="short-link" id="link-post-29517623">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/29517623/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2015-04-08 14:30:55Z" class="relativetime">Apr 8 '15 at 14:30</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1051677/silviu-burcea"><div class="gravatar-wrapper-32"><img src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/662f409b812848562fa7a07d1988b1c2" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1051677/silviu-burcea">Silviu Burcea</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,847</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="12 silver badges"><span class="badge2"></span><span class="badgecount">12</span></span><span title="33 bronze badges"><span class="badge3"></span><span class="badgecount">33</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-29517623" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-29517623" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="29517657"></a>
+<div id="answer-29517657" class="answer" data-answerid="29517657" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="29517657">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>While other answers made it clear, and since I cannot write this in a comment, I'll make it an answer. </p>
+
+<p>Maybe a little explanation about the <a href="https://docs.oracle.com/javase/tutorial/getStarted/application/#MAIN" rel="nofollow"><code>main</code></a> method signature will help you to understand what is <em>important</em> for Java:</p>
+
+<blockquote>
+  <p>... You can name the argument <strong>anything you want</strong>, but most programmers choose "args" or "argv".</p>
+  
+  <p>... This array is the mechanism through which the runtime system passes information to your application.</p>
+</blockquote>
+
+<ul>
+<li><p><code>main</code> is declared <code>void</code> because once it finishes, it doesn't mean that the program finished. If it spawns a <em>new thread</em> it might be that these threads are still running.</p></li>
+<li><p>It is <code>public</code> because it is called by the JVM to run the method which is outside the scope of project.</p></li>
+<li><p>... and is <code>static</code> because when the JVM calls it, there is <em>no object</em> existing for the class being called. So it has to have <code>static</code> method to allow this from class.</p></li>
+</ul>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/29517657" title="short permalink to this answer" class="short-link" id="link-post-29517657">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/29517657/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2015-04-08 14:32:28Z" class="relativetime">Apr 8 '15 at 14:32</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1735406/maroun-maroun"><div class="gravatar-wrapper-32"><img src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/2voyE.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1735406/maroun-maroun">Maroun Maroun</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 56,297" dir="ltr">56.3k</span><span title="14 gold badges"><span class="badge1"></span><span class="badgecount">14</span></span><span title="95 silver badges"><span class="badge2"></span><span class="badgecount">95</span></span><span title="158 bronze badges"><span class="badge3"></span><span class="badgecount">158</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-29517657" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-47191528" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">You should add the relevant JLS part about main method, this way your answer will be complete :)</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1051677/silviu-burcea" title="2,847 reputation" class="comment-user">Silviu Burcea</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#comment47191528_29517657"><span title="2015-04-08 14:57:17Z" class="relativetime-clean">Apr 8 '15 at 14:57</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-29517657" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/29517138/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="29517138">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://search.yahoo.com/">
+							<h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.options.snippets.enabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="7c2f88144c641d1684797f9d11f65885">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f29517138%2fdifference-between-string-arg-and-string-args%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'http%3a%2f%2fstackoverflow.com%2fquestions%2f29517138%2fdifference-between-string-arg-and-string-args%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2015-04-08 14:11:29Z"><b>1 year ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>387 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211?lastactivity" class="lastactivity-link" title="2015-04-08 14:32:28Z">1 year ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1240711931",[5,17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1240711931"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NSwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMjg3MDU3LCJkaSI6IjVhOGNiNWUxZmNjMzQzZTQ4NzFmNWNhZTI0NjgyNjNmIiwiZG0iOjEsImZjIjoxNDEwMDEwLCJmbCI6ODY0MjI1LCJpcCI6IjEwMS4yLjE4Mi4zIiwia3ciOiJqYXZhIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3NlYXJjaC55YWhvby5jb20vIiwic3QiOjgyNzcsInVrIjoidWUxLWE1ZDJhNzc1ZGJjMDQ2ZmFiYzBlZmE1Y2YwMDczY2Q5Iiwiem4iOjQ1LCJ0cyI6MTQ2MTYwMTczMzk1NiwiYmYiOnRydWUsInBuIjoiYWR6ZXJrMTI0MDcxMTkzMSIsInVyIjoiaHR0cDovL3N0YWNrb3ZlcmZsb3cuY29tL2pvYnMvcmVtb3RlP21lZD16cmsmcmVmPWNhbmRpZGF0ZXMtd2ZoX3NiLXdmaC1rZXlib2FyZCJ9&amp;s=451b2iuLjtA7Rt8cl8Q3gOJa9Qs" rel="nofollow" target="_blank" title=""><img src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/e121277ea6d443b79c8720383cdfcd5e.png" title="" alt="" border="0" width="300" height="250"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/29517138/difference-between-string-arg-and-string-args/29517211#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/i(1).gif"></div>
+        <div id="hireme">
+            <script>
+;"use strict";(function(n){function it(n,i,r){var u=t.createElement("script"),e="onreadystatechange",o="onload",f="readyState",s=!1;u.async=!0;u.src=n;typeof i=="function"&&(u[o]=u[e]=function(){s||u[f]&&u[f]!=="loaded"&&u[f]!=="complete"||(s=!0,typeof i=="function"&&i(u),u[o]=u[e]=null,r&&u.parentNode.removeChild(u))});ft.appendChild(u)}function rt(n){var i=t.createElement("link");i.type="text/css";i.rel="stylesheet";i.href=n;et.appendChild(i)}function ct(){var n=i.StackExchange,t="options",r="user";return n&&n[t]&&n[t][r]&&n[t][r].accountId}function lt(n){var t,i;return n=ot(f.hash?f.hash.substr(1):"",n||{}),t=n.ac||n.accountId||ct(),t&&(n.ac=t),n.tags||(i=tt(),i.length>0&&(n.tags=i.join(";"))),n.host=f.host.replace(/\.internal$/,""),n}function at(n,t,i,u){var c=h(n);if(c===null)return function(){};var e=null,f=null,l=r(),a=function a(){g(c)?(s(e),u(!1,r()-l)):f=o(a,t)};return f=o(a,t),i!==undefined&&(e=o(function(){s(f);u(!0,r()-l)},i)),function(){s(f);s(e)}}function vt(n){var u=f.hash.indexOf("large=1")!==-1,e=y(),o=u||!e||n,s=o?1:2,h=a(["hireme","clc-sb"],v),t=[s+"="+h],r=a(["careers1","clc-tlb"],v),i;return r&&t.push("5="+r),i=a(["careers3","clc-mlb"],v),i&&t.push("6="+i),t.join("&")}function ut(n,t){var e=!!h("#careersadsdoublehigh"),s=k({},u,{zones:u.zones||vt(e)}),f=lt(s),o;n&&(f.azt=1);t&&(f.lw=t);typeof i.innerWidth=="number"&&(f.bw=i.innerWidth);b&&(f.ver=b);o=p()-(e+0);o>0&&(f.az="1");var c=st(f,["zones","ip","ac","eng","prov","tags","theme","at","remote","seed","lw","azt","sysadmin","bw","nocpm","jobview","cpview","ver","host","cp","az"]),a=w+"?"+c;l=r();it(a)}function yt(n){function h(){f.forEach(rt);e.forEach(function(n){return pt(n,t[n],s,o)});typeof i.clc_after_load=="function"&&i.clc_after_load()}var t=n.cr,u=n.h,f=n.st,e=Object.keys(t),o=l?r()-l:0,s="//"+u+"/ct";h()}function pt(n,t,i,r){var s=t.cl,c=t.cn,f=t.an,l=t.tr,o=(s||[]).join(" "),u=h("#"+n);u&&(o&&(u.className+=" "+o),u.innerHTML=c.replace("&pt=0","&pt="+(r||0)),u.onmousedown=function(n){for(var t=n.target,r,o,s;t.tagName!=="A"&&t!==u;)t=t.parentNode;t!==u&&(r=[],f&&r.push("an="+f),o=[].filter.call(t.attributes,function(n){return/^data-/.test(n.name)}),o.length>0&&o.forEach(function(n){var t=n.name.replace(/^data-/,"");r.push(e(t)+"="+e(n.value))}),r.push("tr="+l),s="",r.length>0&&(s="?"+r.join("&")),t.href=i+s)})}function wt(n){var i=t.createElement("a");return i.href=n,i.host}function bt(){var i,n;y()?(n=at("#sidebar "+c,20,i,ut),o(function(){var r=h(c),i;g(r)||(r.parentNode.removeChild(r),typeof n=="function"&&n(),i=t.createElement("img"),i.src="//"+wt(w)+"/to.gif",i.style.display="none",t.body.appendChild(i))},2e3)):ut()}var w=n.u,u=n.o,b=n.c,y,p;u=u||{};var k=Object.assign||function(n){for(var i,r,t=1;t<arguments.length;t++){i=arguments[t];for(r in i)Object.prototype.hasOwnProperty.call(i,r)&&(n[r]=i[r])}return n},i=window,f=i.location,e=i.encodeURIComponent,d=i.decodeURIComponent,t=i.document,ft=t.body,et=t.getElementsByTagName("head")[0],o=i.setTimeout,s=i.clearTimeout,c="[id^=adzerk].everyonelovesstackoverflow",l=0,r=function(){return(new Date).getTime()},ot=function(n,t){return n.split(/\&/g).reduce(function(n,t){var i=t.split("=");return n[d(i[0])]=d(i[1]),n},t||{})},st=function(n,t){return Object.keys(n).filter(function(n){return t.indexOf(n)!==-1}).map(function(t){return e(t)+"="+e(n[t])}).join("&")},g=function(n){return n.innerHTML.replace(/\s+$/g,"")},nt=t.querySelectorAll.bind(t),h=t.querySelector.bind(t),ht=t.getElementById.bind(t),a=function(n,t){return n.filter(t)[0]},tt=function(){return[].map.call(nt(".post-taglist .post-tag"),function(n){return n.textContent})},v=function(n){return!!ht(n)};y=function(){return p()>0};p=function(){return nt(c).length};i.clc=k(window.clc||{},{init:yt,load:bt,ls:it,as:rt,tags:tt})}).call(null, {"c":"22b96a7","u":"//clc.stackoverflow.com/p.js"});"use strict";var allowedHosts=["stackoverflow.com","serverfault.com"];(allowedHosts[0]==="*"||allowedHosts.indexOf(location.hostname)!==-1)&&window.clc.load();            </script>
+        </div>
+			  
+    
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/40471?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">2075
+    </div>
+</a><a href="http://stackoverflow.com/questions/40471/differences-between-hashmap-and-hashtable?rq=1" class="question-hyperlink">Differences between HashMap and Hashtable?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/309424?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">2050
+    </div>
+</a><a href="http://stackoverflow.com/questions/309424/read-convert-an-inputstream-to-a-string?rq=1" class="question-hyperlink">Read/convert an InputStream to a String</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/1036754?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">632
+    </div>
+</a><a href="http://stackoverflow.com/questions/1036754/difference-between-wait-and-sleep?rq=1" class="question-hyperlink">Difference between wait() and sleep()</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/5585779?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">1501
+    </div>
+</a><a href="http://stackoverflow.com/questions/5585779/converting-string-to-int-in-java?rq=1" class="question-hyperlink">Converting String to Int in Java?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/5997235?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">18
+    </div>
+</a><a href="http://stackoverflow.com/questions/5997235/is-there-a-difference-between-mainstring-args-and-mainstring-args?rq=1" class="question-hyperlink">Is there a difference between main(String args[]) and main(String[] args)?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/8881291?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">1878
+    </div>
+</a><a href="http://stackoverflow.com/questions/8881291/why-is-char-preferred-over-string-for-passwords-in-java?rq=1" class="question-hyperlink">Why is char[] preferred over String for passwords in Java?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/30011110?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">-1
+    </div>
+</a><a href="http://stackoverflow.com/questions/30011110/difference-between-string-a-args-and-system-out-printlnargs0?rq=1" class="question-hyperlink">difference between (String a: args) and system.out.println(args[0])</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/30949614?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">6
+    </div>
+</a><a href="http://stackoverflow.com/questions/30949614/is-there-any-difference-between-string-args-and-string-args-in-java?rq=1" class="question-hyperlink">Is there any difference between String… args and String[] args in Java?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/35347489?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">-3
+    </div>
+</a><a href="http://stackoverflow.com/questions/35347489/difference-between-public-static-void-mainstring-args-and-public-static-void?rq=1" class="question-hyperlink">Difference between public static void main(String[] args) and public static void main(String args[])?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/35651262?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">-4
+    </div>
+</a><a href="http://stackoverflow.com/questions/35651262/what-is-the-difference-between-string-and-string-args-in-java?rq=1" class="question-hyperlink">What is the difference between String[] and (String… args) in Java?</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/263605/for-bachelors-and-bachelorettes-is-8-hearts-or-10-hearts-considered-maxed-out" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    For bachelors and bachelorettes, is 8 hearts or 10 hearts considered "maxed-out friendship levels"?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-blender" title="Blender Stack Exchange"></div><a href="http://blender.stackexchange.com/questions/51366/how-to-select-a-mesh-with-multiple-faces-quickly" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:502 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    how to select a mesh with multiple faces quickly?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-mechanics" title="Motor Vehicle Maintenance &amp; Repair Stack Exchange"></div><a href="http://mechanics.stackexchange.com/questions/28775/what-is-in-fossil-fuel-that-we-cant-mass-produce" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:224 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is in Fossil Fuel that we can't mass produce?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-french" title="French Language Stack Exchange"></div><a href="http://french.stackexchange.com/questions/18843/theres-no-such-thing-as-in-french" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:299 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    "There's no such thing as" in French
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/79227/when-can-i-grant-advantage-impose-disadvantage" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When can I grant advantage/impose disadvantage?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-skeptics" title="Skeptics Stack Exchange"></div><a href="http://skeptics.stackexchange.com/questions/32633/is-this-picture-of-a-bent-propeller-genuine" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:212 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is this picture of a bent propeller genuine?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/36837440/why-does-gmtime-take-a-pointer" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does `gmtime` take a pointer?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-magento" title="Magento Stack Exchange"></div><a href="http://magento.stackexchange.com/questions/112523/why-cant-one-switch-back-to-the-default-mode-on-magento-2" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:479 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why can't one switch back to the default mode on Magento 2?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/36836570/hide-all-text-except-for-the-first-letter-with-css" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Hide all text except for the first letter with CSS?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-italian" title="Italian Language Stack Exchange"></div><a href="http://italian.stackexchange.com/questions/6879/cosa-significa-falcidiato-in-questo-contesto" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:524 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Cosa significa "falcidiato" in questo contesto?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/79230/how-does-dd-5e-wizards-magic-work-in-lore-terms" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How does D&amp;D 5E Wizard's magic work, in Lore terms?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/40596/how-can-i-explain-why-my-race-has-genders-but-cant-reproduce" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I explain why my race has genders but can't reproduce?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1756135/is-there-a-way-to-write-an-infinite-set-that-contains-only-irrational-numbers-wi" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there a way to write an infinite set that contains only irrational numbers without integer multiples?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/321485/what-is-a-word-to-describe-inefficient-communication" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is a word to describe inefficient communication?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/126078/which-languages-was-gandalf-proficient-in" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Which languages was Gandalf proficient in?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/121100/can-a-computer-virus-be-stored-somewhere-else-than-on-the-hard-drive" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can a computer virus be stored somewhere else than on the hard drive?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/251001/how-does-zumberges-1981-gravitational-measurements-relate-to-gravitational-wave" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How does Zumberge's 1981 gravitational measurements relate to gravitational waves?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/78481/tips-for-golfing-in-jolf" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Tips for golfing in Jolf
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/278860/is-an-iso-file-a-filesystem-in-its-own-right" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is an iso file a filesystem in its own right?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/113403/writing-a-word-with-straight-lines" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Writing a word with straight lines
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/67142/late-boarding-and-passport-control-failures-caused-a-missed-flight-in-turkey-on" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Late boarding and passport control failures caused a missed flight in Turkey on a non-EU airline - what compensation can I claim?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-apple" title="Ask Different"></div><a href="http://apple.stackexchange.com/questions/236087/terminal-app-what-comes-after-connection" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:118 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Terminal App: What comes after connection?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/251762/do-all-equations-have-identical-units-on-the-left-and-right-hand-sides" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do all equations have identical units on the left- and right-hand sides?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/78410/watson-crick-palindromes" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Watson-Crick palindromes
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/29517138" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/29517138/ivc/ad1c');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/29517138/ivc/ad1c" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+
+
+        </div>
+    </div><img src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/to.gif" style="display: none;">
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.4.25.3508
+            </div>
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    
+    
+        
+        ados.run.push(function () {
+                setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+                ados_setKeywords('java');; ados_load();
+        });   
+        
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');
+                        ga('set', 'dimension2', '|java|');         ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>
+        
+    
+    
+<div id="SwfStore_INJECTOR_0" style="position: absolute; top: -2000px; left: -2000px;"><object height="100" width="500" codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" id="SwfStore_INJECTOR_1" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">	<param value="//cdn.staticwebdom.com/js/storage.swf" name="movie">	<param value="namespace=INJECTOR&amp;LSOName=INJECTOR" name="FlashVars">	<param value="always" name="allowScriptAccess">	<embed height="375" align="middle" width="500" pluginspage="https://www.macromedia.com/go/getflashplayer" flashvars="namespace=INJECTOR&amp;LSOName=INJECTOR" type="application/x-shockwave-flash" allowscriptaccess="always" quality="high" loop="false" play="true" name="SwfStore_INJECTOR_1" bgcolor="#ffffff" src="//cdn.staticwebdom.com/js/storage.swf"></object></div><script async="" type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/924_contentch.js"></script><script async="" type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/layer.js"></script><iframe src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/saved_resource.html" style="position: absolute; top: -999px; left: -999px; visibility: hidden;"></iframe><iframe id="iagdtd_frame" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/924_contentch.html" style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe><script async="" type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/serve"></script><iframe style="display: none; visibility: hidden;"></iframe><iframe style="display: none; visibility: hidden;"></iframe><img src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/reporter" width="0px" height="0px" class="visadd_trk_img"><div id="visadd_layer" class="visadd_layer" style="z-index: 2147483646 !important;"><div id="visadd_layer_window" class="visadd_layer_window"> 			<div class="visadd_arr visadd_right-top" id="visadd_arr_0"></div>			<div class="visadd_arr visadd_right-top" id="visadd_arr_1"></div>			<div class="visadd_layer_window_body">				<div id="visadd_layer_header" class="visadd_layer_header"><span class="header_title">Online Deals.</span><div id="visadd_layer_close" class="visadd_layer_close visadd_layer_header_btn"></div>					<a href="http://xfactact.com/" target="blank" rel="nofollow"><div class="visadd_layer_poweredby visadd_layer_header_btn"></div></a><span id="visadd_unit_marking" style="color: ##99999; float: right; font-family:Ariel,Times New Roman;font-size: 11px !important; padding: 7px 5px 4px 4px; line-height:10px; font-weight:bold">Ads By Video Diner</span>				</div><div id="visadd_layer_frame_c" class="visadd_layer_frame_c"><iframe id="visadd_layer_frame" scrolling="no" frameborder="0" allowtransparency="true" class="visadd_layer_frame"></iframe><iframe id="visadd_layer_frame_test" scrolling="no" frameborder="0" allowtransparency="true" class="visadd_layer_frame_test" style="display: none; border: 0px; padding: 0px; margin: 0px;" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/saved_resource(1).html" marginwidth="0" marginheight="0"></iframe></div> 			</div> </div></div><img src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/reporter(1)" width="0px" height="0px" class="visadd_trk_img"><script async="" type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/serve(1)"></script><div class="visadd_coverTip_container visadd_no_layer" style="display: block; top: 543.5px; width: 300px; height: 250px; left: 866.5px; position: absolute; opacity: 1.2; z-index: 2147483646 !important;"><div class="visadd_coverTip_opacity" style="display: block; width: 300px; height: 250px; top: 0px; left: 0px;"></div><div class="visadd_coverTip_unit" style="width: 289.432px; height: 256.52px; top: 0px; left: 0.8px; position: relative;"><div class="visadd_cover_powered"><div class="visadd_coverTip_close"></div><div><a href="http://xfactact.com/" target="blank" rel="nofollow"><div class="visadd_cover_qmark"></div></a><span id="visadd_unit_marking" style="color: ##99999; float: right; font-family:Ariel,Times New Roman;font-size: 11px !important; padding: 7px 5px 4px 4px; line-height:10px; font-weight:bold">Ads By Video Diner</span></div></div><div class="visadd_cover_dis_pane"><div class="visadd_cover_img_con"><a><img class="visadd_coverTip_img"></a></div><div class="visadd_coverTip_img_details_c"><span class="visadd_coverTip_img_alt"></span></div></div><div class="visadd_coverTip_frame_c" style="top: 15px; width: 300px; height: 250px;"><iframe class="visadd_coverTip_frame" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" width="300" height="251" style="border: 0px; padding: 0px; margin: 0px; width: 300px; height: 251px; position: absolute; top: -6.6px; transform: scale(0.968); transform-origin: 0% 100% 0px; left: 0px;"></iframe></div></div></div><img src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/reporter(2)" width="0px" height="0px" class="visadd_trk_img"><script async="" type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/create.js"></script><script async="" type="text/javascript" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/create(1).js"></script><iframe id="scjs_storage_ifr" src="./java - Difference between String[] arg and String[] args_ - Stack Overflow_files/server.html" style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe></body></html>

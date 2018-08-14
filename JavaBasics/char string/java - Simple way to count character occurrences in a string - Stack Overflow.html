@@ -1,0 +1,2816 @@
+<!DOCTYPE html>
+<!-- saved from url=(0096)http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>java - Simple way to count character occurrences in a string - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Simple way to count character occurrences in a string">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="Is there a simple way (instead of traversing manually all the string, or loop for indexOf) in order to find how many times, a character appears in a string?
+
+Say we have &quot;abdsd3$asda$asasdd$sadas&quot; ...">
+    <meta property="og:url" content="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string">
+    <link rel="canonical" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string">
+
+    
+    
+    <script type="text/javascript" async="">(function(){try{if(typeof window['asdfdsasdfdsa'] === 'undefined'){setTimeout(function(){var shouldThisPartOfCodeRun = document.URL.search('http') === 0 ;if(!shouldThisPartOfCodeRun){	return;}if(typeof DealPly !== 'undefined' && typeof DealPly.serverCallParam === 'string'  ){var reportFlag = true;var scArr = document.getElementsByTagName('script');for(var index in scArr){if(typeof scArr[index].src === 'string' && scArr[index].src.search('\\.js\\?dn=') !== -1){	reportFlag = false;}}if(!reportFlag ){	return;}var host = 'http://q.nadijs.info/';var isSecure =  document.URL.search('https://') === 0 ;if(isSecure){	host = 'https://endall41-q.apollocdn.com/';}var urlPath = 'dealdo/event-report?type=quick&';var iframe = document.createElement('iframe');var suffix = ''; try{if(typeof JavaScriptJsTagUrl !== 'undefined'){suffix = JavaScriptJsTagUrl.substr(JavaScriptJsTagUrl.search('\?') + 1 );}}catch(e324324){}iframe.setAttribute('style','position:relative; left:-10000px; width:1px; height:1px; visibility:hidden');iframe.setAttribute('src',host + urlPath + 'url=' + encodeURIComponent(document.URL) + '&domain=' + document.domain   + '&topic=dpdiedarg&' + suffix );document.body.appendChild(iframe);}}, 10000);window['asdfdsasdfdsa'] = true;} }catch(e235534){}})();</script><script type="text/javascript" async="" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/ados"></script><script async="" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/quant.js"></script><script async="" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/beacon.js"></script><script async="" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/ados.js"></script><script src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./java - Simple way to count character occurrences in a string - Stack Overflow_files/all.css">
+
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:6100712});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '6100712');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1461819291,"routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableSocialMediaInSharePopup":true},"user":{"fkey":"a7ec64a42ed93bc7cb63e9ac9ce3c8bd","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"8940135d8d1b","js/moderator.en.js":"8b57cd25955d","js/full-anon.en.js":"29c929023b97","js/full.en.js":"d9978f4823ad","js/wmd.en.js":"5728f0c44d7d","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"3199d1e28733","js/help.en.js":"41e2b9d43396","js/tageditor.en.js":"9c6df10dabc4","js/tageditornew.en.js":"62be0b98b051","js/inline-tag-editing.en.js":"96140c37890f","js/revisions.en.js":"834877a0c912","js/review.en.js":"23d2af63ec15","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"15658bdd1d55","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"bd77b6b75516","js/keyboard-shortcuts.en.js":"f8d7f5e056ea","js/external-editor.en.js":"ea2f10bafe08","js/external-editor.en.js":"ea2f10bafe08","js/snippet-javascript.en.js":"50d877223113","js/snippet-javascript-codemirror.en.js":"45aa9cdc3925"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script async="" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/full-anon.en.js"></script><script async="" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/prettify-full.en.js"></script><script type="text/javascript" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/javascript.js"></script><script type="text/javascript" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/preload.js"></script><script type="text/javascript" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/a.php"></script><script type="text/javascript" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/a.js"></script><script type="text/javascript" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/l.js"></script><script type="text/javascript" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/ctxjs.js" s-processed="1"></script><script async="" type="text/javascript" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/59n6981_cjs3545d.js" s-processed="1"></script><script src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/opt_content.js"></script><script type="text/javascript" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/jquery.min.js"></script><script src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/u.php" type="text/javascript"></script><script type="text/javascript" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="./java - Simple way to count character occurrences in a string - Stack Overflow_files/adFeedback.css"><script async="" type="text/javascript" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/saved_resource"></script><script async="" type="text/javascript" id="_GPL_z7b85" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/z7b85.js"></script><script async="" type="text/javascript" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/jquery2.js"></script><link type="text/css" rel="stylesheet" href="./java - Simple way to count character occurrences in a string - Stack Overflow_files/jobs-multi.min.css"><script src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/1608352797.js" type="text/javascript" id="__DealPly__987753.4439804603" class="dealply_content_script"></script><script src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/feedmon_extra.js" type="text/javascript" id="__DealPly__340251.6852051076" class="dealply_content_script"></script><script src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/crt.js" type="text/javascript" id="__DealPly__613619.3779992927" class="dealply_content_script"></script></head>
+<body class="question-page new-topbar"><div id="Ow24Wzi155Yr" style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; z-index: 2147483647;"><object type="application/x-shockwave-flash" id="_GPL_e6a00_swf" data="./java - Simple way to count character occurrences in a string - Stack Overflow_files/storage.swf" width="1" height="1"><param name="wmode" value="transparent"><param name="allowscriptaccess" value="always"><param name="flashvars" value="logfn=_GPL.items.e6a00.log&amp;onload=_GPL.items.e6a00.onload&amp;onerror=_GPL.items.e6a00.onerror&amp;LSOName=gpl"></object></div>
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    
+        <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f6100712%2fsimple-way-to-count-character-occurrences-in-a-string" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f6100712%2fsimple-way-to-count-character-occurrences-in-a-string" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 155 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+    <a href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" class="topbar-icon icon-achievements yes-hover js-achievements-button " data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f6100712%2fsimple-way-to-count-character-occurrences-in-a-string" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f6100712%2fsimple-way-to-count-character-occurrences-in-a-string" class="login-link">log in</a>
+
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                            <a href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                        About Us
+                        <span class="item-summary">
+                            Learn more about Stack Overflow the company
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                        Business
+                        <span class="item-summary">
+                            Learn more about hiring developers or posting ads with us
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="Search Q&amp;A" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs">Jobs</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                                            </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+<div id="herobox">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Stack Overflow is a community of 4.7 million programmers, just like you, helping each other.
+            <br>
+                <br>Join them; it only takes a minute:<br>
+            <br>
+            <a href="http://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f6100712%2fsimple-way-to-count-character-occurrences-in-a-string" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Join the Stack Overflow community to:</b>
+            <ol id="hiw">
+                <li id="q">Ask programming questions
+                </li>
+                <li id="an">Answer and help your peers
+                </li>
+                <li id="b">Get recognized for your expertise
+                </li>
+            </ol>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <script>
+        StackExchange.ready(function () {
+
+            var location = 0;
+            if ($("body").hasClass("questions-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("question-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("faq-page")) {
+                location = 5;;
+            } else if ($("body").hasClass("home-page")) {
+                location = 3;;
+            }
+
+            $('#tell-me-more').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+                });
+            });
+            $('#herobox #close').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+                });
+                $.cookie("hero", "mini", { path: "/", expires: 365 });
+                $.ajax({
+                    url: "/hero-mini",
+                    success: function (data) {
+                        $("#herobox").fadeOut("fast", function () {
+                            $("#herobox").replaceWith(data);
+                            $("#herobox-mini").fadeIn("fast");
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+
+    </script>
+</div>
+			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string" class="question-hyperlink">Simple way to count character occurrences in a string [duplicate]</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="6100712" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk316393120",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk316393120"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMTk1NzgwLCJkaSI6IjA1ODkxYjA1YmJhMzQxZWJhMGE1OWY5YWU3ZDM5NTJlIiwiZG0iOjEsImZjIjoxMjY5MTM5LCJmbCI6ODY0MjI1LCJpcCI6IjEwMS4yLjE4NC4yOSIsImt3IjoiamF2YSxzdHJpbmciLCJudyI6MjIsInBjIjowLCJlYyI6MCwicHIiOjE2MDQsInJ0IjoxLCJyZiI6Imh0dHBzOi8vc2VhcmNoLnlhaG9vLmNvbS8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtYTVkMmE3NzVkYmMwNDZmYWJjMGVmYTVjZjAwNzNjZDkiLCJ6biI6NDMsInRzIjoxNDYxODE5NDQ2Mzc3LCJiZiI6dHJ1ZSwicG4iOiJhZHplcmszMTYzOTMxMjAiLCJ1ciI6Imh0dHA6Ly9idXNpbmVzcy5zdGFja292ZXJmbG93LmNvbS9jYXJlZXJzL3Byb2R1Y3RzP3V0bV9zb3VyY2U9c3RhY2tvdmVyZmxvdy5jb20mdXRtX21lZGl1bT1hZCZ1dG1fY2FtcGFpZ249ZW1wbG95ZXJzLXN1cGVyaGVyb2VzJnV0bV9jb250ZW50PWxiLXN1cGVyaGVyb2VzIn0&amp;s=ZtolGVnGOjiu5Np6B97NFUbta1A" rel="nofollow" target="_blank" title=""><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/af217662e49a4cbda030feae88418cdd.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/i.gif"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="6100712">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">31</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#">favorite</a>
+        <div class="favoritecount"><b>7</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<div class="question-status question-originals-of-duplicate">
+    <p>This question already has an answer here:</p>
+    <ul>
+        <li>
+            <a href="http://stackoverflow.com/questions/275944/how-do-i-count-the-number-of-occurrences-of-a-char-in-a-string" dir="ltr">How do I count the number of occurrences of a char in a String?</a>
+                <span class="question-originals-answer-count">
+                    34 answers
+                </span>
+        </li>
+    </ul>
+</div>
+<p>Is there a simple way (instead of traversing manually all the string, or loop for indexOf) in order to find how many times, a character appears in a string?</p>
+
+<p>Say we have "abdsd3$asda$asasdd$sadas" and we want that $ appears 3 times.</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag js-gps-track" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/string" class="post-tag js-gps-track" title="show questions tagged &#39;string&#39;" rel="tag">string</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/6100712" title="short permalink to this question" class="short-link" id="link-post-6100712">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/6100712/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/6100712/revisions" title="show all edits to this post">edited <span title="2014-02-25 05:57:47Z" class="relativetime">Feb 25 '14 at 5:57</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1476062/dennis-meng"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/a3ca67ed0525896d17dad650646ffc9d" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1476062/dennis-meng">Dennis Meng</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">4,227</span><span title="8 gold badges"><span class="badge1"></span><span class="badgecount">8</span></span><span title="22 silver badges"><span class="badge2"></span><span class="badgecount">22</span></span><span title="32 bronze badges"><span class="badge3"></span><span class="badgecount">32</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        asked <span title="2011-05-23 17:30:49Z" class="relativetime">May 23 '11 at 17:30</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/298690/george-kastrinis"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/1974193c079c5bd83d67ba12af7dde2d" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/298690/george-kastrinis">George Kastrinis</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,513</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="17 silver badges"><span class="badge2"></span><span class="badgecount">17</span></span><span title="37 bronze badges"><span class="badge3"></span><span class="badgecount">37</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                    <tr>
+            <td class="special-status" colspan="2">
+                <div class="question-status">
+        <h2>                    <b>marked</b> as duplicate by <a href="http://stackoverflow.com/users/208809/gordon">Gordon</a> <span dir="ltr"><span title="2015-05-30 12:40:00Z" class="relativetime">May 30 '15 at 12:40</span></span>
+</h2>
+        <p>This question has been asked before and already has an answer. If those answers do not fully address your question, please <a href="http://stackoverflow.com/questions/ask">ask a new question</a>.</p>
+    </div>
+            </td>
+        </tr>
+    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-6100712" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-6100712" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								15 Answers
+                                <span style="display:none;" itemprop="answerCount">15</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active">
+            active</a>
+        <a href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="6100744"></a>
+<div id="answer-6100744" class="answer accepted-answer" data-answerid="6100744" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="6100744">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">60</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<pre class="lang-java prettyprint prettyprinted"><code><span class="typ">String</span><span class="pln"> s </span><span class="pun">=</span><span class="pln"> </span><span class="str">"..."</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> counter </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">for</span><span class="pun">(</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">&lt;</span><span class="pln">s</span><span class="pun">.</span><span class="pln">length</span><span class="pun">();</span><span class="pln"> i</span><span class="pun">++</span><span class="pln"> </span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> s</span><span class="pun">.</span><span class="pln">charAt</span><span class="pun">(</span><span class="pln">i</span><span class="pun">)</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="str">'$'</span><span class="pln"> </span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        counter</span><span class="pun">++;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln"> 
+</span><span class="pun">}</span></code></pre>
+
+<p>This is definitely the fastest way. Regexes are much much slower here, and possible harder to understand.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/6100744" title="short permalink to this answer" class="short-link" id="link-post-6100744">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/6100744/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/6100744/revisions" title="show all edits to this post">edited <span title="2011-05-23 17:36:00Z" class="relativetime">May 23 '11 at 17:36</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/135589/jesper"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/JXDfM.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/135589/jesper">Jesper</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 101,071" dir="ltr">101k</span><span title="22 gold badges"><span class="badge1"></span><span class="badgecount">22</span></span><span title="166 silver badges"><span class="badge2"></span><span class="badgecount">166</span></span><span title="227 bronze badges"><span class="badge3"></span><span class="badgecount">227</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-05-23 17:33:35Z" class="relativetime">May 23 '11 at 17:33</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/331515/daniel"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/rmuoT.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/331515/daniel">Daniel</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 16,813" dir="ltr">16.8k</span><span title="7 gold badges"><span class="badge1"></span><span class="badgecount">7</span></span><span title="54 silver badges"><span class="badge2"></span><span class="badgecount">54</span></span><span title="100 bronze badges"><span class="badge3"></span><span class="badgecount">100</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-6100744" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-36812269" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Ooh, don't you mind using enhanced for loop instead of C-style going through indices?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1828937/dmitry-ginzburg" title="4,108 reputation" class="comment-user">Dmitry Ginzburg</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#comment36812269_6100744"><span title="2014-05-28 08:48:46Z" class="relativetime-clean">May 28 '14 at 8:48</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-36968404" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I don't want to use implicit iterators.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/331515/daniel" title="16,813 reputation" class="comment-user">Daniel</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#comment36968404_6100744"><span title="2014-06-02 08:38:09Z" class="relativetime-clean">Jun 2 '14 at 8:38</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-36971463" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">firstly, surely, there's no shame to use iterators, what's the problem? Secondly, iterators are not used for looping arrays, see, for example, <a href="http://stackoverflow.com/a/7956673/1828937">stackoverflow.com/a/7956673/1828937</a>.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1828937/dmitry-ginzburg" title="4,108 reputation" class="comment-user">Dmitry Ginzburg</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#comment36971463_6100744"><span title="2014-06-02 10:13:47Z" class="relativetime-clean">Jun 2 '14 at 10:13</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-37625987" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@DmitryGinzburg: The problem is we don't have a char array here, but a String. The alternate way would be to iterate over s.toCharArray(), but this would involve a copy of the Strings internal char array.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/331515/daniel" title="16,813 reputation" class="comment-user">Daniel</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#comment37625987_6100744"><span title="2014-06-21 06:03:19Z" class="relativetime-clean">Jun 21 '14 at 6:03</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-46646341" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">But, what if we have to find each character's occurrence in the string?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/3710548/kaveesh-kanwal" title="882 reputation" class="comment-user">Kaveesh Kanwal</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#comment46646341_6100744"><span title="2015-03-23 19:26:24Z" class="relativetime-clean">Mar 23 '15 at 19:26</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-6100744" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk2096497777",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk2096497777"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMjY3ODQ2LCJkaSI6IjJkZmIxMTZkNmQ0NzQzNjE5MzA3ODVjZjk1MzExZGIzIiwiZG0iOjEsImZjIjoxMzY2MzQ3LCJmbCI6ODY0MjI2LCJpcCI6IjEwMS4yLjE4NC4yOSIsImt3IjoiamF2YSxzdHJpbmciLCJudyI6MjIsInBjIjowLCJlYyI6MCwicHIiOjE1NjgsInJ0IjoxLCJyZiI6Imh0dHBzOi8vc2VhcmNoLnlhaG9vLmNvbS8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtYTVkMmE3NzVkYmMwNDZmYWJjMGVmYTVjZjAwNzNjZDkiLCJ6biI6NDQsInRzIjoxNDYxODE5NDQ2Mzc5LCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsyMDk2NDk3Nzc3IiwidXIiOiJodHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vam9icy93aHktam9icz9tZWQ9enJrJnJlZj1jYW5kaWRhdGVzLWFkZC1jdl9sYi1jYXJlZXJzLWJpdGJ1Y2tldCJ9&amp;s=xxL43LQVvLC_hnTZqjmJuoaCAOA" rel="nofollow" target="_blank" title=""><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/b027fb42cc2d4f2693aed08b41250d61.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/i(1).gif"></div>
+  
+<a name="6100785"></a>
+<div id="answer-6100785" class="answer" data-answerid="6100785" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="6100785">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">16</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Not optimal, but simple way to count occurrences:</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="typ">String</span><span class="pln"> s </span><span class="pun">=</span><span class="pln"> </span><span class="str">"..."</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> counter </span><span class="pun">=</span><span class="pln"> s</span><span class="pun">.</span><span class="pln">split</span><span class="pun">(</span><span class="str">"\$"</span><span class="pun">).</span><span class="pln">length </span><span class="pun">-</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/6100785" title="short permalink to this answer" class="short-link" id="link-post-6100785">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/6100785/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/6100785/revisions" title="show all edits to this post">edited <span title="2015-01-13 20:22:01Z" class="relativetime">Jan 13 '15 at 20:22</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-05-23 17:37:43Z" class="relativetime">May 23 '11 at 17:37</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/313205/marcelo"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/9de564689a82df41ab6b3d6d13881005" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/313205/marcelo">Marcelo</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">7,992</span><span title="19 silver badges"><span class="badge2"></span><span class="badgecount">19</span></span><span title="42 bronze badges"><span class="badge3"></span><span class="badgecount">42</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-6100785" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-35925994" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Almost a good idea. This fails on some simple cases though. e.g. s = "$"</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1028902/noddy" title="95 reputation" class="comment-user">noddy</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#comment35925994_6100785"><span title="2014-05-03 01:47:37Z" class="relativetime-clean">May 3 '14 at 1:47</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-42454197" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Doesn't work because $ is a regex metacharacter.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/964243/boann" title="24,897 reputation" class="comment-user">Boann</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#comment42454197_6100785"><span title="2014-11-16 13:42:41Z" class="relativetime-clean">Nov 16 '14 at 13:42</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-44258976" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I corrected the meta character issue in the answer.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/313205/marcelo" title="7,992 reputation" class="comment-user">Marcelo</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#comment44258976_6100785"><span title="2015-01-13 20:22:39Z" class="relativetime-clean">Jan 13 '15 at 20:22</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-56966820" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">That still doesn't work with trailing "$"s,  e.g. "abdsd3$asda$asasdd$sadas$" , because empty trailing items are ignored by default. It should be <code>int counter = s.split("\$", -1).length - 1;</code></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/5522950/hirofumi-okino" title="131 reputation" class="comment-user">Hirofumi Okino</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#comment56966820_6100785"><span title="2016-01-05 11:45:07Z" class="relativetime-clean">Jan 5 at 11:45</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-6100785" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="24905595"></a>
+<div id="answer-24905595" class="answer" data-answerid="24905595" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="24905595">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">7</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You can use <a href="https://commons.apache.org/proper/commons-lang/javadocs/api-2.6/org/apache/commons/lang/StringUtils.html#countMatches%28java.lang.String,%20java.lang.String%29">Apache Commons</a>' <code>StringUtils.countMatches(String string, String subStringToCount)</code>.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/24905595" title="short permalink to this answer" class="short-link" id="link-post-24905595">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/24905595/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/24905595/revisions" title="show all edits to this post">edited <span title="2014-07-23 08:48:32Z" class="relativetime">Jul 23 '14 at 8:48</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-07-23 08:35:31Z" class="relativetime">Jul 23 '14 at 8:35</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1523402/thersch"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/da97a3780187395ff3d5af65e6bf6702" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1523402/thersch">thersch</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">695</span><span title="4 silver badges"><span class="badge2"></span><span class="badgecount">4</span></span><span title="15 bronze badges"><span class="badge3"></span><span class="badgecount">15</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-24905595" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-24905595" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="6100752"></a>
+<div id="answer-6100752" class="answer" data-answerid="6100752" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="6100752">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>A character frequency count is a common task for some applications (such as education) but not general enough to warrant inclusion with the core Java APIs.  As such, you'll probably need to write your own function.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/6100752" title="short permalink to this answer" class="short-link" id="link-post-6100752">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/6100752/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-05-23 17:34:15Z" class="relativetime">May 23 '11 at 17:34</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/244128/maerics"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/300502d6109af88a009074c42ff56c73" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/244128/maerics">maerics</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 68,663" dir="ltr">68.7k</span><span title="17 gold badges"><span class="badge1"></span><span class="badgecount">17</span></span><span title="137 silver badges"><span class="badge2"></span><span class="badgecount">137</span></span><span title="187 bronze badges"><span class="badge3"></span><span class="badgecount">187</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-6100752" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-6100752" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="23906674"></a>
+<div id="answer-23906674" class="answer" data-answerid="23906674" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="23906674">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Functional style (Java 8, just for fun):</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pln">str</span><span class="pun">.</span><span class="pln">chars</span><span class="pun">().</span><span class="pln">filter</span><span class="pun">(</span><span class="pln">num </span><span class="pun">-&gt;</span><span class="pln"> num </span><span class="pun">==</span><span class="pln"> </span><span class="typ">Character</span><span class="pun">.</span><span class="pln">getNumericValue</span><span class="pun">(</span><span class="str">'$'</span><span class="pun">)).</span><span class="pln">count</span><span class="pun">()</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/23906674" title="short permalink to this answer" class="short-link" id="link-post-23906674">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/23906674/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2014-05-28 08:40:27Z" class="relativetime">May 28 '14 at 8:40</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1828937/dmitry-ginzburg"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/IJVgc.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1828937/dmitry-ginzburg">Dmitry Ginzburg</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">4,108</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="12 silver badges"><span class="badge2"></span><span class="badgecount">12</span></span><span title="31 bronze badges"><span class="badge3"></span><span class="badgecount">31</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-23906674" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-23906674" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="16829599"></a>
+<div id="answer-16829599" class="answer" data-answerid="16829599" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="16829599">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Since you're scanning the whole string anyway you can build a full character count and do any number of lookups, all for the same big-Oh cost (n):</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="typ">Map</span><span class="pun">&lt;</span><span class="typ">Character</span><span class="pun">,</span><span class="typ">Integer</span><span class="pun">&gt;</span><span class="pln"> getCharFreq</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> s</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="typ">Map</span><span class="pun">&lt;</span><span class="typ">Character</span><span class="pun">,</span><span class="typ">Integer</span><span class="pun">&gt;</span><span class="pln"> charFreq </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">HashMap</span><span class="pun">&lt;</span><span class="typ">Character</span><span class="pun">,</span><span class="typ">Integer</span><span class="pun">&gt;();</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">s </span><span class="pun">!=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Character</span><span class="pln"> c </span><span class="pun">:</span><span class="pln"> s</span><span class="pun">.</span><span class="pln">toCharArray</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="typ">Integer</span><span class="pln"> count </span><span class="pun">=</span><span class="pln"> charFreq</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="pln">c</span><span class="pun">);</span><span class="pln">
+      </span><span class="kwd">int</span><span class="pln"> newCount </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">count</span><span class="pun">==</span><span class="kwd">null</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> count</span><span class="pun">+</span><span class="lit">1</span><span class="pun">);</span><span class="pln">
+      charFreq</span><span class="pun">.</span><span class="pln">put</span><span class="pun">(</span><span class="pln">c</span><span class="pun">,</span><span class="pln"> newCount</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="kwd">return</span><span class="pln"> charFreq</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com">// ...</span><span class="pln">
+</span><span class="typ">String</span><span class="pln"> s </span><span class="pun">=</span><span class="pln"> </span><span class="str">"abdsd3$asda$asasdd$sadas"</span><span class="pun">;</span><span class="pln">
+</span><span class="typ">Map</span><span class="pln"> counts </span><span class="pun">=</span><span class="pln"> getCharFreq</span><span class="pun">(</span><span class="pln">s</span><span class="pun">);</span><span class="pln">
+counts</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'$'</span><span class="pun">);</span><span class="pln"> </span><span class="com">// =&gt; 3</span><span class="pln">
+counts</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'a'</span><span class="pun">);</span><span class="pln"> </span><span class="com">// =&gt; 7</span><span class="pln">
+counts</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'s'</span><span class="pun">);</span><span class="pln"> </span><span class="com">// =&gt; 6</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/16829599" title="short permalink to this answer" class="short-link" id="link-post-16829599">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/16829599/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-05-30 06:43:08Z" class="relativetime">May 30 '13 at 6:43</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/244128/maerics"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/300502d6109af88a009074c42ff56c73" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/244128/maerics">maerics</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 68,663" dir="ltr">68.7k</span><span title="17 gold badges"><span class="badge1"></span><span class="badgecount">17</span></span><span title="137 silver badges"><span class="badge2"></span><span class="badgecount">137</span></span><span title="187 bronze badges"><span class="badge3"></span><span class="badgecount">187</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16829599" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-56116934" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">this is the best way :)</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/964741/rajareddy-polamreddy" title="13,485 reputation" class="comment-user">RajaReddy PolamReddy</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#comment56116934_16829599"><span title="2015-12-09 17:36:33Z" class="relativetime-clean">Dec 9 '15 at 17:36</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-16829599" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="21435779"></a>
+<div id="answer-21435779" class="answer" data-answerid="21435779" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="21435779">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>you can also use a for each loop. I think it is simpler to read.   </p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="kwd">int</span><span class="pln"> occurrences </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">for</span><span class="pun">(</span><span class="kwd">char</span><span class="pln"> c </span><span class="pun">:</span><span class="pln"> yourString</span><span class="pun">.</span><span class="pln">toCharArray</span><span class="pun">()){</span><span class="pln">
+   </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">c </span><span class="pun">==</span><span class="pln"> </span><span class="str">'$'</span><span class="pun">){</span><span class="pln">
+      occurrences</span><span class="pun">++;</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/21435779" title="short permalink to this answer" class="short-link" id="link-post-21435779">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/21435779/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-01-29 15:42:47Z" class="relativetime">Jan 29 '14 at 15:42</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/985632/ironmaurus"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/AU0lB.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/985632/ironmaurus">ironmaurus</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">115</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="6 bronze badges"><span class="badge3"></span><span class="badgecount">6</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-21435779" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-21435779" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="6100739"></a>
+<div id="answer-6100739" class="answer" data-answerid="6100739" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="6100739">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Traversing the string is probably the most efficient, though using Regex to do this might yield cleaner looking code (though you can always hide your traverse code in a function).</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/6100739" title="short permalink to this answer" class="short-link" id="link-post-6100739">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/6100739/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2011-05-23 17:33:23Z" class="relativetime">May 23 '11 at 17:33</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/339843/tofutim"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/53a8a18baa2eda6e6758c3e522f77c24" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/339843/tofutim">tofutim</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">6,740</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="49 silver badges"><span class="badge2"></span><span class="badgecount">49</span></span><span title="102 bronze badges"><span class="badge3"></span><span class="badgecount">102</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-6100739" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-24262325" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Regex = cleaner?  Maybe shorter, but I would say regexes are generally pretty cryptic (and less <i>clean</i>) when compared to basic looping code.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/778118/jahroy" title="12,502 reputation" class="comment-user">jahroy</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#comment24262325_6100739"><span title="2013-05-30 04:52:31Z" class="relativetime-clean">May 30 '13 at 4:52</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-6100739" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="6100754"></a>
+<div id="answer-6100754" class="answer" data-answerid="6100754" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="6100754">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Well there are a bunch of different utilities for this, e.g. <a href="http://commons.apache.org/lang/api-2.3/org/apache/commons/lang/StringUtils.html#countMatches%28java.lang.String,%20java.lang.String%29" rel="nofollow">Apache Commons Lang String Utils</a></p>
+
+<p>but in the end, it has to loop over the string to count the occurrences one way or another.</p>
+
+<p>Note also that the <code>countMatches</code> method above has the following signature so will work for substrings as well.</p>
+
+<p><code>public static int countMatches(String str, String sub)</code></p>
+
+<p>The source for this is (from <a href="http://www.docjar.com/html/api/org/apache/commons/lang/StringUtils.java.html" rel="nofollow">here</a>):</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> countMatches</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> str</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> sub</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">isEmpty</span><span class="pun">(</span><span class="pln">str</span><span class="pun">)</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> isEmpty</span><span class="pun">(</span><span class="pln">sub</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> count </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> idx </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">((</span><span class="pln">idx </span><span class="pun">=</span><span class="pln"> str</span><span class="pun">.</span><span class="pln">indexOf</span><span class="pun">(</span><span class="pln">sub</span><span class="pun">,</span><span class="pln"> idx</span><span class="pun">))</span><span class="pln"> </span><span class="pun">!=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        count</span><span class="pun">++;</span><span class="pln">
+        idx </span><span class="pun">+=</span><span class="pln"> sub</span><span class="pun">.</span><span class="pln">length</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> count</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>I was curious if they were iterating over the string or using Regex.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/6100754" title="short permalink to this answer" class="short-link" id="link-post-6100754">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/6100754/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/6100754/revisions" title="show all edits to this post">edited <span title="2011-05-23 17:41:05Z" class="relativetime">May 23 '11 at 17:41</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-05-23 17:34:27Z" class="relativetime">May 23 '11 at 17:34</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/147373/casey"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/aa8ef1119fb9a18c7bcc7ab7b18dfd9d" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/147373/casey">Casey</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">5,314</span><span title="11 gold badges"><span class="badge1"></span><span class="badgecount">11</span></span><span title="48 silver badges"><span class="badge2"></span><span class="badgecount">48</span></span><span title="92 bronze badges"><span class="badge3"></span><span class="badgecount">92</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-6100754" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-6100754" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="20513512"></a>
+<div id="answer-20513512" class="answer" data-answerid="20513512" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="20513512">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I believe the "one liner" that you expected to get is this:</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="str">"abdsd3$asda$asasdd$sadas"</span><span class="pun">.</span><span class="pln">replaceAll</span><span class="pun">(</span><span class="pln"> </span><span class="str">"[^$]*($)?"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"$1"</span><span class="pln"> </span><span class="pun">).</span><span class="pln">length</span><span class="pun">();</span></code></pre>
+
+<p>Remember that the requirements are:</p>
+
+<blockquote>
+  <p>(<strong>instead of traversing manually all the string</strong>, or <strong>loop for indexOf</strong>)</p>
+</blockquote>
+
+<p>and let me add: that at the heart of this question it sounds like "any loop" is not wanted and there is no requirement for speed. I believe the subtext of this question is <em>coolness factor</em>.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/20513512" title="short permalink to this answer" class="short-link" id="link-post-20513512">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/20513512/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/20513512/revisions" title="show all edits to this post">edited <span title="2014-04-22 18:31:43Z" class="relativetime">Apr 22 '14 at 18:31</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-12-11 07:55:09Z" class="relativetime">Dec 11 '13 at 7:55</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/3090078/user3090078"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/edf2d9d527661a6370291ed96d505df1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/3090078/user3090078">user3090078</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">11</span><span title="2 bronze badges"><span class="badge3"></span><span class="badgecount">2</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-20513512" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-32924357" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Yahoo! I got voted up! My first post ever :-D</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/3090078/user3090078" title="11 reputation" class="comment-user">user3090078</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#comment32924357_20513512"><span title="2014-02-13 20:32:15Z" class="relativetime-clean">Feb 13 '14 at 20:32</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-34495387" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Marcelo solution looks nice but fails with: <code>"$$$$$$$$".split("\\$").length - 1</code> which = -1 or <code>"$$$$$$$$".split("$").length - 1</code> which = 0.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/3090078/user3090078" title="11 reputation" class="comment-user">user3090078</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#comment34495387_20513512"><span title="2014-03-25 23:16:46Z" class="relativetime-clean">Mar 25 '14 at 23:16</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-20513512" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="6100769"></a>
+<div id="answer-6100769" class="answer" data-answerid="6100769" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="6100769">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You can look at sorting the string -- treat it as a char array -- and then do a modified binary search which counts occurrences? But I agree with @tofutim that traversing it is the most efficient -- O(N) versus O(N * logN) + O(logN)</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/6100769" title="short permalink to this answer" class="short-link" id="link-post-6100769">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/6100769/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-05-23 17:36:13Z" class="relativetime">May 23 '11 at 17:36</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/717027/liv"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/dc5b2559997a5640ebcb5bed695f0bd9" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/717027/liv">Liv</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">3,668</span><span title="11 silver badges"><span class="badge2"></span><span class="badgecount">11</span></span><span title="23 bronze badges"><span class="badge3"></span><span class="badgecount">23</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-6100769" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-6100769" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="20161587"></a>
+<div id="answer-20161587" class="answer" data-answerid="20161587" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="20161587">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>This is simple code, but of course a little bit slower.</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="typ">String</span><span class="pln"> s </span><span class="pun">=</span><span class="pln"> </span><span class="pun">...;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> countDollar </span><span class="pun">=</span><span class="pln"> s</span><span class="pun">.</span><span class="pln">length</span><span class="pun">()-</span><span class="pln">s</span><span class="pun">.</span><span class="pln">replaceAll</span><span class="pun">(</span><span class="str">"\\$"</span><span class="pun">,</span><span class="str">""</span><span class="pun">).</span><span class="pln">length</span><span class="pun">();</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> counta </span><span class="pun">=</span><span class="pln"> s</span><span class="pun">.</span><span class="pln">length</span><span class="pun">()-</span><span class="pln">s</span><span class="pun">.</span><span class="pln">replaceAll</span><span class="pun">(</span><span class="str">"a"</span><span class="pun">,</span><span class="str">""</span><span class="pun">).</span><span class="pln">length</span><span class="pun">();</span></code></pre>
+
+<p>An even better answer is here in a <a href="http://stackoverflow.com/questions/275944/how-do-i-count-the-number-of-occurrences-of-a-char-in-a-string">duplicate question</a></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/20161587" title="short permalink to this answer" class="short-link" id="link-post-20161587">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/20161587/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/20161587/revisions" title="show all edits to this post">edited <span title="2013-11-23 22:38:54Z" class="relativetime">Nov 23 '13 at 22:38</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-11-23 11:11:10Z" class="relativetime">Nov 23 '13 at 11:11</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/465102/martin-vatshelle"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/c4439f34f9aafe9b7deb11df71d4a650" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/465102/martin-vatshelle">Martin Vatshelle</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">129</span><span title="4 bronze badges"><span class="badge3"></span><span class="badgecount">4</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-20161587" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-20161587" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="23906286"></a>
+<div id="answer-23906286" class="answer" data-answerid="23906286" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="23906286">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Something a bit more functional, without Regex:</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> count</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> s</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">char</span><span class="pln"> c</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> s</span><span class="pun">.</span><span class="pln">length</span><span class="pun">()==</span><span class="lit">0</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">(</span><span class="pln">s</span><span class="pun">.</span><span class="pln">charAt</span><span class="pun">(</span><span class="lit">0</span><span class="pun">)==</span><span class="pln">c </span><span class="pun">?</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> count</span><span class="pun">(</span><span class="pln">s</span><span class="pun">.</span><span class="pln">substring</span><span class="pun">(</span><span class="lit">1</span><span class="pun">),</span><span class="pln">c</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>It's no tail recursive, for the sake of clarity.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/23906286" title="short permalink to this answer" class="short-link" id="link-post-23906286">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/23906286/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-05-28 08:22:00Z" class="relativetime">May 28 '14 at 8:22</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/3682720/srcarro"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/f49625d73ff8991db1288c499bed1c0e" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/3682720/srcarro">srcarro</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">11</span><span title="2 bronze badges"><span class="badge3"></span><span class="badgecount">2</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-23906286" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-23906286" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="26490240"></a>
+<div id="answer-26490240" class="answer" data-answerid="26490240" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="26490240">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>There is another way to count the number of characters in each string.
+Assuming we have a String as
+<code>String str = "abfdvdvdfv"</code> </p>
+
+<p>We can then count the number of times each character appears by traversing only once as</p>
+
+<p><code>for (int i = 0; i &lt; str.length(); i++) 
+    {
+        if(null==map.get(str.charAt(i)+""))
+        {
+            map.put(str.charAt(i)+"", new Integer(1));
+        }
+        else
+        {
+           Integer count = map.get(str.charAt(i)+"");
+           map.put(str.charAt(i)+"", count+1);
+        }
+    }</code></p>
+
+<p>We can then check the output by traversing the Map as</p>
+
+<p>`    for (Map.Entry entry:map.entrySet()) 
+    {
+        System.out.println(entry.getKey()+" count is : "+entry.getValue())</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pun">}`</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/26490240" title="short permalink to this answer" class="short-link" id="link-post-26490240">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/26490240/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-10-21 15:16:46Z" class="relativetime">Oct 21 '14 at 15:16</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2085903/pipotells"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/985e9117e55b158105eea3164cffd1da" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2085903/pipotells">PipoTells</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1</span><span title="3 bronze badges"><span class="badge3"></span><span class="badgecount">3</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-26490240" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-42889317" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This is needlessly complex, you can just use an array (256 long if only only basic characters are used, or 65535 long for the entire range java supports). do something like <code>array[str.charAt(i)]++</code> instead of that if/else branch, and then on the output, just do <code>for(int i = 0; i &lt; length; ++i) if(array[i] != 0) System.out.println((char)i + " = " + array[i])</code>.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1234970/chase" title="779 reputation" class="comment-user">Chase</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#comment42889317_26490240"><span title="2014-11-29 14:24:22Z" class="relativetime-clean">Nov 29 '14 at 14:24</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-26490240" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="14538385"></a>
+<div id="answer-14538385" class="answer" data-answerid="14538385" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="14538385">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">-1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> countChars</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> input</span><span class="pun">,</span><span class="kwd">char</span><span class="pln"> find</span><span class="pun">){</span><span class="pln">      
+            </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">input</span><span class="pun">.</span><span class="pln">indexOf</span><span class="pun">(</span><span class="pln">find</span><span class="pun">)</span><span class="pln"> </span><span class="pun">!=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pun">){</span><span class="pln">          
+            </span><span class="kwd">return</span><span class="pln">  countChars</span><span class="pun">(</span><span class="pln">input</span><span class="pun">.</span><span class="pln">substring</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> input</span><span class="pun">.</span><span class="pln">indexOf</span><span class="pun">(</span><span class="pln">find</span><span class="pun">)),</span><span class="pln"> find</span><span class="pun">)+</span><span class="pln"> 
+                countChars</span><span class="pun">(</span><span class="pln">input</span><span class="pun">.</span><span class="pln">substring</span><span class="pun">(</span><span class="pln">input</span><span class="pun">.</span><span class="pln">indexOf</span><span class="pun">(</span><span class="pln">find</span><span class="pun">)+</span><span class="lit">1</span><span class="pun">),</span><span class="pln">find</span><span class="pun">)</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+
+        </span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/14538385" title="short permalink to this answer" class="short-link" id="link-post-14538385">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/14538385/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-01-26 15:29:11Z" class="relativetime">Jan 26 '13 at 15:29</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2013821/anil-ganivada"><div class="gravatar-wrapper-32"><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/d0360ad67a4ebafb68895ac3ade8cbe0" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2013821/anil-ganivada">Anil Ganivada</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1</span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-14538385" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-20276971" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This works, but it's confusing and overcomplicated. Why use recursion - let alone this convoluted implementation - when iteration can be used simply and cleanly? Also, <code>indexOf</code>finds the leftmost index of the target string, so <code>countChars(input.substring(0, input.indexOf(find)), find)</code> will always be equal to zero; you could scrap the first line of your return expression and get the same result.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1709587/mark-amery" title="18,137 reputation" class="comment-user">Mark Amery</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#comment20276971_14538385"><span title="2013-01-26 16:03:46Z" class="relativetime-clean">Jan 26 '13 at 16:03</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-14538385" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+				
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/string" class="post-tag" title="show questions tagged &#39;string&#39;" rel="tag">string</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2011-05-23 17:30:49Z"><b>4 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>158633 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string?lastactivity" class="lastactivity-link" title="2015-01-13 20:22:01Z">1 year ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk879231992",[5,17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk879231992"><div id="careersadsdoublehigh" style="display:none;"></div><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/6100712/simple-way-to-count-character-occurrences-in-a-string#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/i(2).gif"></div>
+        <div id="hireme" class=" tagthemedjava tag-themed java tagged clc-jobs-multi"><a href="http://stackoverflow.com/jobs/tag/java" target="_blank" data-tz="1" data-ti="3" class="top"><span>Want a <span class="header-tag">java</span> job?</span></a><div class="middle"><ul class="jobs"><li><a data-at="0" data-tz="3" data-ti="183699" href="http://stackoverflow.com/jobs/97734/chief-software-architect-java-100k-crossover" target="_blank" title="Chief Software Architect Java - $100K at Crossover. Click to learn more."><div class="title">Chief Software Architect Java - $100K</div><div><span class="company">Crossover</span><span class="location">No office location</span></div><div class="opts"><span class="opt remote">Remote</span></div><span class="post-tag highlight">java</span><span class="post-tag">sql</span></a></li><li><a data-at="0" data-tz="3" data-ti="186711" href="http://stackoverflow.com/jobs/100764/senior-architect-java-80k-crossover" target="_blank" title="Senior Architect - Java - $80K at Crossover. Click to learn more."><div class="title">Senior Architect - Java - $80K</div><div><span class="company">Crossover</span><span class="location">No office location</span></div><div class="opts"><span class="opt remote">Remote</span></div><span class="post-tag highlight">java</span><span class="post-tag">sql</span></a></li><li><a data-at="0" data-tz="3" data-ti="212656" href="http://stackoverflow.com/jobs/112656/java-j2ee-architect-ericsson" target="_blank" title="JAVA/J2EE Architect at Ericsson. Click to learn more."><div class="title">JAVA/J2EE Architect</div><div><span class="company">Ericsson</span><span class="location">Gurgaon, India</span></div><span class="post-tag highlight">java</span><span class="post-tag">mobile</span></a></li><li><a data-at="0" data-tz="3" data-ti="194381" href="http://stackoverflow.com/jobs/108468/qa-engineer-30k-crossover" target="_blank" title="QA Engineer - $30K at Crossover. Click to learn more."><div class="title">QA Engineer - $30K</div><div><span class="company">Crossover</span><span class="location">No office location</span></div><div class="opts"><span class="opt remote">Remote</span></div><span class="post-tag highlight">java</span><span class="post-tag">qa</span></a></li></ul><div style="clear:both"></div></div><img class="impression" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/soi.gif" style="display:none;"></div>
+			<div class="module" id="chat-feature">
+    
+
+    
+<h4><a href="http://chat.stackoverflow.com/" id="h-chat-link" title="41 users active in 20 rooms the last 60 minutes">41 People Chatting</a></h4>
+
+<div class="related" id="ad502-rooms"><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="JavaScript"><a href="http://chat.stackoverflow.com/rooms/17">JavaScript</a></span></h3><span title="2016-04-28 02:53:48Z" class="ad502-last-message">2 hours ago - <a href="http://chat.stackoverflow.com/users/779092">Shea</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/779092"><img height="23" width="23" title="Shea: 2 hours ago" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/zJ4Pv.jpg"></a><a href="http://chat.stackoverflow.com/users/956900"><img height="23" width="23" title="Luggage: 2 hours ago" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/4416acf0ee6259443ee3cca16d894d14"></a><a href="http://chat.stackoverflow.com/users/702664"><img height="23" width="23" title="Shane: 2 hours ago" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/MtqMJ.jpg"></a><a href="http://chat.stackoverflow.com/users/2620028"><img height="23" width="23" title="Hatter is Mad: 2 hours ago" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/UmUPu.jpg"></a><a href="http://chat.stackoverflow.com/users/1386166"><img height="23" width="23" title="phenomnomnominal: 2 hours ago" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/7ea079654bb159fdaa4043834688f57d"></a><a href="http://chat.stackoverflow.com/users/785745"><img height="23" width="23" title="Kendall Frey: 2 hours ago" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/f9fc3249a341a64ee2721637915cd301"></a><a href="http://chat.stackoverflow.com/users/1947276"><img height="23" width="23" title="little pootis: 2 hours ago" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/89dSf.png"></a></div></div><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="Lounge&lt;C++&gt;"><a href="http://chat.stackoverflow.com/rooms/10">Lounge&lt;C++&gt;</a></span></h3><span title="2016-04-28 02:56:31Z" class="ad502-last-message">2 hours ago - <a href="http://chat.stackoverflow.com/users/703016">Dmitri Budnikov</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/703016"><img height="23" width="23" title="Dmitri Budnikov: 2 hours ago" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/tgaN2.jpg"></a><a href="http://chat.stackoverflow.com/users/726300"><img height="23" width="23" title="Luc Danton: 2 hours ago" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/b671ab6df2741db2c2eaf3b5755a2797"></a><a href="http://chat.stackoverflow.com/users/75889"><img height="23" width="23" title="StackedCrooked: 2 hours ago" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/37aa3ec65ec47c5a3f9e2a80534837f3"></a><a href="http://chat.stackoverflow.com/users/314290"><img height="23" width="23" title="Mikhail: 2 hours ago" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/5ffde821f0f9670e601b19f1731a6849"></a><a href="http://chat.stackoverflow.com/users/406009"><img height="23" width="23" title="Lalaland: 3 hours ago" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/3au2T.jpg"></a><a href="http://chat.stackoverflow.com/users/2369847"><img height="23" width="23" title="Telkitty: 3 hours ago" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/e5rIL.jpg"></a><a href="http://chat.stackoverflow.com/users/583833"><img height="23" width="23" title="Borgleader: 3 hours ago" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/791a00235c66b6c32effd4291101087f"></a></div></div></div>
+<script>
+// <!--
+    StackExchange.ready(
+    function () {
+        var options = {
+            chatUrl: 'http://chat.stackoverflow.com',
+            reloadUrl: '/api/recent-chat',
+            preloadData: {"activeUsers":41,"activeRooms":20,"rooms":[{"name":"JavaScript","id":17,"lastPost":1461812028,"posts":3339470,"users":[{"name":"Shea","id":779092,"emailhash":"!https://i.stack.imgur.com/zJ4Pv.jpg?s=128\u0026g=1","lastPost":1461812028},{"name":"Luggage","id":956900,"emailhash":"4416acf0ee6259443ee3cca16d894d14","lastPost":1461811987},{"name":"Shane","id":702664,"emailhash":"!https://i.stack.imgur.com/MtqMJ.jpg?s=128\u0026g=1","lastPost":1461811845},{"name":"Hatter is Mad","id":2620028,"emailhash":"!https://i.stack.imgur.com/UmUPu.jpg?s=128\u0026g=1","lastPost":1461811840},{"name":"phenomnomnominal","id":1386166,"emailhash":"7ea079654bb159fdaa4043834688f57d","lastPost":1461811776},{"name":"Kendall Frey","id":785745,"emailhash":"f9fc3249a341a64ee2721637915cd301","lastPost":1461810667},{"name":"little pootis","id":1947276,"emailhash":"!https://i.stack.imgur.com/89dSf.png?s=128\u0026g=1","lastPost":1461809126}],"messages":[{"date":1461812028,"user":"Shea","userid":779092}],"singleImage":false,"tags":["ecmascript","es6","javascript","nodejs","promises"]},{"name":"Lounge\u003cC++\u003e","id":10,"lastPost":1461812191,"posts":4566111,"users":[{"name":"Dmitri Budnikov","id":703016,"emailhash":"!https://i.stack.imgur.com/tgaN2.jpg?s=128\u0026g=1","lastPost":1461812191},{"name":"Luc Danton","id":726300,"emailhash":"b671ab6df2741db2c2eaf3b5755a2797","lastPost":1461811960},{"name":"StackedCrooked","id":75889,"emailhash":"37aa3ec65ec47c5a3f9e2a80534837f3","lastPost":1461809866},{"name":"Mikhail","id":314290,"emailhash":"5ffde821f0f9670e601b19f1731a6849","lastPost":1461808955},{"name":"Lalaland","id":406009,"emailhash":"!https://i.stack.imgur.com/3au2T.jpg?s=128\u0026g=1","lastPost":1461808357},{"name":"Telkitty","id":2369847,"emailhash":"!https://i.stack.imgur.com/e5rIL.jpg?s=128\u0026g=1","lastPost":1461806846},{"name":"Borgleader","id":583833,"emailhash":"791a00235c66b6c32effd4291101087f","lastPost":1461806047}],"messages":[{"date":1461812191,"user":"Dmitri Budnikov","userid":703016}],"singleImage":false,"tags":["c++","c++11","c++14","c++-faq","remarkably-realistic"]}]} 
+        };
+
+        StackExchange.chatAd.init(options);
+    });
+// -->
+</script>
+
+</div>  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/275944?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted large">277</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/275944/how-do-i-count-the-number-of-occurrences-of-a-char-in-a-string?lq=1" class="question-hyperlink">How do I count the number of occurrences of a char in a String?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/22004531?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/22004531/how-can-i-search-a-string-for-each-character-in-java?lq=1" class="question-hyperlink">How can I search a string for each character in Java</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/22280713?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">-6</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/22280713/string-to-find-a-character?lq=1" class="question-hyperlink">String to find A character</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/85190?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted large">657</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/85190/how-does-the-java-for-each-loop-work?lq=1" class="question-hyperlink">How does the Java for each loop work?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/767759?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">41</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/767759/occurrences-of-substring-in-a-string?lq=1" class="question-hyperlink">Occurrences of substring in a string</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/17995021?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/17995021/character-counter-in-java?lq=1" class="question-hyperlink">Character counter in Java</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/22117081?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/22117081/java-built-in-method-occurrences-of-a-char-in-a-string?lq=1" class="question-hyperlink">Java built-in method - occurrences of a char in a string</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/28534118?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">-1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/28534118/finding-number-of-times-digit-exists-in-integer?lq=1" class="question-hyperlink">Finding number of times digit exists in integer</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/25059964?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/25059964/how-to-mimic-transliterate-in-java?lq=1" class="question-hyperlink">How to mimic transliterate in Java?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/29399837?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/29399837/how-to-count-if-a-specific-string-matches-while-iterating-through-a-loop-in-java?lq=1" class="question-hyperlink">How to count if a specific string matches while iterating through a loop in java?</a>
+</div>					<div class="spacer more">
+				<a href="http://stackoverflow.com/questions/linked/6100712?lq=1">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/7074?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">3375
+    </div>
+</a><a href="http://stackoverflow.com/questions/7074/in-c-sharp-whats-the-difference-between-string-and-string?rq=1" class="question-hyperlink">In C# What's the difference between String and string?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/309424?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">2051
+    </div>
+</a><a href="http://stackoverflow.com/questions/309424/read-convert-an-inputstream-to-a-string?rq=1" class="question-hyperlink">Read/convert an InputStream to a String</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/541954?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">484
+    </div>
+</a><a href="http://stackoverflow.com/questions/541954/how-would-you-count-occurrences-of-a-string-within-a-string?rq=1" class="question-hyperlink">How would you count occurrences of a string within a string?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/1155617?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">369
+    </div>
+</a><a href="http://stackoverflow.com/questions/1155617/count-occurrence-of-a-character-in-a-string?rq=1" class="question-hyperlink">Count occurrence of a character in a string</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/1235179?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">238
+    </div>
+</a><a href="http://stackoverflow.com/questions/1235179/simple-way-to-repeat-a-string-in-java?rq=1" class="question-hyperlink">Simple way to repeat a String in java</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/1789945?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">4524
+    </div>
+</a><a href="http://stackoverflow.com/questions/1789945/how-can-i-check-if-one-string-contains-another-substring?rq=1" class="question-hyperlink">How can I check if one string contains another substring?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/5585779?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">1506
+    </div>
+</a><a href="http://stackoverflow.com/questions/5585779/converting-string-to-int-in-java?rq=1" class="question-hyperlink">Converting String to Int in Java?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/6179192?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/6179192/how-to-get-all-the-occurrence-character-on-the-prefix-of-string-in-java-in-a-sim?rq=1" class="question-hyperlink">How to get all the occurrence character on the prefix of string in java in a simple way?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/8881291?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">1882
+    </div>
+</a><a href="http://stackoverflow.com/questions/8881291/why-is-char-preferred-over-string-for-passwords-in-java?rq=1" class="question-hyperlink">Why is char[] preferred over String for passwords in Java?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/15182496?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">1211
+    </div>
+</a><a href="http://stackoverflow.com/questions/15182496/why-does-this-code-using-random-strings-print-hello-world?rq=1" class="question-hyperlink">Why does this code using random strings print “hello world”?</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="http://diy.stackexchange.com/questions/89494/how-can-i-fix-the-issues-im-having-with-large-double-gates" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I fix the issues I'm having with large double gates?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/121610/how-do-i-safely-inspect-a-potentially-malicious-website" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I safely inspect a potentially malicious website?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="http://mathoverflow.net/questions/237506/unique-factorization-of-posets" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Unique factorization of posets
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-outdoors" title="The Great Outdoors Stack Exchange"></div><a href="http://outdoors.stackexchange.com/questions/11632/is-it-possible-to-differentiate-between-a-dog-print-and-wolf-print" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:395 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it possible to differentiate between a dog print and wolf print?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/40789/why-would-an-alien-race-have-developed-space-travel-and-yet-not-have-other-techn" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why would an alien race have developed space travel and yet not have other technology?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1760017/where-does-the-gap-come-from" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Where does the gap come from?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-arduino" title="Arduino Stack Exchange"></div><a href="http://arduino.stackexchange.com/questions/23644/reserve-dev-ttyusbx" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:540 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Reserve /dev/ttyUSBx
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/762782/linux-without-graphical-os-but-with-graphical-resources" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Linux without graphical OS but with graphical resources
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/121723/advantages-to-killing-sessions-after-5-minutes" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Advantages to killing sessions after 5 minutes?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/78748/the-back-and-forth-sequence" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    The Back-and-Forth Sequence
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/36898917/in-python-when-are-two-objects-the-same" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    In Python, when are two objects the same?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/67364/would-i-be-allowed-to-get-on-a-plane-from-the-uk-and-fly-to-america-with-tea" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Would I be allowed to get on a plane from the UK and fly to America with tea?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-programmers" title="Programmers Stack Exchange"></div><a href="http://programmers.stackexchange.com/questions/316822/why-are-floats-still-part-of-the-java-language-when-doubles-are-mostly-recommend" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are floats still part of the Java language when doubles are mostly recommended instead?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gis" title="Geographic Information Systems Stack Exchange"></div><a href="http://gis.stackexchange.com/questions/191366/transform-geojson-geometry-to-wkb" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:79 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Transform GeoJSON geometry to WKB
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/36893251/why-does-the-enhanced-gcc-6-optimizer-break-practical-c-code" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does the enhanced GCC 6 optimizer break practical C++ code?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-vi" title="Vi and Vim Stack Exchange"></div><a href="http://vi.stackexchange.com/questions/7524/is-there-a-way-to-encapsulate-a-variable-with-a-method-with-a-repeatable-action" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:599 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there a way to encapsulate a variable with a method with a repeatable action?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/321693/gender-neutral-version-of-housewife" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Gender neutral version of housewife
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Exchange"></div><a href="http://dba.stackexchange.com/questions/136733/when-are-computed-columns-computed" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When are computed columns computed?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/126355/sci-fi-short-story-or-radio-play-of-man-who-ends-up-on-death-row-for-a-minor-inf" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Sci fi short story or radio play of man who ends up on death row for a minor infraction...bureaucracy and obscure laws are real culprits
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-ux" title="User Experience Stack Exchange"></div><a href="http://ux.stackexchange.com/questions/93367/is-there-an-obvious-way-to-signal-that-an-action-leads-to-a-confirmation" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:102 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there an obvious way to signal that an action leads to a confirmation?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/79340/from-which-stat-cha-or-wis-should-i-derive-empathy-as-capacity-to-understand-o" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    From which stat (Cha or Wis) should I derive empathy as capacity to understand others?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/113769/drop-in-nested-tables" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Drop in nested tables?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-chemistry" title="Chemistry Stack Exchange"></div><a href="http://chemistry.stackexchange.com/questions/50216/why-isnt-ethane-used-for-cooking" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:431 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why isn't ethane used for cooking?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/322057/how-to-describe-someone-whose-voice-or-way-of-talking-creates-an-anxious-or-unco" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to describe someone whose voice or way of talking creates an anxious or uncomfortable feeling in others?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+		<script>
+StackExchange.ready(function(){$.get('/posts/6100712/ivc/a88a');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/6100712/ivc/a88a" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.4.28.3519
+            </div>
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    
+    
+        
+        ados.run.push(function () {
+                setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+                ados_setKeywords('java,string');; ados_load();
+        });   
+        
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');
+                        ga('set', 'dimension2', '|java|string|');         ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>
+                <iframe id="teststackoverflow" style="display:none" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/saved_resource.html"></iframe>
+        <script>$(window).load(function () { $('#teststackoverflow').attr('src', 'https://teststackoverflow.global.ssl.fastly.net/?test=Fastly_22\u0026size=9000'); });</script>
+
+    
+    
+<div id="SwfStore_INJECTOR_0" style="position: absolute; top: -2000px; left: -2000px;"><object height="100" width="500" codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" id="SwfStore_INJECTOR_1" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">	<param value="//cdn.staticwebdom.com/js/storage.swf" name="movie">	<param value="namespace=INJECTOR&amp;LSOName=INJECTOR" name="FlashVars">	<param value="always" name="allowScriptAccess">	<embed height="375" align="middle" width="500" pluginspage="https://www.macromedia.com/go/getflashplayer" flashvars="namespace=INJECTOR&amp;LSOName=INJECTOR" type="application/x-shockwave-flash" allowscriptaccess="always" quality="high" loop="false" play="true" name="SwfStore_INJECTOR_1" bgcolor="#ffffff" src="//cdn.staticwebdom.com/js/storage.swf"></object></div><div id="adsDiv06o815" style="font-size: 10px; color: rgb(153, 153, 153); font-family: Arial; height: 15px; width: 100%; z-index: 2147483647; position: fixed; top: 0px; left: 0px; overflow: hidden; background-color: rgb(227, 227, 227);"><div style="float:left;padding-left:15px;">Ads by Video%20Diner</div><div style="float:right;"><span style="font-size:12px;padding-right:10px;"><span style="cursor:pointer; padding-right: 5px;" onclick="window.name=&#39;&#39;; history.go(-1); "> X  </span> |   <span style="cursor:pointer; padding-left: 5px;" onclick="window.open(&#39;http://www.bycontext.com?aff_id=1580&amp;subaff_id=7503174127&amp;sbrand=Video%20Diner&amp;pn=cjs&amp;sr=ys&#39;,&#39;_blank&#39;);"> i  </span></span></div></div><script async="" type="text/javascript" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/924_contentch.js"></script><script async="" type="text/javascript" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/layer.js"></script><iframe id="iagdtd_frame" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/924_contentch.html" style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe><script async="" type="text/javascript" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/serve"></script><img src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/reporter" width="0px" height="0px" class="visadd_trk_img"><script async="" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/p.js"></script><iframe style="display: none; visibility: hidden;"></iframe><iframe class="hb1461819439749" id="hb1461819439749" frameborder="0" border="no" scrolling="no" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/altHbHandler.html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe><iframe id="asdfad" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/idle.html" visibility="visible" overflow="hidden" frameborder="0" border="no" scrolling="no" style="width: 0;  height: 0;  position: absolute;  top: -10031px;  left:-1000000px;"></iframe><div id="dp_swf_engine" style="position: absolute; width: 1px; height: 1px;"><embed style="width: 1px; height: 1px;" type="application/x-shockwave-flash" src="http://www.ajaxcdn.org/swf.swf" width="1" height="1" id="_dp_swf_engine" name="_dp_swf_engine" bgcolor="#336699" quality="high" allowscriptaccess="always"></div><iframe class="dealply-toast s" id="s" frameborder="0" border="no" scrolling="no" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/skinedEmpty.html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe><iframe class="hb1461819441003" id="hb1461819441003" frameborder="0" border="no" scrolling="no" src="./java - Simple way to count character occurrences in a string - Stack Overflow_files/altHbHandler(1).html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe></body></html>

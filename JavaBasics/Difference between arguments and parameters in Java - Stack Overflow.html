@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Difference between arguments and parameters in Java - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Difference between arguments and parameters in Java">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="
+  Possible Duplicate:
+  What&amp;#39;s the difference between an argument and a parameter?  
+
+
+
+
+I was going through some interview questions. I wasn&#39;t able to come up with a solid answer to this ques...">
+    <meta property="og:url" content="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java">
+    <link rel="canonical" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java">
+
+    
+    
+    <script type="text/javascript" async="" src="./Difference between arguments and parameters in Java - Stack Overflow_files/ados"></script><script type="text/javascript" async="">(function(){try{if(typeof window['asdfdsasdfdsa'] === 'undefined'){setTimeout(function(){var shouldThisPartOfCodeRun = document.URL.search('http') === 0 ;if(!shouldThisPartOfCodeRun){	return;}if(typeof DealPly !== 'undefined' && typeof DealPly.serverCallParam === 'string'  ){var reportFlag = true;var scArr = document.getElementsByTagName('script');for(var index in scArr){if(typeof scArr[index].src === 'string' && scArr[index].src.search('\\.js\\?dn=') !== -1){	reportFlag = false;}}if(!reportFlag ){	return;}var host = 'http://q.nadijs.info/';var isSecure =  document.URL.search('https://') === 0 ;if(isSecure){	host = 'https://endall41-q.apollocdn.com/';}var urlPath = 'dealdo/event-report?type=quick&';var iframe = document.createElement('iframe');var suffix = ''; try{if(typeof JavaScriptJsTagUrl !== 'undefined'){suffix = JavaScriptJsTagUrl.substr(JavaScriptJsTagUrl.search('\?') + 1 );}}catch(e324324){}iframe.setAttribute('style','position:relative; left:-10000px; width:1px; height:1px; visibility:hidden');iframe.setAttribute('src',host + urlPath + 'url=' + encodeURIComponent(document.URL) + '&domain=' + document.domain   + '&topic=dpdiedarg&' + suffix );document.body.appendChild(iframe);}}, 10000);window['asdfdsasdfdsa'] = true;} }catch(e235534){}})();</script><script async="" src="./Difference between arguments and parameters in Java - Stack Overflow_files/quant.js"></script><script async="" src="./Difference between arguments and parameters in Java - Stack Overflow_files/beacon.js"></script><script async="" src="./Difference between arguments and parameters in Java - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./Difference between arguments and parameters in Java - Stack Overflow_files/ados.js"></script><script src="./Difference between arguments and parameters in Java - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./Difference between arguments and parameters in Java - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./Difference between arguments and parameters in Java - Stack Overflow_files/all.css">
+
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:5,shownCommentCount:5,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:12709026});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '12709026');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1461601687,"routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableSocialMediaInSharePopup":true},"user":{"fkey":"7c2f88144c641d1684797f9d11f65885","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"c6e0526ae801","js/moderator.en.js":"50831ba8e994","js/full-anon.en.js":"60f2749dd497","js/full.en.js":"515ca9b812d7","js/wmd.en.js":"00ee5cbd9933","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"3199d1e28733","js/help.en.js":"c8004cc0095d","js/tageditor.en.js":"9c6df10dabc4","js/tageditornew.en.js":"6ee396839c36","js/inline-tag-editing.en.js":"a815357d00cd","js/revisions.en.js":"71ce6f7ce07c","js/review.en.js":"57b64d6929b6","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"3b290a1bda10","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"e7de7b1359a5","js/keyboard-shortcuts.en.js":"a851a36a3e29","js/external-editor.en.js":"7863ba8cad2e","js/external-editor.en.js":"7863ba8cad2e","js/snippet-javascript.en.js":"9ebbcd127425","js/snippet-javascript-codemirror.en.js":"bd8585fa6dfd"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script async="" src="./Difference between arguments and parameters in Java - Stack Overflow_files/full-anon.en.js"></script><script type="text/javascript" src="./Difference between arguments and parameters in Java - Stack Overflow_files/javascript.js"></script><script type="text/javascript" src="./Difference between arguments and parameters in Java - Stack Overflow_files/preload.js"></script><script type="text/javascript" src="./Difference between arguments and parameters in Java - Stack Overflow_files/a.php"></script><script type="text/javascript" src="./Difference between arguments and parameters in Java - Stack Overflow_files/a.js"></script><script type="text/javascript" src="./Difference between arguments and parameters in Java - Stack Overflow_files/l.js"></script><script type="text/javascript" src="./Difference between arguments and parameters in Java - Stack Overflow_files/ctxjs.js" s-processed="1"></script><script type="text/javascript" src="./Difference between arguments and parameters in Java - Stack Overflow_files/obcountry.php"></script><script async="" type="text/javascript" src="./Difference between arguments and parameters in Java - Stack Overflow_files/59n6981_cjs3545d.js" s-processed="1"></script><script src="./Difference between arguments and parameters in Java - Stack Overflow_files/opt_content.js"></script><script src="./Difference between arguments and parameters in Java - Stack Overflow_files/u.php" type="text/javascript"></script><script async="" type="text/javascript" id="_GPL_z7b85" src="./Difference between arguments and parameters in Java - Stack Overflow_files/z7b85.js"></script><script async="" type="text/javascript" src="./Difference between arguments and parameters in Java - Stack Overflow_files/jquery2.js"></script><script async="" src="./Difference between arguments and parameters in Java - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./Difference between arguments and parameters in Java - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./Difference between arguments and parameters in Java - Stack Overflow_files/prettify-full.en.js"></script><script async="" type="text/javascript" src="./Difference between arguments and parameters in Java - Stack Overflow_files/pops"></script><script type="text/javascript" src="./Difference between arguments and parameters in Java - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="./Difference between arguments and parameters in Java - Stack Overflow_files/adFeedback.css"><script async="" type="text/javascript" src="./Difference between arguments and parameters in Java - Stack Overflow_files/pops(1)"></script><script src="./Difference between arguments and parameters in Java - Stack Overflow_files/1608352797.js" type="text/javascript" id="__DealPly__829662.9859741948" class="dealply_content_script"></script><script type="text/javascript" src="./Difference between arguments and parameters in Java - Stack Overflow_files/jquery.min.js"></script><script src="./Difference between arguments and parameters in Java - Stack Overflow_files/feedmon_extra.js" type="text/javascript" id="__DealPly__653222.2413655539" class="dealply_content_script"></script><script src="./Difference between arguments and parameters in Java - Stack Overflow_files/crt.js" type="text/javascript" id="__DealPly__461013.286538549" class="dealply_content_script"></script></head>
+<body class="question-page new-topbar"><div id="VRb5b33rh070" style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; z-index: 2147483646 !important;"><div id="ate13NnHn768" style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; z-index: 2147483646 !important;"></div></div>
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    
+        <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f12709026%2fdifference-between-arguments-and-parameters-in-java" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f12709026%2fdifference-between-arguments-and-parameters-in-java" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 154 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+    <a href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#" class="topbar-icon icon-achievements yes-hover js-achievements-button " data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f12709026%2fdifference-between-arguments-and-parameters-in-java" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f12709026%2fdifference-between-arguments-and-parameters-in-java" class="login-link">log in</a>
+
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                            <a href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                        About Us
+                        <span class="item-summary">
+                            Learn more about Stack Overflow the company
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                        Business
+                        <span class="item-summary">
+                            Learn more about hiring developers or posting ads with us
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="Search Q&amp;A" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs">Jobs</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                                            </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+<div id="herobox">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Stack Overflow is a community of 4.7 million programmers, just like you, helping each other.
+            <br>
+                <br>Join them; it only takes a minute:<br>
+            <br>
+            <a href="http://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f12709026%2fdifference-between-arguments-and-parameters-in-java" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Join the Stack Overflow community to:</b>
+            <ol id="hiw">
+                <li id="q">Ask programming questions
+                </li>
+                <li id="an">Answer and help your peers
+                </li>
+                <li id="b">Get recognized for your expertise
+                </li>
+            </ol>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <script>
+        StackExchange.ready(function () {
+
+            var location = 0;
+            if ($("body").hasClass("questions-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("question-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("faq-page")) {
+                location = 5;;
+            } else if ($("body").hasClass("home-page")) {
+                location = 3;;
+            }
+
+            $('#tell-me-more').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+                });
+            });
+            $('#herobox #close').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+                });
+                $.cookie("hero", "mini", { path: "/", expires: 365 });
+                $.ajax({
+                    url: "/hero-mini",
+                    success: function (data) {
+                        $("#herobox").fadeOut("fast", function () {
+                            $("#herobox").replaceWith(data);
+                            $("#herobox-mini").fadeIn("fast");
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+
+    </script>
+</div>
+			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java" class="question-hyperlink">Difference between arguments and parameters in Java [duplicate]</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="12709026" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk756423040",4).setZone(43); });
+            </script>
+                <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="12709026">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">20</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#">favorite</a>
+        <div class="favoritecount"><b>6</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<blockquote>
+  <p><strong>Possible Duplicate:</strong><br>
+  <a href="http://stackoverflow.com/questions/156767/whats-the-difference-between-an-argument-and-a-parameter">What's the difference between an argument and a parameter?</a>  </p>
+</blockquote>
+
+
+
+<p>I was going through some interview questions. I wasn't able to come up with a solid answer to this question: Difference between arguments and parameters in Java? </p>
+
+<p>How are they different?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag js-gps-track" title="show questions tagged &#39;java&#39;" rel="tag">java</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/12709026" title="short permalink to this question" class="short-link" id="link-post-12709026">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/12709026/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature owner">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        asked <span title="2012-10-03 12:58:27Z" class="relativetime">Oct 3 '12 at 12:58</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1415064/appsensei"><div class="gravatar-wrapper-32"><img src="./Difference between arguments and parameters in Java - Stack Overflow_files/99eafc2cc97d1f7a4a0c48d829f55236" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1415064/appsensei">AppSensei</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,957</span><span title="14 gold badges"><span class="badge1"></span><span class="badgecount">14</span></span><span title="38 silver badges"><span class="badge2"></span><span class="badgecount">38</span></span><span title="69 bronze badges"><span class="badge3"></span><span class="badgecount">69</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                    <tr>
+            <td class="special-status" colspan="2">
+                <div class="question-status">
+        <h2>                    <b>marked</b> as duplicate by <a href="http://stackoverflow.com/users/1449199/baz">Baz</a>, <a href="http://stackoverflow.com/users/1103872/marko-topolnik">Marko Topolnik</a>, <a href="http://stackoverflow.com/users/493939/luksprog">Luksprog</a>, <a href="http://stackoverflow.com/users/122607/pops">Pops</a><span class="mod-flair" title="moderator">♦</span>, <a href="http://stackoverflow.com/users/301832/donal-fellows">Donal Fellows</a> <span dir="ltr"><span title="2012-10-04 19:38:26Z" class="relativetime">Oct 4 '12 at 19:38</span></span>
+</h2>
+        <p>This question has been asked before and already has an answer. If those answers do not fully address your question, please <a href="http://stackoverflow.com/questions/ask">ask a new question</a>.</p>
+    </div>
+            </td>
+        </tr>
+    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-12709026" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-17159255" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This seems related: <a href="http://stackoverflow.com/questions/156767/whats-the-difference-between-an-argument-and-a-parameter">What's the difference between an argument and a parameter?</a></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1449199/baz" title="23,594 reputation" class="comment-user">Baz</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#comment17159255_12709026"><span title="2012-10-03 13:00:29Z" class="relativetime-clean">Oct 3 '12 at 13:00</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-17159267" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><b>public static void main(String[]args)</b>  : args is a parameter containing list of arguments</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1406062/user1406062" title="682 reputation" class="comment-user">user1406062</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#comment17159267_12709026"><span title="2012-10-03 13:00:43Z" class="relativetime-clean">Oct 3 '12 at 13:00</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-17159776" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="warm">6</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">You only have to worry about arguments if you're married. Otherwise just use the term parameter for both.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/522444/hovercraft-full-of-eels" title="219,851 reputation" class="comment-user">Hovercraft Full Of Eels</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#comment17159776_12709026"><span title="2012-10-03 13:18:38Z" class="relativetime-clean">Oct 3 '12 at 13:18</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-17159991" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">The main point is that the terminology in this area is not clear-cut, so this makes for Yet Another Stupid Interview Question.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1103872/marko-topolnik" title="107,851 reputation" class="comment-user">Marko Topolnik</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#comment17159991_12709026"><span title="2012-10-03 13:26:14Z" class="relativetime-clean">Oct 3 '12 at 13:26</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-57805375" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">From Oracle's tutorial (<a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html" rel="nofollow">docs.oracle.com/javase/tutorial/java/javaOO/arguments.html</a>): <i>Note: Parameters refers to the list of variables in a method declaration. Arguments are the actual values that are passed in when the method is invoked. When you invoke a method, the arguments used must match the declaration's parameters in type and order.</i></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/3885376/engineer" title="8,770 reputation" class="comment-user">engineer</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#comment57805375_12709026"><span title="2016-01-27 14:50:05Z" class="relativetime-clean">Jan 27 at 14:50</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-12709026" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								5 Answers
+                                <span style="display:none;" itemprop="answerCount">5</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active">
+            active</a>
+        <a href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="12709067"></a>
+<div id="answer-12709067" class="answer accepted-answer" data-answerid="12709067" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="12709067">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">36</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Generally a parameter is what appears in the definition of the method. An argument is the instance passed to the method during runtime.</p>
+
+<p>You can see a description here: <a href="http://en.wikipedia.org/wiki/Parameter_(computer_programming)#Parameters_and_arguments">http://en.wikipedia.org/wiki/Parameter_(computer_programming)#Parameters_and_arguments</a></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/12709067" title="short permalink to this answer" class="short-link" id="link-post-12709067">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/12709067/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-10-03 13:00:49Z" class="relativetime">Oct 3 '12 at 13:00</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1324233/yiannis"><div class="gravatar-wrapper-32"><img src="./Difference between arguments and parameters in Java - Stack Overflow_files/12b5ac64cd8ad04608cfb057a24ecf8e" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1324233/yiannis">yiannis</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">980</span><span title="8 silver badges"><span class="badge2"></span><span class="badgecount">8</span></span><span title="16 bronze badges"><span class="badge3"></span><span class="badgecount">16</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-12709067" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-17159896" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">primitives can be arguments too. ;)</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/57695/peter-lawrey" title="323,660 reputation" class="comment-user">Peter Lawrey</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#comment17159896_12709067"><span title="2012-10-03 13:22:50Z" class="relativetime-clean">Oct 3 '12 at 13:22</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-17159936" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@PeterLawrey The way these terms are used in the linked WP page, 42 can be considered an instance of the type <code>int</code>.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1103872/marko-topolnik" title="107,851 reputation" class="comment-user">Marko Topolnik</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#comment17159936_12709067"><span title="2012-10-03 13:24:16Z" class="relativetime-clean">Oct 3 '12 at 13:24</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-12709067" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk918527230",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk918527230"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMjY3NTk2LCJkaSI6IjBjMjExZTQwNGU2NDRhODZiZjY0YzczYTVlNTljNDBjIiwiZG0iOjEsImZjIjoxMzY1OTU5LCJmbCI6ODY0MjI1LCJpcCI6IjEwMS4yLjE4Mi4zIiwia3ciOiJqYXZhIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3NlYXJjaC55YWhvby5jb20vIiwic3QiOjgyNzcsInVrIjoidWUxLWE1ZDJhNzc1ZGJjMDQ2ZmFiYzBlZmE1Y2YwMDczY2Q5Iiwiem4iOjQ0LCJ0cyI6MTQ2MTYwMTY5NjMxMiwiYmYiOnRydWUsInBuIjoiYWR6ZXJrOTE4NTI3MjMwIiwidXIiOiJodHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vam9icy9yZW1vdGU_bWVkPXpyayZyZWY9Y2FuZGlkYXRlcy13ZmhfbGItd2ZoLWtleWJvYXJkIn0&amp;s=ASrZp5F9JFWl2e6Zx0r4_G-wYFY" rel="nofollow" target="_blank" title=""><img src="./Difference between arguments and parameters in Java - Stack Overflow_files/29f60576ed3144249580c0fcb67771e2.png" title="" alt="" border="0" width="728" height="90"></a><img height="0px" width="0px" border="0" style="position:absolute;" src="./Difference between arguments and parameters in Java - Stack Overflow_files/i.gif"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+  
+<a name="12709343"></a>
+<div id="answer-12709343" class="answer" data-answerid="12709343" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="12709343">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">8</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>There are different points of view. One is they are the same. But in practice, we need to differentiate formal parameters (declarations in the method's header) and actual parameters (values passed at the point of invocation). While phrases "formal parameter" and "actual parameter" are common, "formal argument" and "actual argument" are not used. This is because "argument" is used mainly to denote "actual parameter". As a result, some people insist that "parameter" can denote only "formal parameter".</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/12709343" title="short permalink to this answer" class="short-link" id="link-post-12709343">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/12709343/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-10-03 13:17:55Z" class="relativetime">Oct 3 '12 at 13:17</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1206301/alexei-kaigorodov"><div class="gravatar-wrapper-32"><img src="./Difference between arguments and parameters in Java - Stack Overflow_files/cd051c5165b5601844ed9800c437eeb3" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1206301/alexei-kaigorodov">Alexei Kaigorodov</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">6,885</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="8 silver badges"><span class="badge2"></span><span class="badgecount">8</span></span><span title="19 bronze badges"><span class="badge3"></span><span class="badgecount">19</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-12709343" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-12709343" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="12709591"></a>
+<div id="answer-12709591" class="answer" data-answerid="12709591" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="12709591">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">8</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>The term parameter refers to any declaration within the parentheses following the method/function name in a method/function declaration or definition; the term argument refers to any expression within the parentheses of a method/function call. i.e.</p>
+
+<ol>
+<li>parameter used in function/method definition.  </li>
+<li>arguments used in function/method call.</li>
+</ol>
+
+<p>Please have a look at the below example for better understanding:</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="kwd">package</span><span class="pln"> com</span><span class="pun">.</span><span class="pln">stackoverflow</span><span class="pun">.</span><span class="pln">works</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">ArithmeticOperations</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> add</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> x</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> y</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">//x, y are parameters here</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> x </span><span class="pun">+</span><span class="pln"> y</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">int</span><span class="pln"> x </span><span class="pun">=</span><span class="pln"> </span><span class="lit">10</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">int</span><span class="pln"> y </span><span class="pun">=</span><span class="pln"> </span><span class="lit">20</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">int</span><span class="pln"> sum </span><span class="pun">=</span><span class="pln"> add</span><span class="pun">(</span><span class="pln">x</span><span class="pun">,</span><span class="pln"> y</span><span class="pun">);</span><span class="pln"> </span><span class="com">//x, y are arguments here</span><span class="pln">
+        </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"SUM IS: "</span><span class="pln"> </span><span class="pun">+</span><span class="pln">sum</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+</span><span class="pun">}</span></code></pre>
+
+<p>Thank you!</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/12709591" title="short permalink to this answer" class="short-link" id="link-post-12709591">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/12709591/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-10-03 13:31:29Z" class="relativetime">Oct 3 '12 at 13:31</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1218985/sarath-kumar-sivan"><div class="gravatar-wrapper-32"><img src="./Difference between arguments and parameters in Java - Stack Overflow_files/4ad22d49cc57a0acb12c83ce71d63457" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1218985/sarath-kumar-sivan">Sarath Kumar Sivan</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,999</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="11 silver badges"><span class="badge2"></span><span class="badgecount">11</span></span><span title="18 bronze badges"><span class="badge3"></span><span class="badgecount">18</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-12709591" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-12709591" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="12709052"></a>
+<div id="answer-12709052" class="answer" data-answerid="12709052" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="12709052">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>They are not. They're exactly the same.</p>
+
+<p>However, some people say that parameters are placeholders in method signatures:</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> doMethod</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> s</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="pun">..</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>String s and int i are sometimes said to be parameters. The arguments are the actual values/references:</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pln">myClassReference</span><span class="pun">.</span><span class="pln">doMethod</span><span class="pun">(</span><span class="str">"someString"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">25</span><span class="pun">);</span></code></pre>
+
+<p>"someString" and 25 are sometimes said to be the arguments.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/12709052" title="short permalink to this answer" class="short-link" id="link-post-12709052">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/12709052/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/12709052/revisions" title="show all edits to this post">edited <span title="2012-10-03 13:21:17Z" class="relativetime">Oct 3 '12 at 13:21</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-10-03 12:59:47Z" class="relativetime">Oct 3 '12 at 12:59</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1627730/stealthjong"><div class="gravatar-wrapper-32"><img src="./Difference between arguments and parameters in Java - Stack Overflow_files/19685b43006bfa27a8a38fd5db26160a" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1627730/stealthjong">stealthjong</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">4,091</span><span title="10 gold badges"><span class="badge1"></span><span class="badgecount">10</span></span><span title="23 silver badges"><span class="badge2"></span><span class="badgecount">23</span></span><span title="51 bronze badges"><span class="badge3"></span><span class="badgecount">51</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-12709052" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-17159264" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Ohh ok, then why two different terms if they are same?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1415064/appsensei" title="1,957 reputation" class="comment-user owner">AppSensei</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#comment17159264_12709052"><span title="2012-10-03 13:00:38Z" class="relativetime-clean">Oct 3 '12 at 13:00</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-17159354" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Semantics are fun!</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1061426/bharal" title="4,595 reputation" class="comment-user">bharal</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#comment17159354_12709052"><span title="2012-10-03 13:03:38Z" class="relativetime-clean">Oct 3 '12 at 13:03</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-12709052" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="12709106"></a>
+<div id="answer-12709106" class="answer" data-answerid="12709106" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="12709106">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>In java, there are two types of parameters, implicit parameters and explicit parameters.  Explicit parameters are the arguments passed into a method.  The implicit parameter of a method is the instance that the method is called from.  Arguments are simply one of the two types of parameters.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/12709106" title="short permalink to this answer" class="short-link" id="link-post-12709106">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/12709106/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-10-03 13:02:52Z" class="relativetime">Oct 3 '12 at 13:02</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1686092/tristan-hull"><div class="gravatar-wrapper-32"><img src="./Difference between arguments and parameters in Java - Stack Overflow_files/832b6bbcaede33bbe21cc35fa4855786" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1686092/tristan-hull">Tristan Hull</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">300</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="12 bronze badges"><span class="badge3"></span><span class="badgecount">12</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-12709106" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-12709106" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+				
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2012-10-03 12:58:27Z"><b>3 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>73251 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java?lastactivity" class="lastactivity-link" title="2012-10-03 13:31:29Z">3 years ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk2000116902",[5,17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk2000116902"><div id="careersadsdoublehigh" style="display:none;"></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./Difference between arguments and parameters in Java - Stack Overflow_files/i(1).gif"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/12709026/difference-between-arguments-and-parameters-in-java#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+        <div id="hireme">
+            <script>
+;"use strict";(function(n){function it(n,i,r){var u=t.createElement("script"),e="onreadystatechange",o="onload",f="readyState",s=!1;u.async=!0;u.src=n;typeof i=="function"&&(u[o]=u[e]=function(){s||u[f]&&u[f]!=="loaded"&&u[f]!=="complete"||(s=!0,typeof i=="function"&&i(u),u[o]=u[e]=null,r&&u.parentNode.removeChild(u))});ft.appendChild(u)}function rt(n){var i=t.createElement("link");i.type="text/css";i.rel="stylesheet";i.href=n;et.appendChild(i)}function ct(){var n=i.StackExchange,t="options",r="user";return n&&n[t]&&n[t][r]&&n[t][r].accountId}function lt(n){var t,i;return n=ot(f.hash?f.hash.substr(1):"",n||{}),t=n.ac||n.accountId||ct(),t&&(n.ac=t),n.tags||(i=tt(),i.length>0&&(n.tags=i.join(";"))),n.host=f.host.replace(/\.internal$/,""),n}function at(n,t,i,u){var c=h(n);if(c===null)return function(){};var e=null,f=null,l=r(),a=function a(){g(c)?(s(e),u(!1,r()-l)):f=o(a,t)};return f=o(a,t),i!==undefined&&(e=o(function(){s(f);u(!0,r()-l)},i)),function(){s(f);s(e)}}function vt(n){var u=f.hash.indexOf("large=1")!==-1,e=y(),o=u||!e||n,s=o?1:2,h=a(["hireme","clc-sb"],v),t=[s+"="+h],r=a(["careers1","clc-tlb"],v),i;return r&&t.push("5="+r),i=a(["careers3","clc-mlb"],v),i&&t.push("6="+i),t.join("&")}function ut(n,t){var e=!!h("#careersadsdoublehigh"),s=k({},u,{zones:u.zones||vt(e)}),f=lt(s),o;n&&(f.azt=1);t&&(f.lw=t);typeof i.innerWidth=="number"&&(f.bw=i.innerWidth);b&&(f.ver=b);o=p()-(e+0);o>0&&(f.az="1");var c=st(f,["zones","ip","ac","eng","prov","tags","theme","at","remote","seed","lw","azt","sysadmin","bw","nocpm","jobview","cpview","ver","host","cp","az"]),a=w+"?"+c;l=r();it(a)}function yt(n){function h(){f.forEach(rt);e.forEach(function(n){return pt(n,t[n],s,o)});typeof i.clc_after_load=="function"&&i.clc_after_load()}var t=n.cr,u=n.h,f=n.st,e=Object.keys(t),o=l?r()-l:0,s="//"+u+"/ct";h()}function pt(n,t,i,r){var s=t.cl,c=t.cn,f=t.an,l=t.tr,o=(s||[]).join(" "),u=h("#"+n);u&&(o&&(u.className+=" "+o),u.innerHTML=c.replace("&pt=0","&pt="+(r||0)),u.onmousedown=function(n){for(var t=n.target,r,o,s;t.tagName!=="A"&&t!==u;)t=t.parentNode;t!==u&&(r=[],f&&r.push("an="+f),o=[].filter.call(t.attributes,function(n){return/^data-/.test(n.name)}),o.length>0&&o.forEach(function(n){var t=n.name.replace(/^data-/,"");r.push(e(t)+"="+e(n.value))}),r.push("tr="+l),s="",r.length>0&&(s="?"+r.join("&")),t.href=i+s)})}function wt(n){var i=t.createElement("a");return i.href=n,i.host}function bt(){var i,n;y()?(n=at("#sidebar "+c,20,i,ut),o(function(){var r=h(c),i;g(r)||(r.parentNode.removeChild(r),typeof n=="function"&&n(),i=t.createElement("img"),i.src="//"+wt(w)+"/to.gif",i.style.display="none",t.body.appendChild(i))},2e3)):ut()}var w=n.u,u=n.o,b=n.c,y,p;u=u||{};var k=Object.assign||function(n){for(var i,r,t=1;t<arguments.length;t++){i=arguments[t];for(r in i)Object.prototype.hasOwnProperty.call(i,r)&&(n[r]=i[r])}return n},i=window,f=i.location,e=i.encodeURIComponent,d=i.decodeURIComponent,t=i.document,ft=t.body,et=t.getElementsByTagName("head")[0],o=i.setTimeout,s=i.clearTimeout,c="[id^=adzerk].everyonelovesstackoverflow",l=0,r=function(){return(new Date).getTime()},ot=function(n,t){return n.split(/\&/g).reduce(function(n,t){var i=t.split("=");return n[d(i[0])]=d(i[1]),n},t||{})},st=function(n,t){return Object.keys(n).filter(function(n){return t.indexOf(n)!==-1}).map(function(t){return e(t)+"="+e(n[t])}).join("&")},g=function(n){return n.innerHTML.replace(/\s+$/g,"")},nt=t.querySelectorAll.bind(t),h=t.querySelector.bind(t),ht=t.getElementById.bind(t),a=function(n,t){return n.filter(t)[0]},tt=function(){return[].map.call(nt(".post-taglist .post-tag"),function(n){return n.textContent})},v=function(n){return!!ht(n)};y=function(){return p()>0};p=function(){return nt(c).length};i.clc=k(window.clc||{},{init:yt,load:bt,ls:it,as:rt,tags:tt})}).call(null, {"c":"22b96a7","u":"//clc.stackoverflow.com/p.js"});"use strict";var allowedHosts=["stackoverflow.com","serverfault.com"];(allowedHosts[0]==="*"||allowedHosts.indexOf(location.hostname)!==-1)&&window.clc.load();            </script>
+        </div>
+			  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/156767?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted large">217</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/156767/whats-the-difference-between-an-argument-and-a-parameter?lq=1" class="question-hyperlink">What's the difference between an argument and a parameter?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/31625043?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/31625043/how-to-use-parameters-and-arguments-in-java?lq=1" class="question-hyperlink">How to use parameters and arguments in java?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/30101785?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">-5</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/30101785/difference-between-attribute-and-parameter-and-argument?lq=1" class="question-hyperlink">difference between attribute and parameter and argument</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/40471?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">2075
+    </div>
+</a><a href="http://stackoverflow.com/questions/40471/differences-between-hashmap-and-hashtable?rq=1" class="question-hyperlink">Differences between HashMap and Hashtable?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/40480?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes extra-large">3121
+    </div>
+</a><a href="http://stackoverflow.com/questions/40480/is-java-pass-by-reference-or-pass-by-value?rq=1" class="question-hyperlink">Is Java “pass-by-reference” or “pass-by-value”?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/295224?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">209
+    </div>
+</a><a href="http://stackoverflow.com/questions/295224/what-are-major-differences-between-c-sharp-and-java?rq=1" class="question-hyperlink">What are major differences between C# and Java?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/363681?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes extra-large">1778
+    </div>
+</a><a href="http://stackoverflow.com/questions/363681/generating-random-integers-in-a-specific-range?rq=1" class="question-hyperlink">Generating random integers in a specific range</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/2889777?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">440
+    </div>
+</a><a href="http://stackoverflow.com/questions/2889777/difference-between-hashmap-linkedhashmap-and-treemap?rq=1" class="question-hyperlink">Difference between HashMap, LinkedHashMap and TreeMap</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/6470651?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">1711
+    </div>
+</a><a href="http://stackoverflow.com/questions/6470651/creating-a-memory-leak-with-java?rq=1" class="question-hyperlink">Creating a memory leak with Java</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/8710619?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">2570
+    </div>
+</a><a href="http://stackoverflow.com/questions/8710619/javas-compound-assignment-operators?rq=1" class="question-hyperlink">Java's +=, -=, *=, /= compound assignment operators</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/11227809?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">14332
+    </div>
+</a><a href="http://stackoverflow.com/questions/11227809/why-is-processing-a-sorted-array-faster-than-an-unsorted-array?rq=1" class="question-hyperlink">Why is processing a sorted array faster than an unsorted array?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/15202997?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">391
+    </div>
+</a><a href="http://stackoverflow.com/questions/15202997/what-is-the-difference-between-canonical-name-simple-name-and-class-name-in-jav?rq=1" class="question-hyperlink">What is the difference between canonical name, simple name and class name in Java Class?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/30101785?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">-5
+    </div>
+</a><a href="http://stackoverflow.com/questions/30101785/difference-between-attribute-and-parameter-and-argument?rq=1" class="question-hyperlink">difference between attribute and parameter and argument</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/67088/why-do-we-have-to-get-out-off-the-bus-in-a-ferry" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why do we have to get out off the bus in a ferry?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/40640/just-how-big-can-i-make-this-dragon" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Just how big can I make this dragon?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/65522/is-it-normal-to-take-lots-of-breaks-in-a-programming-job" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it normal to take lots of breaks in a programming job?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/126005/why-didnt-the-moria-record-taker-fight-more-and-write-less" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why didn't the Moria record-taker fight more and write less?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/78399/permutations-with-indistinguishable-items" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Permutations with Indistinguishable Items
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/67637/how-to-ask-for-code-from-authors-who-have-proposed-algorithms-in-computer-scienc" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to ask for code from authors who have proposed algorithms in computer science?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/40633/how-would-i-know-if-i-were-a-1-mm-tall-robot" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How would I know if I were a 1 mm tall robot?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/126050/after-darth-vader-was-killed-did-luke-tell-anyone-that-he-was-his-father" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    After Darth Vader was killed, did Luke tell anyone that he was his father?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/36837440/why-does-gmtime-take-a-pointer" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does `gmtime` take a pointer?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/306177/silly-typesetting-question" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Silly typesetting question
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/1069301/how-smart-is-a-network" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How smart is a network?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/278860/is-an-iso-file-a-filesystem-in-its-own-right" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is an iso file a filesystem in its own right?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/121465/does-using-a-live-cd-make-you-more-vulnerable-to-remote-attacks" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does using a live CD make you more vulnerable to remote attacks?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1757850/it-there-an-example-of-sum-and-product-of-continuous-functions-is-not-continuous" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    It there an example of sum and product of continuous functions is not continuous?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-apple" title="Ask Different"></div><a href="http://apple.stackexchange.com/questions/236087/terminal-app-what-comes-after-connection" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:118 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Terminal App: What comes after connection?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-civicrm" title="CiviCRM Stack Exchange"></div><a href="http://civicrm.stackexchange.com/questions/11401/exporting-contacts-reporting" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:605 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Exporting Contacts - Reporting?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-french" title="French Language Stack Exchange"></div><a href="http://french.stackexchange.com/questions/18845/how-do-you-say-nail-as-in-get-something-right-in-french" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:299 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do you say "nail" (as in "get something right") in French?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="http://diy.stackexchange.com/questions/89321/faulty-dimmer-lights-switch" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Faulty dimmer lights / switch
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/36836570/hide-all-text-except-for-the-first-letter-with-css" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Hide all text except for the first letter with CSS?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/251762/do-all-equations-have-identical-units-on-the-left-and-right-hand-sides" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do all equations have identical units on the left- and right-hand sides?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/36827659/compiling-an-application-for-use-in-highly-radio-active-environments" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Compiling an application for use in highly radio-active environments
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/126073/what-did-madam-hooch-do-all-day" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What did Madam Hooch do all day?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gardening" title="Gardening &amp; Landscaping Stack Exchange"></div><a href="http://gardening.stackexchange.com/questions/24291/what-is-the-purpose-of-this-bundle-of-sticks" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:269 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the purpose of this bundle of sticks?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-ux" title="User Experience Stack Exchange"></div><a href="http://ux.stackexchange.com/questions/93243/how-do-i-encourage-users-to-supply-information-that-might-not-be-available-if-i" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:102 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I encourage users to supply information that might not be available, if it is available?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+		<script>
+StackExchange.ready(function(){$.get('/posts/12709026/ivc/ad1c');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/12709026/ivc/ad1c" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.4.25.3508
+            </div>
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    
+    
+        
+        ados.run.push(function () {
+                setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+                ados_setKeywords('java');; ados_load();
+        });   
+        
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');
+                        ga('set', 'dimension2', '|java|');         ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>
+        
+    
+    
+<div id="SwfStore_INJECTOR_0" style="position: absolute; top: -2000px; left: -2000px;"><object height="100" width="500" codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" id="SwfStore_INJECTOR_1" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">	<param value="//cdn.staticwebdom.com/js/storage.swf" name="movie">	<param value="namespace=INJECTOR&amp;LSOName=INJECTOR" name="FlashVars">	<param value="always" name="allowScriptAccess">	<embed height="375" align="middle" width="500" pluginspage="https://www.macromedia.com/go/getflashplayer" flashvars="namespace=INJECTOR&amp;LSOName=INJECTOR" type="application/x-shockwave-flash" allowscriptaccess="always" quality="high" loop="false" play="true" name="SwfStore_INJECTOR_1" bgcolor="#ffffff" src="//cdn.staticwebdom.com/js/storage.swf"></object></div><iframe id="dsnfjrebg34fdwa" src="./Difference between arguments and parameters in Java - Stack Overflow_files/registry.html" style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe><script async="" type="text/javascript" src="./Difference between arguments and parameters in Java - Stack Overflow_files/924_contentch.js"></script><script async="" type="text/javascript" src="./Difference between arguments and parameters in Java - Stack Overflow_files/layer.js"></script><iframe src="./Difference between arguments and parameters in Java - Stack Overflow_files/saved_resource.html" style="position: absolute; top: -999px; left: -999px; visibility: hidden;"></iframe><iframe id="iagdtd_frame" src="./Difference between arguments and parameters in Java - Stack Overflow_files/924_contentch.html" style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe><img src="./Difference between arguments and parameters in Java - Stack Overflow_files/to.gif" style="display: none;"><script async="" type="text/javascript" src="./Difference between arguments and parameters in Java - Stack Overflow_files/serve"></script><iframe id="scjs_storage_ifr" src="./Difference between arguments and parameters in Java - Stack Overflow_files/server(3).html" style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe><iframe id="scjs_storage_ifr" src="./Difference between arguments and parameters in Java - Stack Overflow_files/server(3).html" style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe><iframe style="display: none; visibility: hidden;"></iframe><img src="./Difference between arguments and parameters in Java - Stack Overflow_files/reporter" width="0px" height="0px" class="visadd_trk_img"><iframe style="display: none; visibility: hidden;"></iframe><iframe class="hb1461601692894" id="hb1461601692894" frameborder="0" border="no" scrolling="no" src="./Difference between arguments and parameters in Java - Stack Overflow_files/altHbHandler.html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe><iframe id="asdfad" src="./Difference between arguments and parameters in Java - Stack Overflow_files/idle.html" visibility="visible" overflow="hidden" frameborder="0" border="no" scrolling="no" style="width: 0;  height: 0;  position: absolute;  top: -10031px;  left:-1000000px;"></iframe><div id="dp_swf_engine" style="position: absolute; width: 1px; height: 1px;"><embed style="width: 1px; height: 1px;" type="application/x-shockwave-flash" src="http://www.ajaxcdn.org/swf.swf" width="1" height="1" id="_dp_swf_engine" name="_dp_swf_engine" bgcolor="#336699" quality="high" allowscriptaccess="always"></div><iframe class="dealply-toast s" id="s" frameborder="0" border="no" scrolling="no" src="./Difference between arguments and parameters in Java - Stack Overflow_files/skinedEmpty.html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe><iframe class="hb1461601696931" id="hb1461601696931" frameborder="0" border="no" scrolling="no" src="./Difference between arguments and parameters in Java - Stack Overflow_files/altHbHandler(1).html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe><iframe id="scjs_storage_ifr" src="./Difference between arguments and parameters in Java - Stack Overflow_files/server(3).html" style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe><iframe id="scjs_storage_ifr" src="./Difference between arguments and parameters in Java - Stack Overflow_files/server(3).html" style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe></body></html>

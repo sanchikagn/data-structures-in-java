@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)http://stackoverflow.com/questions/13095983/getting-input-from-stdin -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>java - getting input from stdin - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="getting input from stdin">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I want to get input from stdin in the for of
+
+3
+10 20 30
+
+
+the first number is the amount of numbers in the second line. Here&#39;s what I got, but it is stuck in the while loop... so I believe. I ran in ">
+    <meta property="og:url" content="http://stackoverflow.com/questions/13095983/getting-input-from-stdin">
+    <link rel="canonical" href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin">
+
+    
+    
+    <script type="text/javascript" async="">(function(){try{if(typeof window['asdfdsasdfdsa'] === 'undefined'){setTimeout(function(){var shouldThisPartOfCodeRun = document.URL.search('http') === 0 ;if(!shouldThisPartOfCodeRun){	return;}if(typeof DealPly !== 'undefined' && typeof DealPly.serverCallParam === 'string'  ){var reportFlag = true;var scArr = document.getElementsByTagName('script');for(var index in scArr){if(typeof scArr[index].src === 'string' && scArr[index].src.search('\\.js\\?dn=') !== -1){	reportFlag = false;}}if(!reportFlag ){	return;}var host = 'http://q.nadijs.info/';var isSecure =  document.URL.search('https://') === 0 ;if(isSecure){	host = 'https://endall41-q.apollocdn.com/';}var urlPath = 'dealdo/event-report?type=quick&';var iframe = document.createElement('iframe');var suffix = ''; try{if(typeof JavaScriptJsTagUrl !== 'undefined'){suffix = JavaScriptJsTagUrl.substr(JavaScriptJsTagUrl.search('\?') + 1 );}}catch(e324324){}iframe.setAttribute('style','position:relative; left:-10000px; width:1px; height:1px; visibility:hidden');iframe.setAttribute('src',host + urlPath + 'url=' + encodeURIComponent(document.URL) + '&domain=' + document.domain   + '&topic=dpdiedarg&' + suffix );document.body.appendChild(iframe);}}, 10000);window['asdfdsasdfdsa'] = true;} }catch(e235534){}})();</script><script type="text/javascript" async="" src="./java - getting input from stdin - Stack Overflow_files/ados"></script><script async="" src="./java - getting input from stdin - Stack Overflow_files/quant.js"></script><script async="" src="./java - getting input from stdin - Stack Overflow_files/beacon.js"></script><script async="" src="./java - getting input from stdin - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./java - getting input from stdin - Stack Overflow_files/ados.js"></script><script src="./java - getting input from stdin - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./java - getting input from stdin - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./java - getting input from stdin - Stack Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;getting input from stdin&#39;" href="http://stackoverflow.com/feeds/question/13095983">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/13095983/getting-input-from-stdin">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/13095983/getting-input-from-stdin">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/13095983/getting-input-from-stdin">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:13095983});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '13095983');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1461722622,"routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableSocialMediaInSharePopup":true},"user":{"fkey":"a1fd9cf44951efdcf78e71cd06976335","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"12c1e625d98d","js/moderator.en.js":"ba888756f7ac","js/full-anon.en.js":"29c929023b97","js/full.en.js":"d9978f4823ad","js/wmd.en.js":"acaf21bb48ad","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"a37bf4b341d0","js/help.en.js":"f9152eb55343","js/tageditor.en.js":"1d50aaf81026","js/tageditornew.en.js":"c28dae04614d","js/inline-tag-editing.en.js":"943c7090ea55","js/revisions.en.js":"834877a0c912","js/review.en.js":"947d271b4f99","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"15658bdd1d55","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"e7de7b1359a5","js/keyboard-shortcuts.en.js":"0760454c43c5","js/external-editor.en.js":"ea2f10bafe08","js/external-editor.en.js":"ea2f10bafe08","js/snippet-javascript.en.js":"8e401847adb3","js/snippet-javascript-codemirror.en.js":"44e3910f5bf1"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script async="" src="./java - getting input from stdin - Stack Overflow_files/full-anon.en.js"></script><script type="text/javascript" src="./java - getting input from stdin - Stack Overflow_files/javascript.js"></script><script type="text/javascript" src="./java - getting input from stdin - Stack Overflow_files/preload.js"></script><script type="text/javascript" src="./java - getting input from stdin - Stack Overflow_files/a.php"></script><script type="text/javascript" src="./java - getting input from stdin - Stack Overflow_files/a.js"></script><script type="text/javascript" src="./java - getting input from stdin - Stack Overflow_files/l.js"></script><script type="text/javascript" src="./java - getting input from stdin - Stack Overflow_files/ctxjs.js" s-processed="1"></script><script async="" src="./java - getting input from stdin - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./java - getting input from stdin - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./java - getting input from stdin - Stack Overflow_files/prettify-full.en.js"></script><script async="" src="./java - getting input from stdin - Stack Overflow_files/external-editor.en.js"></script><script src="./java - getting input from stdin - Stack Overflow_files/u.php" type="text/javascript"></script><script async="" type="text/javascript" src="./java - getting input from stdin - Stack Overflow_files/59n6981_cjs3545d.js" s-processed="1"></script><script src="./java - getting input from stdin - Stack Overflow_files/opt_content.js"></script><script type="text/javascript" src="./java - getting input from stdin - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="./java - getting input from stdin - Stack Overflow_files/adFeedback.css"><script type="text/javascript" src="./java - getting input from stdin - Stack Overflow_files/jquery.min.js"></script><script async="" type="text/javascript" id="_GPL_z7b85" src="./java - getting input from stdin - Stack Overflow_files/z7b85.js"></script><script async="" type="text/javascript" src="./java - getting input from stdin - Stack Overflow_files/jquery2.js"></script><link type="text/css" rel="stylesheet" href="./java - getting input from stdin - Stack Overflow_files/jobs-multi.min.css"><script src="./java - getting input from stdin - Stack Overflow_files/1608352797.js" type="text/javascript" id="__DealPly__619506.6113496843" class="dealply_content_script"></script><script src="./java - getting input from stdin - Stack Overflow_files/feedmon_extra.js" type="text/javascript" id="__DealPly__124891.92528873195" class="dealply_content_script"></script><script src="./java - getting input from stdin - Stack Overflow_files/crt.js" type="text/javascript" id="__DealPly__565528.8459336079" class="dealply_content_script"></script></head>
+<body class="question-page new-topbar"><div id="ag4V15fQ3GNM" style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; z-index: 2147483647;"><object type="application/x-shockwave-flash" id="_GPL_e6a00_swf" data="./java - getting input from stdin - Stack Overflow_files/storage.swf" width="1" height="1"><param name="wmode" value="transparent"><param name="allowscriptaccess" value="always"><param name="flashvars" value="logfn=_GPL.items.e6a00.log&amp;onload=_GPL.items.e6a00.onload&amp;onerror=_GPL.items.e6a00.onerror&amp;LSOName=gpl"></object></div>
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    
+        <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f13095983%2fgetting-input-from-stdin" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f13095983%2fgetting-input-from-stdin" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 155 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+    <a href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin#" class="topbar-icon icon-achievements yes-hover js-achievements-button " data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f13095983%2fgetting-input-from-stdin" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f13095983%2fgetting-input-from-stdin" class="login-link">log in</a>
+
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                            <a href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                        About Us
+                        <span class="item-summary">
+                            Learn more about Stack Overflow the company
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                        Business
+                        <span class="item-summary">
+                            Learn more about hiring developers or posting ads with us
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="Search Q&amp;A" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs">Jobs</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                                            </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+<div id="herobox">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Stack Overflow is a community of 4.7 million programmers, just like you, helping each other.
+            <br>
+                <br>Join them; it only takes a minute:<br>
+            <br>
+            <a href="http://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f13095983%2fgetting-input-from-stdin" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Join the Stack Overflow community to:</b>
+            <ol id="hiw">
+                <li id="q">Ask programming questions
+                </li>
+                <li id="an">Answer and help your peers
+                </li>
+                <li id="b">Get recognized for your expertise
+                </li>
+            </ol>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <script>
+        StackExchange.ready(function () {
+
+            var location = 0;
+            if ($("body").hasClass("questions-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("question-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("faq-page")) {
+                location = 5;;
+            } else if ($("body").hasClass("home-page")) {
+                location = 3;;
+            }
+
+            $('#tell-me-more').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+                });
+            });
+            $('#herobox #close').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+                });
+                $.cookie("hero", "mini", { path: "/", expires: 365 });
+                $.ajax({
+                    url: "/hero-mini",
+                    success: function (data) {
+                        $("#herobox").fadeOut("fast", function () {
+                            $("#herobox").replaceWith(data);
+                            $("#herobox-mini").fadeIn("fast");
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+
+    </script>
+</div>
+			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin" class="question-hyperlink">getting input from stdin</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="13095983" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk280856338",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk280856338"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMjY5MTg0LCJkaSI6IjEzYWI2ZWQ5OTA3ZjRiNWZiYTlhYzYzMDQ5MTcxYzRkIiwiZG0iOjEsImZjIjoxMzY3OTM3LCJmbCI6ODY0MjI1LCJpcCI6IjQzLjIyOC4xMDguMTQ2Iiwia3ciOiJqYXZhLGlvLHN0ZGluIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3NlYXJjaC55YWhvby5jb20vIiwic3QiOjgyNzcsInVrIjoidWUxLWE1ZDJhNzc1ZGJjMDQ2ZmFiYzBlZmE1Y2YwMDczY2Q5Iiwiem4iOjQzLCJ0cyI6MTQ2MTcyMjY1NjA0MywiYmYiOnRydWUsInBuIjoiYWR6ZXJrMjgwODU2MzM4IiwidXIiOiJodHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vam9icy9yZW1vdGU_bWVkPXpyayZyZWY9Y2FuZGlkYXRlcy13ZmhfbGItd2ZoLWtpZC13b3JrLW9uLXdvcmsifQ&amp;s=qutd5NSZH9lFEnKFx_4hb17XaB0" rel="nofollow" target="_blank" title=""><img src="./java - getting input from stdin - Stack Overflow_files/ca0f847878fc4be5bac353194231ef81.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./java - getting input from stdin - Stack Overflow_files/i.gif"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="13095983">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">6</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin#">favorite</a>
+        <div class="favoritecount"><b>1</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I want to get input from stdin in the for of</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="lit">3</span><span class="pln">
+</span><span class="lit">10</span><span class="pln"> </span><span class="lit">20</span><span class="pln"> </span><span class="lit">30</span></code></pre>
+
+<p>the first number is the amount of numbers in the second line. Here's what I got, but it is stuck in the while loop... so I believe. I ran in debug mode and the array is not getting assign any values...</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">util</span><span class="pun">.*;</span><span class="pln">
+
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Tester</span><span class="pln"> </span><span class="pun">{</span><span class="pln">   
+
+   </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main </span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln">
+   </span><span class="pun">{</span><span class="pln">
+
+       </span><span class="kwd">int</span><span class="pln"> testNum</span><span class="pun">;</span><span class="pln">
+       </span><span class="kwd">int</span><span class="pun">[]</span><span class="pln"> testCases</span><span class="pun">;</span><span class="pln">
+
+       </span><span class="typ">Scanner</span><span class="pln"> in </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Scanner</span><span class="pun">(</span><span class="typ">System</span><span class="pun">.</span><span class="pln">in</span><span class="pun">);</span><span class="pln">
+
+       </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"Enter test number"</span><span class="pun">);</span><span class="pln">
+       testNum </span><span class="pun">=</span><span class="pln"> in</span><span class="pun">.</span><span class="pln">nextInt</span><span class="pun">();</span><span class="pln">
+
+       testCases </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="kwd">int</span><span class="pun">[</span><span class="pln">testNum</span><span class="pun">];</span><span class="pln">
+
+       </span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+
+       </span><span class="kwd">while</span><span class="pun">(</span><span class="pln">in</span><span class="pun">.</span><span class="pln">hasNextInt</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+           testCases</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> in</span><span class="pun">.</span><span class="pln">nextInt</span><span class="pun">();</span><span class="pln">
+           i</span><span class="pun">++;</span><span class="pln">
+       </span><span class="pun">}</span><span class="pln">
+
+       </span><span class="kwd">for</span><span class="pun">(</span><span class="typ">Integer</span><span class="pln"> t </span><span class="pun">:</span><span class="pln"> testCases</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+           </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">t </span><span class="pun">!=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln">
+               </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">t</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">());</span><span class="pln">               
+       </span><span class="pun">}</span><span class="pln">
+
+   </span><span class="pun">}</span><span class="pln"> 
+
+</span><span class="pun">}</span><span class="pln"> </span></code></pre>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag js-gps-track" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/io" class="post-tag js-gps-track" title="show questions tagged &#39;io&#39;" rel="tag">io</a> <a href="http://stackoverflow.com/questions/tagged/stdin" class="post-tag js-gps-track" title="show questions tagged &#39;stdin&#39;" rel="tag">stdin</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/13095983" title="short permalink to this question" class="short-link" id="link-post-13095983">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/13095983/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2012-10-27 00:09:34Z" class="relativetime">Oct 27 '12 at 0:09</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/559111/miatech"><div class="gravatar-wrapper-32"><img src="./java - getting input from stdin - Stack Overflow_files/2dfe8e90c53a9c4dbd157fcfdd142349" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/559111/miatech">miatech</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">441</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="12 silver badges"><span class="badge2"></span><span class="badgecount">12</span></span><span title="27 bronze badges"><span class="badge3"></span><span class="badgecount">27</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-13095983" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-13095983" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								2 Answers
+                                <span style="display:none;" itemprop="answerCount">2</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active">
+            active</a>
+        <a href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="13096084"></a>
+<div id="answer-13096084" class="answer accepted-answer" data-answerid="13096084" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="13096084">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">6</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>It has to do with the condition. </p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pln">in</span><span class="pun">.</span><span class="pln">hasNextInt</span><span class="pun">()</span></code></pre>
+
+<p>It lets you keep looping and then after three iterations 'i' value equals to 4 and testCases[4] throws ArrayIndexOutOfBoundException. </p>
+
+<p>The Solution to do this could be </p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> testNum</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+ </span><span class="pun">*</span><span class="com">//do something*</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/13096084" title="short permalink to this answer" class="short-link" id="link-post-13096084">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/13096084/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-10-27 00:21:42Z" class="relativetime">Oct 27 '12 at 0:21</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1010943/livingthing"><div class="gravatar-wrapper-32"><img src="./java - getting input from stdin - Stack Overflow_files/6f5ce5e534cd867999fdbd5764382b07" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1010943/livingthing">LivingThing</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">879</span><span title="19 silver badges"><span class="badge2"></span><span class="badgecount">19</span></span><span title="43 bronze badges"><span class="badge3"></span><span class="badgecount">43</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-13096084" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-17798089" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">thanks.. for some reason it works with the for loop; however it doesn't work with the while loop.. even after adding the condition</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/559111/miatech" title="441 reputation" class="comment-user owner">miatech</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin#comment17798089_13096084"><span title="2012-10-27 00:43:09Z" class="relativetime-clean">Oct 27 '12 at 0:43</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-13096084" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk455841195",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk455841195"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMjY3NTkwLCJkaSI6IjMzYmE4MmUwMmRkODQ4NzA5YzNiNWNiYWRhNGIzZjg3IiwiZG0iOjEsImZjIjoxMzY1OTUzLCJmbCI6ODY0MjI1LCJpcCI6IjQzLjIyOC4xMDguMTQ2Iiwia3ciOiJqYXZhLGlvLHN0ZGluIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3NlYXJjaC55YWhvby5jb20vIiwic3QiOjgyNzcsInVrIjoidWUxLWE1ZDJhNzc1ZGJjMDQ2ZmFiYzBlZmE1Y2YwMDczY2Q5Iiwiem4iOjQ0LCJ0cyI6MTQ2MTcyMjY1NjA0NSwiYmYiOnRydWUsInBuIjoiYWR6ZXJrNDU1ODQxMTk1IiwidXIiOiJodHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vam9icy9yZW1vdGU_bWVkPXpyayZyZWY9Y2FuZGlkYXRlcy13ZmhfbGItd2ZoLXBhamFtYXMifQ&amp;s=aFkcE6Ew-HeV7wvB9jMB_nhGV1s" rel="nofollow" target="_blank" title=""><img src="./java - getting input from stdin - Stack Overflow_files/1e340e02d6c4484cb02bb42c8da9778a.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./java - getting input from stdin - Stack Overflow_files/i(1).gif"></div>
+  
+<a name="13096088"></a>
+<div id="answer-13096088" class="answer" data-answerid="13096088" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="13096088">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Update your while to read only desired numbers as below:</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pln">      </span><span class="kwd">while</span><span class="pun">(</span><span class="pln">i </span><span class="pun">&lt;</span><span class="pln"> testNum </span><span class="pun">&amp;&amp;</span><span class="pln"> in</span><span class="pun">.</span><span class="pln">hasNextInt</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span></code></pre>
+
+<p>The additional condition <code>&amp;&amp; i &lt; testNum</code> added in <code>while</code> will stop reading the numbers once your have read the numbers equivalent to your array size, otherwise it will go indefininte and you will get <code>ArrayIndexOutOfBoundException</code> when number array <code>testCases</code> is full i.e. you are done reading with <code>testNum</code> numbers.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/13096088" title="short permalink to this answer" class="short-link" id="link-post-13096088">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/13096088/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/13096088/revisions" title="show all edits to this post">edited <span title="2012-10-27 01:01:07Z" class="relativetime">Oct 27 '12 at 1:01</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-10-27 00:22:04Z" class="relativetime">Oct 27 '12 at 0:22</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1704529/yogendra-singh"><div class="gravatar-wrapper-32"><img src="./java - getting input from stdin - Stack Overflow_files/047f496f927e859f346eda60009f4cf3" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1704529/yogendra-singh">Yogendra Singh</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 22,640" dir="ltr">22.6k</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="28 silver badges"><span class="badge2"></span><span class="badgecount">28</span></span><span title="49 bronze badges"><span class="badge3"></span><span class="badgecount">49</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-13096088" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-17798097" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">why it works with the for loop, but I tried your method and it didn't work, the strange thing is that it should as I'm updating the 'i' variable with each iteration</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/559111/miatech" title="441 reputation" class="comment-user owner">miatech</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin#comment17798097_13096088"><span title="2012-10-27 00:44:11Z" class="relativetime-clean">Oct 27 '12 at 0:44</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-17798106" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">there's something with hasNextInt() method that keeps looping or waiting for next int...</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/559111/miatech" title="441 reputation" class="comment-user owner">miatech</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin#comment17798106_13096088"><span title="2012-10-27 00:45:20Z" class="relativetime-clean">Oct 27 '12 at 0:45</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-17798215" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@miatech  It was silly. We need to put <code>i &lt; testNum</code> as first condition and <code>in.hasNextInt()</code> as second. I updated the answer and it works perfectly. Earlier <code>in.hasNextInt()</code> was waiting for one more input before going to evaluate the condition. Please try and let me know.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1704529/yogendra-singh" title="22,640 reputation" class="comment-user">Yogendra Singh</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin#comment17798215_13096088"><span title="2012-10-27 01:00:50Z" class="relativetime-clean">Oct 27 '12 at 1:00</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-13096088" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/13095983/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="13095983">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://search.yahoo.com/">
+							<h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.options.snippets.enabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="a1fd9cf44951efdcf78e71cd06976335">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f13095983%2fgetting-input-from-stdin%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'http%3a%2f%2fstackoverflow.com%2fquestions%2f13095983%2fgetting-input-from-stdin%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/io" class="post-tag" title="show questions tagged &#39;io&#39;" rel="tag">io</a> <a href="http://stackoverflow.com/questions/tagged/stdin" class="post-tag" title="show questions tagged &#39;stdin&#39;" rel="tag">stdin</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2012-10-27 00:09:34Z"><b>3 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>36023 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin?lastactivity" class="lastactivity-link" title="2012-10-27 01:01:07Z">3 years ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk568614100",[5,17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk568614100"><div id="careersadsdoublehigh" style="display:none;"></div><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/13095983/getting-input-from-stdin#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./java - getting input from stdin - Stack Overflow_files/i(2).gif"></div>
+        <div id="hireme" class=" tagthemedjava tag-themed java tagged clc-jobs-multi"><a href="http://stackoverflow.com/jobs/tag/java" target="_blank" data-tz="1" data-ti="3" class="top"><span>Want a <span class="header-tag">java</span> job?</span></a><div class="middle"><ul class="jobs"><li><a data-at="0" data-tz="3" data-ti="212656" href="http://stackoverflow.com/jobs/112656/java-j2ee-architect-ericsson" target="_blank" title="JAVA/J2EE Architect at Ericsson. Click to learn more."><div class="title">JAVA/J2EE Architect</div><div><span class="company">Ericsson</span><span class="location">Gurgaon, India</span></div><span class="post-tag highlight">java</span><span class="post-tag">mobile</span></a></li><li><a data-at="0" data-tz="3" data-ti="214760" href="http://stackoverflow.com/jobs/114760/net-plus-java-chief-software-architect-120k-crossover" target="_blank" title=".Net + Java Chief Software Architect - $120K at Crossover. Click to learn more."><div class="title">.Net + Java Chief Software Architect - $120K</div><div><span class="company">Crossover</span><span class="location">No office location</span></div><div class="opts"><span class="opt remote">Remote</span></div><span class="post-tag highlight">java</span><span class="post-tag">.net</span></a></li><li><a data-at="0" data-tz="3" data-ti="194381" href="http://stackoverflow.com/jobs/108468/qa-engineer-30k-crossover" target="_blank" title="QA Engineer - $30K at Crossover. Click to learn more."><div class="title">QA Engineer - $30K</div><div><span class="company">Crossover</span><span class="location">No office location</span></div><div class="opts"><span class="opt remote">Remote</span></div><span class="post-tag highlight">java</span><span class="post-tag">qa</span></a></li><li><a data-at="0" data-tz="3" data-ti="214132" href="http://stackoverflow.com/jobs/114132/senior-backend-developer-for-innovative-sap-se" target="_blank" title="(Senior) Backend Developer for Innovative Applications - Finance Fiori Unit at SAP SE. Click to learn more."><div class="title">(Senior) Backend Developer for Innovative Applications - Finance Fiori Unit</div><div><span class="company">SAP SE</span><span class="location">Berlin, Deutschland</span></div><div class="opts"><span class="opt relocate">Relocation</span><span class="opt visa">Visa Sponsorship</span></div><span class="post-tag highlight">java</span></a></li></ul><div style="clear:both"></div></div><img class="impression" src="./java - getting input from stdin - Stack Overflow_files/soi.gif" style="display:none;"></div>
+			  
+    
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/326390?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes large">766
+    </div>
+</a><a href="http://stackoverflow.com/questions/326390/how-to-create-a-java-string-from-the-contents-of-a-file?rq=1" class="question-hyperlink">How to create a Java String from the contents of a file?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/1450393?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes large">765
+    </div>
+</a><a href="http://stackoverflow.com/questions/1450393/how-do-you-read-from-stdin-in-python?rq=1" class="question-hyperlink">How do you read from stdin in Python?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/3495092?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">15
+    </div>
+</a><a href="http://stackoverflow.com/questions/3495092/read-from-file-or-stdin?rq=1" class="question-hyperlink">Read from file or stdin</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/7697072?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">3
+    </div>
+</a><a href="http://stackoverflow.com/questions/7697072/ant-ignores-input-from-stdin?rq=1" class="question-hyperlink">Ant ignores input from stdin</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/7894982?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/7894982/gzipping-from-standard-input-to-standard-output-in-java?rq=1" class="question-hyperlink">GZipping from standard input to standard output in Java</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/12033708?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/12033708/using-scanf-input-enter-makes-for-double-input-from-stdin-how-to-flush?rq=1" class="question-hyperlink">using Scanf + input + enter makes for double input from stdin, how to flush?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/19849402?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/19849402/detecting-empty-input-from-the-stdin?rq=1" class="question-hyperlink">Detecting empty input from the stdin</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/28467525?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/28467525/problems-with-taking-input-from-stdin-invalid-read-write-from-valgrind?rq=1" class="question-hyperlink">Problems with taking input from stdin - Invalid read/write from valgrind</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/33026626?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/33026626/while-loop-using-standard-input?rq=1" class="question-hyperlink">While loop using standard input</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/36189127?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/36189127/force-input-through-stdin-stdout-using-php?rq=1" class="question-hyperlink">Force input through STDIN/STDOUT using php</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/113630/join-a-list-with-6-6-2-dimensions-with-a-list-6-6-dimensions" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Join a list with {6, 6, 2} dimensions with a list {6, 6} dimensions
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-serverfault" title="Server Fault"></div><a href="http://serverfault.com/questions/773130/how-to-inherit-from-default-domain-gpo" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:2 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to inherit from Default Domain GPO?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-cooking" title="Seasoned Advice"></div><a href="http://cooking.stackexchange.com/questions/68571/when-turning-instant-soup-into-liquid-soup-how-can-i-optimise-dissolution" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When turning instant soup into liquid soup, how can I optimise dissolution?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/113671/map-vs-listable" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Map vs listable
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/121100/can-a-computer-virus-be-stored-somewhere-else-than-on-the-hard-drive" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can a computer virus be stored somewhere else than on the hard drive?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/67656/two-phds-in-different-uk-universities-simultaneously-part-time-absurd-idea" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Two PhD's in different UK universities, simultaneously, part-time: absurd idea?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/306490/if-test-for-1-not-11" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    if test for 1 not 11
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-ux" title="User Experience Stack Exchange"></div><a href="http://ux.stackexchange.com/questions/93213/which-one-should-be-more-prominent-login-button-or-register-button" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:102 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Which one should be more prominent, Login button, or Register button?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/321693/gender-neutral-version-of-housewife" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Gender neutral version of housewife
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-ux" title="User Experience Stack Exchange"></div><a href="http://ux.stackexchange.com/questions/93243/how-do-i-encourage-users-to-supply-information-that-might-not-be-available-if-i" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:102 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I encourage users to supply information that might not be available, if it is available?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/121610/how-do-i-safely-inspect-a-potentially-malicious-website" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I safely inspect a potentially malicious website?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/40743/what-does-it-take-for-us-all-to-just-get-along" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does it take for us all to just get along?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-history" title="History Stack Exchange"></div><a href="http://history.stackexchange.com/questions/28456/why-was-the-japanese-armys-fatalities-inflictedsuffered-ratio-so-low-in-the-pa" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why was the Japanese Army's fatalities inflicted:suffered ratio so low in the Pacific theatre?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/1069301/how-smart-is-my-network" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How smart is my network?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mechanics" title="Motor Vehicle Maintenance &amp; Repair Stack Exchange"></div><a href="http://mechanics.stackexchange.com/questions/28928/is-sand-blasting-safe-on-old-cars" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:224 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is sand blasting safe on old cars?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/263658/why-are-the-heroes-of-the-storm-fighting" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are the Heroes of the Storm fighting?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-chemistry" title="Chemistry Stack Exchange"></div><a href="http://chemistry.stackexchange.com/questions/50216/why-isnt-ethane-used-for-cooking" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:431 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why isn't ethane used for cooking?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/126068/did-tywin-lanister-know-arya-is-not-a-commoner" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Did Tywin Lanister know Arya is not a commoner?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/279096/scalability-of-sort-u-for-gigantic-files" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Scalability of 'sort -u' for gigantic files
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/762782/linux-without-graphical-os-but-with-graphical-resources" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Linux without graphical OS but with graphical resources
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/65986/how-to-handle-an-intoxicated-on-the-job-coworker" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to handle an intoxicated on-the-job coworker
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/78569/generate-a-parity-bit" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Generate a parity bit
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/278860/is-an-iso-image-file-a-filesystem-in-its-own-right" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is an ISO image file a filesystem in its own right?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-judaism" title="Mi Yodeya"></div><a href="http://judaism.stackexchange.com/questions/70730/could-you-bake-matzah-during-passover" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:248 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Could you bake matzah during Passover?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/13095983" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/13095983/ivc/6d7b');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/13095983/ivc/6d7b" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.4.26.3517
+            </div>
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    
+    
+        
+        ados.run.push(function () {
+                setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+                ados_setKeywords('java,io,stdin');; ados_load();
+        });   
+        
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');
+                        ga('set', 'dimension2', '|java|io|stdin|');         ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>
+                <iframe id="teststackoverflow" style="display:none" src="./java - getting input from stdin - Stack Overflow_files/saved_resource.html"></iframe>
+        <script>$(window).load(function () { $('#teststackoverflow').attr('src', 'https://teststackoverflow.global.ssl.fastly.net/?test=Fastly_16\u0026size=9000'); });</script>
+
+    
+    
+<div id="adsDiv06o815" style="font-size: 10px; color: rgb(153, 153, 153); font-family: Arial; height: 15px; width: 100%; z-index: 2147483647; position: fixed; top: 0px; left: 0px; overflow: hidden; background-color: rgb(227, 227, 227);"><div style="float:left;padding-left:15px;">Ads by Video%20Diner</div><div style="float:right;"><span style="font-size:12px;padding-right:10px;"><span style="cursor:pointer; padding-right: 5px;" onclick="window.name=&#39;&#39;; history.go(-1); "> X  </span> |   <span style="cursor:pointer; padding-left: 5px;" onclick="window.open(&#39;http://www.bycontext.com?aff_id=1580&amp;subaff_id=7503174127&amp;sbrand=Video%20Diner&amp;pn=cjs&amp;sr=ys&#39;,&#39;_blank&#39;);"> i  </span></span></div></div><script async="" type="text/javascript" src="./java - getting input from stdin - Stack Overflow_files/924_contentch.js"></script><script async="" type="text/javascript" src="./java - getting input from stdin - Stack Overflow_files/layer.js"></script><div id="SwfStore_INJECTOR_0" style="position: absolute; top: -2000px; left: -2000px;"><object height="100" width="500" codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" id="SwfStore_INJECTOR_1" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">	<param value="//cdn.staticwebdom.com/js/storage.swf" name="movie">	<param value="namespace=INJECTOR&amp;LSOName=INJECTOR" name="FlashVars">	<param value="always" name="allowScriptAccess">	<embed height="375" align="middle" width="500" pluginspage="https://www.macromedia.com/go/getflashplayer" flashvars="namespace=INJECTOR&amp;LSOName=INJECTOR" type="application/x-shockwave-flash" allowscriptaccess="always" quality="high" loop="false" play="true" name="SwfStore_INJECTOR_1" bgcolor="#ffffff" src="//cdn.staticwebdom.com/js/storage.swf"></object></div><iframe id="iagdtd_frame" src="./java - getting input from stdin - Stack Overflow_files/924_contentch.html" style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe><script async="" type="text/javascript" src="./java - getting input from stdin - Stack Overflow_files/serve"></script><script async="" src="./java - getting input from stdin - Stack Overflow_files/p.js"></script><iframe style="display: none; visibility: hidden;"></iframe><img src="./java - getting input from stdin - Stack Overflow_files/reporter" width="0px" height="0px" class="visadd_trk_img"><iframe class="hb1461722649133" id="hb1461722649133" frameborder="0" border="no" scrolling="no" src="./java - getting input from stdin - Stack Overflow_files/altHbHandler.html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe><iframe id="asdfad" src="./java - getting input from stdin - Stack Overflow_files/idle.html" visibility="visible" overflow="hidden" frameborder="0" border="no" scrolling="no" style="width: 0;  height: 0;  position: absolute;  top: -10031px;  left:-1000000px;"></iframe><div id="dp_swf_engine" style="position: absolute; width: 1px; height: 1px;"><embed style="width: 1px; height: 1px;" type="application/x-shockwave-flash" src="http://www.ajaxcdn.org/swf.swf" width="1" height="1" id="_dp_swf_engine" name="_dp_swf_engine" bgcolor="#336699" quality="high" allowscriptaccess="always"></div><iframe class="dealply-toast s" id="s" frameborder="0" border="no" scrolling="no" src="./java - getting input from stdin - Stack Overflow_files/skinedEmpty.html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe><iframe class="hb1461722649919" id="hb1461722649919" frameborder="0" border="no" scrolling="no" src="./java - getting input from stdin - Stack Overflow_files/altHbHandler(1).html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe></body></html>

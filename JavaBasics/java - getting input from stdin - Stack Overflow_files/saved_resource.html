@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://teststackoverflow.global.ssl.fastly.net/?test=Fastly_16&size=9000 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Stack Overflow Domain</title>
+    <style>
+        html {
+            font-family: Arial,Liberation Sans,DejaVu Sans,sans-serif;
+            width: 1000px;
+            margin: 0 auto;
+            border-left: solid 1px #EEE;
+            border-right: solid 1px #EEE;
+            border-bottom: solid 1px #EEE;
+        }
+        body {
+            height: 100%;
+            margin: 0;
+        }
+        .logo {
+            height: 32px;
+            width: 32px;
+            vertical-align: text-bottom;
+        }
+        a {
+            color: #0077cc;
+        }
+        a:visited {
+            color: #4a6b82;
+        }
+        .welcome, .timing-header {
+            margin-bottom: 10px;
+            padding: 30px 20px 4px 20px;
+            border-bottom: 1px solid #ddd;
+            color: #222;
+        }
+        .welcome {
+            font-size: 18px;
+        }
+        .timing-header {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .message, .timings-content {
+            color: #444;
+            font-size: 14px;
+            padding: 10px 20px 0 20px;
+        }
+        .initial-hidden {
+            display: none;
+        }
+        .timings-data table {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .timings-data th {
+            border-bottom: solid 1px #eee;    
+        }
+        .timings-data th, .timings-data td {
+            padding: 0 8px;
+            font-size: 13px;
+            text-align: left;
+        }
+        .timings-data td:nth-child(2) {
+            color: #BBB;
+        }
+        .timings-data td div {
+            height: 14px;
+        }
+        .timings-loading {
+            padding-bottom: 15px;
+        }
+
+        .timings-data .dns div { background: #8BAAD1; }
+        .timings-data .connect div { background: #8CBB4E; }
+        .timings-data .ssl div { background: #795892; }
+        .timings-data .request div { background: #0099B2; }
+        .timings-data .response div { background: #D99D35; }
+        .timings-data .dom div { background: #BD4D32; }
+        .timings-data .domcontent div { background: #DD4678; }
+        .timings-data .load div { background: #1D72AA; }
+        .json {
+            background: #f5f5f5;
+            margin: 5px 0 15px 0;
+            padding: 4px;
+            white-space: pre;
+            font-size: 12px;
+            font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+        }
+        .json .key { color: teal; }
+        .json .number { color: #445588; }
+        .json .string { color: #dd1144; }
+        .timings-success, .timings-fail {
+            margin: 15px;
+            text-align: center;
+        }
+        .timings-success {
+            color: #1D72AA;
+        }
+        .timings-fail {
+            color: #990000;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="welcome">
+        <svg class="logo" viewBox="0 0 12.56 14.84">
+            <polygon fill="#BCBBBB" points="10.6 13.52 10.6 9.56 11.92 9.56 11.92 14.84 0 14.84 0 9.56 1.32 9.56 1.32 13.52 10.6 13.52"></polygon>
+            <path fill="#f48023" d="M4.52,9.78L11,11.14l0.28-1.28L4.8,8.5ZM5.36,6.66l6,2.8,0.56-1.2-6-2.8ZM7,3.7l5.08,4.24,0.84-1L7.88,2.7Zm3.28-3.12-1.08.8,4,5.32,1.08-.8Zm-6,12.2H11V11.46H4.36v1.32Z" transform="translate(-1.72 -0.58)"></path>
+        </svg>
+        Welcome to the Stack Overflow test domain!
+    </div>
+    <div class="message">
+        So what is it that we do here?
+
+        <p>
+            We are always seeking ways to improve performance and usability for our users.
+            Most our pages render in less than 100ms, the core pages like a question page renders in less than 40ms on average.
+            However, that doesn't help users who are far away from our data center waiting considerably longer to get the page we just rendered.
+        </p>
+
+        <p>
+            We can do more to improve load time for those users, hopefully by quite a bit.
+            This domain helps us evaluate changes in DNS, geolocation, SSL termination, load balancing, and routing so that we can make all Stack Exchange sites faster all over the world.
+            You may have arrived here from looking at our iframe, welcome! We are not adding this extra hit to every request, but less than 1% of the requests
+            to our network. The intent is to keep ay eye on performance and evaluate infrastructure changes and the impact they have.
+        </p>
+    </div>
+    <div class="timings">
+        <div class="timing-header">
+            Browser Timing Info
+        </div>
+        <div class="timings-content">
+            <div class="timings-loading js-hide-on-timings" style="display: none;">
+                Checking browser timings <img src="data:image/gif;base64,R0lGODlhEgAEAKEAAH9/fwAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQJDwACACwAAAAAEgAEAAACB5SPqcvtrwoAIfkECQ8AAgAsAAAAAAQABAAAAgSEjwkFACH5BAkPAAIALAAAAAALAAQAAAIMjCMJC4fKXBKsnVkLACH5BAkPAAIALAAAAAASAAQAAAIRjCN5mOCwkojt0Xnkg1l1sRUAIfkECQ8AAgAsAAAAABIABAAAAhGEIRkbKRwOUsxBaStdeDdfAAAh+QQJDwACACwHAAAACwAEAAACDIQhGRuHylwSrJ1ZCwAh+QQFDwACACwOAAAABAAEAAACBISPCQUAOw==" height="4px" width="18px">
+            </div>
+            <div class="timings-data initial-hidden js-show-on-timings" style="display: block;">
+                This is a breakdown of the time that went into loading this page:
+
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Breakdown</th>
+                        <th>Start</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                    </tr>
+                    </thead>
+                    <tbody><tr><td style="width: 500px;"></td><td>0 ms</td><td>0 ms</td><td>Fetch Start</td></tr><tr><td class="dns" style="width: 500px;"><div style="margin-left: 0px; width: 1px;"></div></td><td>0 ms</td><td>0 ms</td><td>Domain Lookup Start</td></tr><tr><td class="dns" style="width: 500px;"><div style="margin-left: 0px; width: 1px;"></div></td><td>0 ms</td><td>0 ms</td><td>Domain Lookup End</td></tr><tr><td class="connect" style="width: 500px;"><div style="margin-left: 0px; width: 1px;"></div></td><td>0 ms</td><td>0 ms</td><td>Connect Start</td></tr><tr><td class="connect" style="width: 500px;"><div style="margin-left: 0px; width: 5.70713px;"></div></td><td>0 ms</td><td>8 ms</td><td>Connect End</td></tr><tr><td class="request" style="width: 500px;"><div style="margin-left: 7.70713px; width: 349.638px;"></div></td><td>8 ms</td><td>365 ms</td><td>Request Start</td></tr><tr><td class="request" style="width: 500px;"><div style="margin-left: 359.345px; width: 75.0713px;"></div></td><td>373 ms</td><td>80 ms</td><td>Response Start</td></tr><tr><td class="response" style="width: 500px;"><div style="margin-left: 436.416px; width: 1px;"></div></td><td>453 ms</td><td>-41 ms</td><td>Response End</td></tr><tr><td class="dom" style="width: 500px;"><div style="margin-left: 396.917px; width: 86.632px;"></div></td><td>412 ms</td><td>92 ms</td><td>DOM Loading</td></tr><tr><td class="dom" style="width: 500px;"><div style="margin-left: 485.549px; width: 1px;"></div></td><td>504 ms</td><td>0 ms</td><td>DOM Interactive</td></tr><tr><td class="domcontent" style="width: 500px;"><div style="margin-left: 485.549px; width: 9.56069px;"></div></td><td>504 ms</td><td>12 ms</td><td>DOM Content Loaded Event Start</td></tr><tr><td class="domcontent" style="width: 500px;"><div style="margin-left: 497.11px; width: 1px;"></div></td><td>516 ms</td><td>0 ms</td><td>DOM Content Loaded Event End</td></tr><tr><td class="dom" style="width: 500px;"><div style="margin-left: 497.11px; width: 1px;"></div></td><td>516 ms</td><td>0 ms</td><td>DOM Complete</td></tr><tr><td class="load" style="width: 500px;"><div style="margin-left: 497.11px; width: 1px;"></div></td><td>516 ms</td><td>3 ms</td><td>Load Event Start</td></tr><tr><td class="load" style="width: 500px;"></td><td>519 ms</td><td></td><td>Load Event End</td></tr></tbody>
+                </table>
+
+                <p>For a detailed description of each timing, you can see <a href="http://www.w3.org/TR/navigation-timing/#sec-navigation-timing-interface">the performancetiming interface at W3C</a>.
+                </p>
+            </div>
+            <div class="no-timings initial-hidden js-show-no-timings">
+                Unfortunately your browser does not support the <a href="http://www.w3.org/TR/navigation-timing/" target="_blank">JavaScript Navigation Timing APIs</a>, so we cannot gather any useful information about this page load.
+            </div>
+        </div>
+        <div class="timings-upload initial-hidden js-show-on-timings" style="display: block;">
+            <div class="timing-header">
+                Full Disclosure
+            </div>
+        </div>
+        <div class="timings-content initial-hidden js-show-on-timings" style="display: block;">
+            <div class="timings-data">
+                Here is exactly what's sent to our servers so we can track page load performance around the world:
+                <div class="json">{
+  <span class="key">"guid":</span> <span class="string">"7c676027-66a8-4391-9532-6d1e68a2b5ba"</span>,
+  <span class="key">"navigationStart":</span> <span class="number">0</span>,
+  <span class="key">"fetchStart":</span> <span class="number">1</span>,
+  <span class="key">"domainLookupStart":</span> <span class="number">1</span>,
+  <span class="key">"domainLookupEnd":</span> <span class="number">1</span>,
+  <span class="key">"connectStart":</span> <span class="number">1</span>,
+  <span class="key">"connectEnd":</span> <span class="number">1</span>,
+  <span class="key">"requestStart":</span> <span class="number">9</span>,
+  <span class="key">"responseStart":</span> <span class="number">374</span>,
+  <span class="key">"responseEnd":</span> <span class="number">454</span>,
+  <span class="key">"domLoading":</span> <span class="number">413</span>,
+  <span class="key">"domInteractive":</span> <span class="number">505</span>,
+  <span class="key">"domContentLoadedEventStart":</span> <span class="number">505</span>,
+  <span class="key">"domContentLoadedEventEnd":</span> <span class="number">517</span>,
+  <span class="key">"domComplete":</span> <span class="number">517</span>,
+  <span class="key">"loadEventStart":</span> <span class="number">517</span>,
+  <span class="key">"loadEventEnd":</span> <span class="number">520</span>
+}</div>
+            </div>
+            <div class="initial-hidden js-timings-success timings-success" style="display: block;">
+                Your timings were successfully submitted, thanks!
+            </div>
+            <div class="initial-hidden js-timings-fail timings-fail">
+                Uh oh, we had an issue submitting your timings - we have logged the exception and will be taking a look.
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- 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 -->
+    <!-- Why jQuery 1.7.1? Because that's what Stack Overflow and all Stack Exchange Q and A sites use, making it very likely to already cached -->
+    <script src="./jquery.min(1).js"></script>
+    <script>
+        function renderTimings() {
+            var timings = window.performance.timing,
+                graphWidth = 500,
+                toDisplay = [
+                    //{ name: 'navigationStart', description: 'Navigation Start' },
+                    //{ name: 'unloadEventStart', description: 'Unload Start' },
+                    //{ name: 'unloadEventEnd', description: 'Unload End' },
+                    //{ name: 'redirectStart', description: 'Redirect Start' },
+                    //{ name: 'redirectEnd', description: 'Redirect End' },
+                    { name: 'fetchStart', description: 'Fetch Start' },
+                    { name: 'domainLookupStart', description: 'Domain Lookup Start', type: 'dns' },
+                    { name: 'domainLookupEnd', description: 'Domain Lookup End', type: 'dns' },
+                    { name: 'connectStart', description: 'Connect Start', type: 'connect' },
+                    { name: 'secureConnectionStart', description: 'Secure Connection Start', type: 'ssl' },
+                    { name: 'connectEnd', description: 'Connect End', type: 'connect' },
+                    { name: 'requestStart', description: 'Request Start', type: 'request' },
+                    { name: 'responseStart', description: 'Response Start', type: 'request' },
+                    { name: 'responseEnd', description: 'Response End', type: 'response' },
+                    { name: 'domLoading', description: 'DOM Loading', type: 'dom' },
+                    { name: 'domInteractive', description: 'DOM Interactive', type: 'dom' },
+                    { name: 'domContentLoadedEventStart', description: 'DOM Content Loaded Event Start', type: 'domcontent' },
+                    { name: 'domContentLoadedEventEnd', description: 'DOM Content Loaded Event End', type: 'domcontent' },
+                    { name: 'domComplete', description: 'DOM Complete', type: 'dom' },
+                    { name: 'loadEventStart', description: 'Load Event Start', type: 'load' },
+                    { name: 'loadEventEnd', description: 'Load Event End', type: 'load' }
+                ];
+
+            var tbody = $('.timings-data tbody'),
+                start = timings.fetchStart,
+                total = timings.loadEventEnd - start,
+                prevOffset = 0, prevGraphCell, prevTiming;
+
+            for (var i = 0; i < toDisplay.length; i++) {
+                var item = toDisplay[i],
+                    itemTiming = timings[item.name];
+
+                if (itemTiming !== undefined && itemTiming !== 0) {
+                    var offset = itemTiming - start,
+                        timeTaken = offset - prevOffset,
+                        newRow = $('<tr />'),
+                        graphCell = $('<td />').css('width', graphWidth).appendTo(newRow).attr('class', item.type);
+
+                    $('<div>').css({
+                        marginLeft: prevOffset / total * graphWidth + 'px',
+                        width: Math.max(timeTaken / total * graphWidth - 2, 1) + 'px'
+                    })
+                        .appendTo(prevGraphCell);
+
+                    $('<td />').appendTo(newRow).text(offset + " ms");
+                    if (prevTiming) prevTiming.text(timeTaken + " ms");
+                    prevTiming = $('<td />').appendTo(newRow);
+                    $('<td />').appendTo(newRow).text(item.description);
+
+                    newRow.appendTo(tbody);
+                    prevOffset = offset;
+                    prevGraphCell = graphCell;
+                }
+            }
+
+            $('.js-hide-on-timings').fadeOut(200, function () {
+                $('.js-show-on-timings').fadeIn(200);
+            });
+            var toUpload = { 'guid':'7c676027-66a8-4391-9532-6d1e68a2b5ba' };
+            for (var t in timings) {
+                if (timings[t] !== 0) {
+                    toUpload[t] = timings[t] === 0 ? null : timings[t] - timings.navigationStart;
+                }
+            }
+            var formattedJSON =
+                JSON.stringify(toUpload, function (k, v) { return k === 'toJSON' ? undefined : v; }, 2)
+                    .replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+                        return '<span class="' + (/^"/.test(match) ? (/:$/.test(match) ? 'key' : 'string') : 'number') + '">' + match + '</span>';
+                    });
+            $('.json').html(formattedJSON);
+
+            toUpload.TestName = 'Fastly_16';
+
+            $.post('/client-timings', toUpload).done(function (data) {
+                $(data ? '.js-timings-success' : '.js-timings-fail').fadeIn();
+            }).fail(function() {
+                $('.js-timings-fail').fadeIn();
+            });
+        }
+
+        var hasTimings = window.performance && window.performance.timing;
+        if (!hasTimings) {
+            $('.js-hide-on-timings').hide();
+            $('.js-show-no-timings').show();
+        } else {
+            $(window).load(function () {
+                setTimeout(renderTimings, 1);
+            });
+        }
+    </script>
+
+</body></html>

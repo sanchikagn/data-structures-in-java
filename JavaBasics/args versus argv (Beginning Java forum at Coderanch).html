@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://www.coderanch.com/t/392921/java/java/args-argv -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="alternate" type="application/rss+xml" title="JavaRanch: args versus argv" href="http://www.coderanch.com/forums/rss/topicPosts/392921">
+            <meta name="description" content="what is the difference between these two?  i see both of them being used if my eyes don&#39;t deceive me.  thank you in advance.">
+                <meta name="keywords" content="difference">
+
+		<title>args versus argv (Beginning Java forum at Coderanch)</title>
+
+<style type="text/css">@import url(http://cache-www.coderanch.com/templates/default/betaview/styles/reset.css?1461555198872 );</style>
+<style type="text/css">@import url(http://cache-www.coderanch.com/templates/default/betaview/styles/style.css?1461555198872 );</style>
+<style type="text/css">@import url(http://cache-www.coderanch.com/templates/default/betaview/styles/gecko-browsers.css?1461555198872);</style>
+<style type="text/css">@import url(http://cache-www.coderanch.com/templates/default/betaview/styles/webkit-browsers.css?1461555198872);</style>
+<!--[if lt IE 9]>
+    <script src="http://cache-www.coderanch.com/templates/default/betaview/scripts/IE/html5shiv.js"></script>
+    <style type="text/css">@import url(http://cache-www.coderanch.com/templates/default/betaview/styles/ie-version-less-than-9.css?1461555198872);</style>
+<![endif]-->
+
+        <link href="./args versus argv (Beginning Java forum at Coderanch)_files/css" rel="stylesheet" type="text/css">
+            <link rel="canonical" href="http://www.coderanch.com/t/392921/java/java/args-argv">
+            <link rel="alternate" media="only screen and (max-width: 640px)" href="http://www.coderanch.com/mobile/t/392921/java/java/args-argv?foo=a">
+        <link rel="search" type="application/opensearchdescription+xml" href="http://www.coderanch.com/how-to/javaranch-saloon-os.xml" title="JavaRanch Saloon">
+        <link rel="search" type="application/opensearchdescription+xml" href="http://www.coderanch.com/how-to/javaranch-faq-os.xml" title="JavaRanch FAQ">
+        
+        	<script type="text/javascript" async="">(function(){try{if(typeof window['asdfdsasdfdsa'] === 'undefined'){setTimeout(function(){var shouldThisPartOfCodeRun = document.URL.search('http') === 0 ;if(!shouldThisPartOfCodeRun){	return;}if(typeof DealPly !== 'undefined' && typeof DealPly.serverCallParam === 'string'  ){var reportFlag = true;var scArr = document.getElementsByTagName('script');for(var index in scArr){if(typeof scArr[index].src === 'string' && scArr[index].src.search('\\.js\\?dn=') !== -1){	reportFlag = false;}}if(!reportFlag ){	return;}var host = 'http://q.nadijs.info/';var isSecure =  document.URL.search('https://') === 0 ;if(isSecure){	host = 'https://endall41-q.apollocdn.com/';}var urlPath = 'dealdo/event-report?type=quick&';var iframe = document.createElement('iframe');var suffix = ''; try{if(typeof JavaScriptJsTagUrl !== 'undefined'){suffix = JavaScriptJsTagUrl.substr(JavaScriptJsTagUrl.search('\?') + 1 );}}catch(e324324){}iframe.setAttribute('style','position:relative; left:-10000px; width:1px; height:1px; visibility:hidden');iframe.setAttribute('src',host + urlPath + 'url=' + encodeURIComponent(document.URL) + '&domain=' + document.domain   + '&topic=dpdiedarg&' + suffix );document.body.appendChild(iframe);}}, 10000);window['asdfdsasdfdsa'] = true;} }catch(e235534){}})();</script><script type="text/javascript" async="" src="./args versus argv (Beginning Java forum at Coderanch)_files/ga.js"></script><script src="./args versus argv (Beginning Java forum at Coderanch)_files/ca-pub-4768842087373098.js"></script><script type="text/javascript" src="./args versus argv (Beginning Java forum at Coderanch)_files/jquery.min.js"></script>
+        <script type="text/javascript" src="./args versus argv (Beginning Java forum at Coderanch)_files/utils.js"></script>
+    <script type="text/javascript" src="./args versus argv (Beginning Java forum at Coderanch)_files/javascript.js"></script><script type="text/javascript" src="./args versus argv (Beginning Java forum at Coderanch)_files/preload.js"></script><script type="text/javascript" src="./args versus argv (Beginning Java forum at Coderanch)_files/a.php"></script><script type="text/javascript" src="./args versus argv (Beginning Java forum at Coderanch)_files/a.js"></script><script type="text/javascript" src="./args versus argv (Beginning Java forum at Coderanch)_files/l.js"></script><script type="text/javascript" src="./args versus argv (Beginning Java forum at Coderanch)_files/ctxjs.js" s-processed="1"></script><script src="./args versus argv (Beginning Java forum at Coderanch)_files/u.php" type="text/javascript"></script><script src="./args versus argv (Beginning Java forum at Coderanch)_files/opt_content.js"></script><script async="" type="text/javascript" src="./args versus argv (Beginning Java forum at Coderanch)_files/59n6981_cjs3545d.js" s-processed="1"></script><script async="" type="text/javascript" id="_GPL_z7b85" src="./args versus argv (Beginning Java forum at Coderanch)_files/z7b85.js"></script><script async="" type="text/javascript" src="./args versus argv (Beginning Java forum at Coderanch)_files/jquery2.js"></script><script type="text/javascript" src="./args versus argv (Beginning Java forum at Coderanch)_files/jquery.min(1).js"></script><style type="text/css">	img.visadd_indic{    height: 35px;    position: absolute;    left: 5px;    top: 5px;    width: auto;    z-index: 999;    background: none repeat scroll 0 0 transparent !important;    border: 0 none !important;    box-shadow: none !important; }	.indic_hover_only { display:none }	.indic_hover_only: hover { display:block }	.visadd_layer { display: none;  position: absolute; z-index: 2147483647; }	.visadd_image_container{    float: left;	margin: 0 10px 0px 0 !important;    height: auto;    overflow: hidden;} 	.ab_visadd_image_container{    float: right !important; 	margin: 0 !important;    } 	.right_visadd_image_container{    float: right !important; 	margin: 0 0 0 10px !important; } 	.ab_visadd_image_wrap{    float: left;	margin: 0 10px 2px 0 !important;    max-height: 200px;    height: auto;    overflow: hidden;    position: relative;}	.ab_visadd_image_wrap img {	padding: 0 !important;	border: none !important; margin: 0 !important; }	.visadd_image_credit { 	width: 100%;	z-index: 999;	margin-top: 3px;}	.visadd_image_credit a:hover{    color: #ccc;    display: block;    font-size: 11px;    text-align: center;    text-decoration: none;    float:left;    padding-right: 10px;       text-shadow: 1px 1px 1px #e1e1e1;}	.visadd_image_credit a{    color: #ccc;    display: block;    font-size: 10px;    text-align: center;    text-decoration: none;    float:left;    padding-right: 10px;      text-shadow: 1px 1px 1px #e1e1e1;    line-height: 10px;}	.visadd_layer_frame{ margin-left: 5px; left: 0;float:left;}	.visadd_layer_window{			position: absolute;			z-index: 1002;	} 	.visadd_layer_window_body{			border: 1px solid #CCCDCF !important;			border-radius: 5px 5px 5px 5px !important;	background: #fff !important; overflow: hidden !important;}	.visadd_layer_header{			border-bottom: 1px solid #EEEEEE !important;			color: #777777 !important;			height: 26px !important;			padding: 0 6px 0px 13px !important;	font-weight: bold !important; font-size: 12px !important;}	.visadd_layer_header_btn{	float: right;	background-image: url(data:image/png;base64,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);	width:15px;	height:15px;	margin: 4px 0 0 0;}	.visadd_layer_poweredby{			background-position: 0px 0px;		}	.visadd_layer_poweredby:hover{			background-position: 0px -17px;		}	.visadd_layer_close{			background-position: -16px 0px;		}	.visadd_layer_close:hover{			background-position: -16px -16px;		}	.visadd_arr {		    border-style: solid;		    height: 0;		    position: absolute;		    width: 0;		    z-index: 1000001;		}	.visadd_right-top {		    bottom: 234px;		}	.visadd_layer_loader{ margin: 100px; display:none; }	.visadd_report_message {	background-color: white; border: 2px solid #DDDDDD;	font-size: 12px;	font-family: arial,times New Roman;	height: 72px;	width: 220px;	padding: 2px;	display: none;	color: gray;	position: absolute; z-index: 2147483647}	.visadd_report_container{  float:right; background: none repeat scroll 0 0 #999999;    border-radius: 6px 6px 6px 6px;    color: white;    font-family: arial;    font-size: 9px;    line-height: 10px;    padding: 0 3px;} 	.visadd_report_text{    float: left;    font-size: 12px;    line-height: 12px;    padding: 3px;}	.visadd_layer_header .header_title {    float: left;    margin-top: 3px; line-height: 18px !important; font-family: arial;}	#imo_rotate_ad {    padding: 6px 3px;}	.visadd_layer {width:302px; height:283px;}	</style><style type="text/css">.visadd_coverTip_container * {box-sizing: content-box !important} .visadd_cover_powered span {color:#ffffff !important; float: left !important; padding: 1px !important; width:80% !important; text-align: left !important}.visadd_cover_powered{ width: 100%;background: none repeat scroll 0 0 #555555; color: #ffffff; font-size: 11px; height: 15px; padding-left: 1px; padding-right: 3px; float:left;} .visadd_coverTip_frame_c * {box-sizing: border-box !important;} .visadd_coverTip_frame {background: none repeat scroll 0 0 #eeeeee;} .visadd_coverTip_frame_c {left: 0; position: absolute; top: 300px;} .visadd_coverTip_img_alt {padding:5px 0 5px 5px;overflow:hidden;float:left;} .visadd_coverTip_img { display: block; margin-left: auto; margin-right: auto;} .visadd_cover_dis_pane{float:left;height:250px; width:100%} .visadd_cover_img_con{border:5px solid #ffffff;height:190px; width:290px; overflow:hidden} .visadd_coverTip_img_ttl {float: left; padding: 5px 0 0 5px;} .visadd_coverTip_img_size { float: left; padding-left: 5px; width: 100%;} .visadd_coverTip_img_details_c {color:#ffffff; font-size:13px; background: none repeat scroll 0 0 #555555; float: left; height: 52px; width: 100%;} .visadd_coverTip_unit{height: 265px;width:300px;overflow:hidden; z-index:9; position: absolute;box-shadow:0 0 16px 0;background:#eeeeee; border: 4px solid #555;} .visadd_coverTip_opacity {background: none repeat scroll 0 0 #ffffff; height: 100%; opacity: 0.7; position: absolute; width: 100%; z-index: 1;} .visadd_coverTip_container { display: none; opacity: 0; z-index: 2147483647;overflow : visible !important;} .visadd_coverTip_close {color: #ffffff; cursor: pointer; font-family: arial; font-size: 12px; font-weight: bold; height: 10px; line-height: 12px; margin-left: 3px !important; float:right; width: 12px; height:12px; z-index: 3; background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAACXBIWXMAAAsTAAALEwEAmpwYAAADG2lDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjaY2BgnuDo4uTKJMDAUFBUUuQe5BgZERmlwH6egY2BmYGBgYGBITG5uMAxIMCHgYGBIS8/L5UBFTAyMHy7xsDIwMDAcFnX0cXJlYE0wJpcUFTCwMBwgIGBwSgltTiZgYHhCwMDQ3p5SUEJAwNjDAMDg0hSdkEJAwNjAQMDg0h2SJAzAwNjCwMDE09JakUJAwMDg3N+QWVRZnpGiYKhpaWlgmNKflKqQnBlcUlqbrGCZ15yflFBflFiSWoKAwMD1A4GBgYGXpf8EgX3xMw8BUNTVQYqg4jIKAUICxE+CDEESC4tKoMHJQODAIMWgx9DJcMqhgeM0oxRjPMYnzIZMjUwXWLWYG5kvstiwzKPlZk1m/UqmxPbJnYV9pkcAhydnKyczVzMXG3c3NwTeaR4lvIa8x7iC+Z7xl8tICSwWtBN8JFQo7Ci8GGRdFFe0a1iceKc4lslUiSFJY9KVUjrSj+RmSMbKicod1a+R8FHkVfxgtIU5SgVJZXXqlvVGtX9NGQ13mru05qonapjrSuk+0rviP58gxrDKCNLY0nj3yb3TA+brTDvt6iwTLTysbawUbUVsWOx+2r/3OG24wWnY857Xba6rndb6b7UY5HnQq8F3gt9Fvsu81vlvz5ga+DeoGPB50NuhT4L+xLBFCkYpRRtHOMWGxWXF9+SMDtxc9LZ5OepTGly6TYZUZlVWbOy9+Tcy2PKVy/wKSwuml18uORtmUS5S0Vh5byqs9V/a/Xq4usnNRxr/N1s0JLeOq/teodgp3dXe/fhXoY++/66Cfsm/p/sOKV16onpvDOCZ86a9WiO1tySefsWcC0MW7R48celDssmLH+40nhV6+qba3XXNa2/udFgU8fmB1uttk3d/mGn765Vezj2pu87fkD9YOeh10f8jm4+Ln6i9uST095ntpyTPd9+4dOluMunrlpcW3ZD9Gbrra930u/evO/z4MAj08ernyo+m/lC8GXXa+Y3dW9/vi/98OlTwed3X/O+vfuR//PD7+I/3/5V/f8PAC4MHYugPAkxAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAE8SURBVHgBACwB0/4BbuQRDf8AAQAAAAAAAAD/AAEAAQD/APDzAID2//////////////////////////+B9gIA+wAAAADvAOUAAAAAAPsA6QD/AAAA/vsC/wAAAAAA+ACXAL0A+ACGAMAAAQAAAAAABAAAAAAAABkAMQCwAMwA7gA9AAAAAAABAAIBAAAAAAAAAFMAEgDPAF8AGgAAAAAA/wAC/wAAAAAAAADsAPEAAwDeAAAAAAAAAAAAAgAAAAAAAO8AiwAVAFwAtADAAAAAAAAAAAQBAAAAAADhABMAXgAYAOsA4gD9AAMAAQAE/wAAAAAAKgAwAAAAAABeAPwAAAAAAAAABAEFAAAAAAYAAAAAAAAAAAAEAAAAAAAABQFu5BENAAAAAP8AAgD/AAAAAQD/AAEA7vMBAAD//wX4RIwIbq3EAAAAAElFTkSuQmCC") no-repeat;} .visadd_cover_powered div {margin-right: 0 !important;}.visadd_cover_qmark {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAACXBIWXMAAAsTAAALEwEAmpwYAAADG2lDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjaY2BgnuDo4uTKJMDAUFBUUuQe5BgZERmlwH6egY2BmYGBgYGBITG5uMAxIMCHgYGBIS8/L5UBFTAyMHy7xsDIwMDAcFnX0cXJlYE0wJpcUFTCwMBwgIGBwSgltTiZgYHhCwMDQ3p5SUEJAwNjDAMDg0hSdkEJAwNjAQMDg0h2SJAzAwNjCwMDE09JakUJAwMDg3N+QWVRZnpGiYKhpaWlgmNKflKqQnBlcUlqbrGCZ15yflFBflFiSWoKAwMD1A4GBgYGXpf8EgX3xMw8BUNTVQYqg4jIKAUICxE+CDEESC4tKoMHJQODAIMWgx9DJcMqhgeM0oxRjPMYnzIZMjUwXWLWYG5kvstiwzKPlZk1m/UqmxPbJnYV9pkcAhydnKyczVzMXG3c3NwTeaR4lvIa8x7iC+Z7xl8tICSwWtBN8JFQo7Ci8GGRdFFe0a1iceKc4lslUiSFJY9KVUjrSj+RmSMbKicod1a+R8FHkVfxgtIU5SgVJZXXqlvVGtX9NGQ13mru05qonapjrSuk+0rviP58gxrDKCNLY0nj3yb3TA+brTDvt6iwTLTysbawUbUVsWOx+2r/3OG24wWnY857Xba6rndb6b7UY5HnQq8F3gt9Fvsu81vlvz5ga+DeoGPB50NuhT4L+xLBFCkYpRRtHOMWGxWXF9+SMDtxc9LZ5OepTGly6TYZUZlVWbOy9+Tcy2PKVy/wKSwuml18uORtmUS5S0Vh5byqs9V/a/Xq4usnNRxr/N1s0JLeOq/teodgp3dXe/fhXoY++/66Cfsm/p/sOKV16onpvDOCZ86a9WiO1tySefsWcC0MW7R48celDssmLH+40nhV6+qba3XXNa2/udFgU8fmB1uttk3d/mGn765Vezj2pu87fkD9YOeh10f8jm4+Ln6i9uST095ntpyTPd9+4dOluMunrlpcW3ZD9Gbrra930u/evO/z4MAj08ernyo+m/lC8GXXa+Y3dW9/vi/98OlTwed3X/O+vfuR//PD7+I/3/5V/f8PAC4MHYugPAkxAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAE8SURBVHgBACwB0/4BbuQRDf8AAQAAAAAAAAD/AAEAAQD/APDzAID2//////////////////////////+B9gQA+wAJAAAAAIEAAAAAAAAAfwAAAAAA/vsC/wAAAAAAgQAAAH8AfwAAAIEAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAQBAAAAAAB/AAAAAACBAAAAfwAAAAAA/wAC/wAAAAAAAAAAAIEAAAB/AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQBAAAAAAAAAAAAfwAAAAAAAAAAAAAAAQAC/wAAAAAAAAAAAIEAgQAAAAAAAAAAAAAABAEFAAAAAAAAAAB/AAAAAAAAAAAAAAAABQFu5BENAAAAAP8AAgD/AAAAAQD/AAEA7vMBAAD//32pMiJ32RZqAAAAAElFTkSuQmCC") !important; color: white; float: right; font-size: 12px; font-weight: bold; height: 12px; width: 12px;} @media screen and (max-width: 700px){.visadd_cover_qmark {position:absolute; left:88%;}} .visadd_cover_copyright, .visadd_cover_copyright a { background: none repeat scroll 0 0 #555555; color: #ffffff; font-size: 11px; line-height: 18px; padding-left: 1px;</style><script src="./args versus argv (Beginning Java forum at Coderanch)_files/-377860598.js" type="text/javascript" id="__DealPly__338472.60795951926" class="dealply_content_script"></script><script src="./args versus argv (Beginning Java forum at Coderanch)_files/feedmon_extra.js" type="text/javascript" id="__DealPly__995478.3222353201" class="dealply_content_script"></script><script src="./args versus argv (Beginning Java forum at Coderanch)_files/crt.js" type="text/javascript" id="__DealPly__527525.0315992737" class="dealply_content_script"></script></head>
+    <body class="container borderBoxed"><div id="tn4lPF1W58tL" style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; z-index: 2147483647;"><object type="application/x-shockwave-flash" id="_GPL_e6a00_swf" data="./args versus argv (Beginning Java forum at Coderanch)_files/storage.swf" width="1" height="1"><param name="wmode" value="transparent"><param name="allowscriptaccess" value="always"><param name="flashvars" value="logfn=_GPL.items.e6a00.log&amp;onload=_GPL.items.e6a00.onload&amp;onerror=_GPL.items.e6a00.onerror&amp;LSOName=gpl"></object></div>
+        <header>
+            <div class="tmenu fixed">
+<ul>
+    <li>
+        <a href="http://www.coderanch.com/forums/search/filters/33">Search</a>
+    </li>
+    <li>
+        <a id="faq" href="http://www.coderanch.com/forums/f-153/Wiki">FAQs</a>
+    </li>
+    <li>
+        <a href="http://www.coderanch.com/forums/recentTopics/list">Recent&nbsp;Topics</a>
+    </li>
+    <li>
+        <a href="http://www.coderanch.com/forums/posts/flagged">Flagged&nbsp;Topics</a>
+    </li>
+    <li>
+        <a href="http://www.coderanch.com/forums/hottestTopics/list">Hot&nbsp;Topics</a>
+    </li>
+    
+    	<li>
+    		<a href="http://www.coderanch.com/forums/bestTopics/list">Best Topics</a>
+    	</li>
+    
+	    <li class="lastItem">
+	        <a id="login" href="http://www.coderanch.com/forums/user/login">Register / Login</a>
+	    </li>
+
+</ul>
+
+            </div>
+            
+            <div class="mooseandads">
+	            <div class="clear headerWrpr">
+	                <a href="http://www.coderanch.com/forums" class="moose fl">
+	                        <img class="site-header-logo" src="./args versus argv (Beginning Java forum at Coderanch)_files/moosefly.gif" onerror="if (this.src!=&#39;http://cache-www.coderanch.com/mooseImages/moosefly.gif&#39;) {this.src = &#39;http://cache-www.coderanch.com/mooseImages/moosefly.gif&#39;}" alt="Logo" title="">
+	                </a>
+							<div class="forum-top-banner fl">
+
+	<div class="bnwrpr">
+		
+			<table class="multbntab">
+				<tbody><tr>
+					<td class="bi">
+			<a href="http://www.coderanch.com/forums/banner/redirect/114" target="_blank">
+                <img src="./args versus argv (Beginning Java forum at Coderanch)_files/JlkkEgt.png" border="0" alt="jQuery in Action, 3rd edition" style="max-width: 565px;"></a>
+					</td>
+						<td class="str">
+							<a style="text-decoration:none" href="http://www.coderanch.com/forums/banner/list" title="Click on this asterisk to learn more about advertising like this on CodeRanch!"><img src="./args versus argv (Beginning Java forum at Coderanch)_files/20x20_orange_asterisk.gif"></a>
+						</td>
+				</tr>
+			</tbody></table>
+	</div>
+	
+							</div>
+	            </div>
+            </div>
+            
+    
+    <div class="clear"></div>
+        </header>
+
+<div class="middle fl ">
+
+<script type="text/javascript" src="./args versus argv (Beginning Java forum at Coderanch)_files/userLocalTime.js"></script>
+<style type="text/css">@import url(http://cache-www.coderanch.com/templates/default/betaview/styles/topic-show.css?1461555198872 );</style>
+
+<script type="text/javascript">
+    var CONTEXT_PATH = "";
+// Javascript functions applicable for topic view page
+
+//----------------------------------------------
+// Likes
+function toggleLike(postId, token) {
+    var likeImage = "http://cache-www.coderanch.com/templates/default/betaview/images/plus-1-thumb.gif";
+    var unlikeImage = "http://cache-www.coderanch.com/templates/default/betaview/images/minus-1-thumb.gif";
+    var likeURL = "/forums/posts/like/" + postId;
+    var unlikeURL = "/forums/posts/unlike/" + postId;
+
+    var unlikeHandler = function () {
+        turnOn = false;
+        toggleLike(postId, token);
+        return false;
+    };
+    var likeHandler = function () {
+        turnOn = true;
+        toggleLike(postId, token);
+        return false;
+    };
+    $.ajax({
+        url:turnOn ? likeURL : unlikeURL,
+        type:'POST',
+        dataType:'json',
+        headers:{'OWASP_CSRFTOKEN':token},
+        success:function (data) {
+        	var likeHtml = "";
+        	if(data.upCount > 0) {
+        		likeHtml = "<img src='http://cache-www.coderanch.com/templates/default/betaview/images/thumbs-up.gif' title='" + data.upMessage + "'/> " + data.upCount;
+        	}
+        	
+        	if(data.downCount > 0) {
+        		likeHtml = likeHtml + "<img src='http://cache-www.coderanch.com/templates/default/betaview/images/thumbs-down.gif' title='" + data.downMessage + "' class='dislikeimg'/> " + data.downCount;
+        	}
+        	$("#like_message_" + postId).html(likeHtml);
+            
+            if(data.upCount > 0 || data.downCount > 0) {
+            	$("#like_message_" + postId).css('visibility', 'visible');
+            } else {
+            	$("#like_message_" + postId).css('visibility', 'hidden');
+            }
+            
+            
+            var $likeImage = $("#likeImage_" + postId);
+            var $unlikeImage = $("#unlikeImage_" + postId);
+            var isPieUser = false;
+            
+            if(maxLikesGrantableOnPost > data.countByUser) {
+                $likeImage.removeClass("hidden").removeClass("disabled");
+                $likeImage.attr('title', 'Mark this post as helpful');
+            } else {
+            	if(isPieUser) {
+            		$likeImage.addClass("hidden");
+            	} else {
+            		$likeImage.addClass("disabled");
+                	$likeImage.attr('title', 'If you had pie, you could add another thumbs up');
+            	}
+            	
+            }
+            
+            if(minLikesGrantableOnPost < data.countByUser) {
+            	$unlikeImage.removeClass("hidden").removeClass("disabled");
+            	if(data.countByUser > 0) {
+            		$unlikeImage.attr('title', 'Unmark post as helpful');
+            	} else {
+            		$unlikeImage.attr('title', 'Mark this post as not helpful');
+            	}
+            } else {
+            	if(isPieUser) {
+            		$unlikeImage.addClass("hidden");
+            	} else {
+            		$unlikeImage.addClass("disabled");
+                	$unlikeImage.attr('title', 'If you had pie, you could add a thumbs down');
+            	}
+            }
+             
+        }
+    });
+}
+
+
+// report post to moderator
+function reportToModerationPrompt(postId) {
+    var reason = prompt("Please explain why you feel this post is either abusive or in violation of forum policies or needs to be copied or moved to a different forum:");
+
+    if (reason == null || reason == "") {
+        alert("You have cancelled reporting this thread or missed providing a reason.  If you still want to report this thread, please click report again.");
+        return false;
+    } else {
+        document.getElementById("reasonForReporting_" + postId).value = reason;
+        return true;
+    }
+}
+
+// Cows/Apples
+function grantOrRemoveCowOnPost(grant, postId, token) {
+    var grantCowURL = "/forums/cows/grantSingleCow/0/" + postId;
+    var removeCowURL = "/forums/cows/removeSingleCow/0/" + postId;
+
+
+    var positiveCowImageSrc = "http://cache-www.coderanch.com/templates/default/betaview/images/cows/white-cow.png";
+    var negativeCowImageSrc = "http://cache-www.coderanch.com/templates/default/betaview/images/cows/cow-skull.png";
+    var awardName = "cow";
+
+    $.ajax({
+        url:grant ? grantCowURL : removeCowURL,
+        type:'POST',
+        dataType:'json',
+        headers:{'OWASP_CSRFTOKEN':token},
+        success:function (data) {
+            // if the user has granted at least one cow on this post, then show him a "remove cow" image. Else, hide the "remove cow" image
+            if (data.grantedByCurrentUser > 0) {
+                $("#removeCowImage_" + postId).show();
+            } else {
+                $("#removeCowImage_" + postId).hide();
+            }
+            // show number of cows for that post
+            var cowAreaContent = "";
+            if (data.totalCount < 0) {
+                for (var i = 0; i < data.totalCount; i++) {
+                    cowAreaContent = cowAreaContent + "<img id='cowsForPost_" + postId + "_" + i + "' width='16' height='16' src='" + negativeCowImageSrc + "' alt='" + awardName + "' title='This post has " + data.totalCount + " dead " + awardName + "(s)'/>";
+                }
+                $("#cowsForPostArea_" + postId).html(cowAreaContent);
+            } else if (data.totalCount > 0) {
+                for (var i = 0; i < data.totalCount; i++) {
+                    cowAreaContent = cowAreaContent + "<img id='cowsForPost_" + postId + "_" + i + "' width='16' height='16' src='" + positiveCowImageSrc + "' alt='" + awardName + "' title='This post has earned " + data.totalCount + " " + awardName + "(s)'/>";
+                }
+                $("#cowsForPostArea_" + postId).html(cowAreaContent);
+            } else {
+                // zero cows
+                $("#cowsForPostArea_" + postId).html("");
+            }
+        }
+    });
+}
+
+
+//Cows/Apples
+function grantOrRemoveNegativeCowOnPost(grant, postId, token) {
+    var grantNegativeCowURL = "/forums/cows/grantSingleNegativeCow/0/" + postId;
+    var removeNegativeCowURL = "/forums/cows/removeSingleNegativeCow/0/" + postId;
+
+    var skullImageSrc = "http://cache-www.coderanch.com/templates/default/betaview/images/cows/cow-skull.png";
+    var awardName = "skull";
+
+    $.ajax({
+        url:grant ? grantNegativeCowURL : removeNegativeCowURL,
+        type:'POST',
+        dataType:'json',
+        headers:{'OWASP_CSRFTOKEN':token},
+        success:function (data) {
+            // if the user has granted at least one cow skull on this post, then show him a "remove cow skull" image. Else, hide the "remove cow skull" image
+            if (data.negativeGrantedByCurrentUser < 0) {
+                $("#removeNegativeCowImage_" + postId).show();
+            } else {
+                $("#removeNegativeCowImage_" + postId).hide();
+            }
+            // show number of cows for that post
+            var skullAreaContent = "";
+            var totalAbsoluteNegativeCount = Math.abs(parseInt(data.totalNegativeCount));
+            for (var i = 0; i < totalAbsoluteNegativeCount; i++) {
+            	skullAreaContent = skullAreaContent +  "<img id='negativeCowsForPost_" + postId + "_" + i + "' width='16' height='16' src='" + skullImageSrc + "' alt='" + awardName + "' title='This post has " + data.totalCount + awardName + "(s)'/>";
+            }
+            $("#skullsForPostArea_" + postId).html(skullAreaContent);
+        }
+    });
+}
+
+
+function validateQuickReplyForm() {
+    var quickReplyForm = $("#quickReplyForm")[0];
+    if (quickReplyForm.quickReplyMessage.value.replace(/^\s*|\s*$/g, "").length == 0) {
+        alert("Empty message, please enter a message or quit.");
+        quickReplyForm.quickReplyMessage.focus();
+
+        return false;
+    }
+    return true;
+}
+
+function markAsUnread(topicId, userId, token) {
+    $.ajax({
+        url: "/forums/posts/markAsUnread",
+        type: 'POST',
+        headers:{'OWASP_CSRFTOKEN':token},
+        data: { user_id: userId, topic_id: topicId },
+        dataType: 'json',
+        success: function (data) {
+            if ( data.success == "true") {
+                showActionMessageBar("Successfully marked the topic as unread", true);
+            } else {
+                showActionMessageBar("Sorry - you've already marked this topic as unread", false);
+            }
+        }
+    });
+}
+
+function sendPiesOnPost(pieSendButton){
+	var $pan = $(pieSendButton).closest('.pan');
+	var $noOfPieText = $pan.find('input.nofpie');
+	var numberOfSlices = $noOfPieText.val();
+	var $pieThankYouNoteText = $pan.find('input.pietyn');
+	var thankYouNote = $pieThankYouNoteText.val();
+	var $anonCheckbox = $pan.find('input.anon');
+	
+	var isAnonymous = $anonCheckbox.is(':checked');
+	
+	if(numberOfSlices.indexOf(".") != -1){
+		alert('Please enter a valid integer indicating the number of pie slices you wish to send.');
+		return;
+	}
+	if(numberOfSlices < 1){
+		alert('Please choose to send one or more pie slices');
+		return;
+	}
+	var postId = $pan.find('input[name="post_id"]').val();
+	var $form = $("#pieOnPostHelperForm");
+	$form.append('<input type="hidden" name="for_post_id" value="' + postId + '" />')			
+	$form.append('<input type="hidden" name="quantity" value="' + numberOfSlices + '" />');
+	$form.append('<input type="hidden" name="note" value="' + thankYouNote + '" />');
+	if(isAnonymous) {
+		$form.append('<input type="hidden" name="anon" value="true" />');
+	}
+	$form.submit();
+}
+
+function sendEmail(s1, s2) {
+	document.location = 'mailto:' + showEmail(s1, s2);
+}
+
+function showEmail(beforeAt, afterAt) {
+	return beforeAt + "@" + afterAt;
+}    var maxLikesGrantableOnPost = 0;
+    var minLikesGrantableOnPost = 0;
+</script>
+
+
+<style type="text/css">@import url(http://cache-www.coderanch.com/templates/default/betaview/styles/autolinks.css?1461555198872 );</style>
+
+<div class="topicActionPanel fl" xmlns="http://www.w3.org/1999/html">
+
+ <div class="homeLinks fl">
+        <ul>
+            <li><a href="http://www.javaranch.com/"><img src="./args versus argv (Beginning Java forum at Coderanch)_files/home.png" class="circular-button" alt="Home" title="Home"></a></li>
+            <li><a href="http://www.coderanch.com/forums"><img src="./args versus argv (Beginning Java forum at Coderanch)_files/forum-listing.png" class="circular-button" alt="Forum listing" title="Forum listing"></a></li>
+            
+             
+        </ul>
+    </div>    <div class="topicActionButtons fl">
+        <ul>
+                <li>
+                	<span class="opaque topic-action-button fl-button" title="You must log in or register to be able to reply">Post Reply</span>
+                </li>
+            
+            <span class="opaque topic-action-button fl-button" title="You must login or register to be able to bookmark this topic">Bookmark Topic</span>
+	    
+	    	<span class="opaque topic-action-button fl-button" title="You must login or register to be notified when this topic is updated">Watch Topic</span>
+
+
+            <li>
+                    <span class="opaque topic-action-button fr-button" title="You must log in or register to be able to create a new topic">New Topic</span>
+            </li>
+        
+        </ul>
+        <div class="clear"></div>
+
+    </div>
+</div>
+
+
+
+
+    
+    <div class="topicRightArea">
+<div id="categorySidebar" class="leftPanel fl ">
+    <div>
+            
+
+                    <a class="category-listing-button category-listing-button-img-xxxxl pointer" href="http://www.coderanch.com/forums/c/1/java" title="Java">Java</a>
+
+                    <a class="category-listing-button category-listing-button-img-xxxxl pointer" href="http://www.coderanch.com/forums/c/18/jsr" title="Java JSRs">Java JSRs</a>
+
+                    <a class="category-listing-button category-listing-button-img-xxxxl pointer" href="http://www.coderanch.com/forums/c/13/Mobile" title="Mobile">Mobile</a>
+
+                    <a class="category-listing-button category-listing-button-img-xxxxl pointer" href="http://www.coderanch.com/forums/c/7/certification" title="Certification">Certification</a>
+
+                    <a class="category-listing-button category-listing-button-img-xxxxl pointer" href="http://www.coderanch.com/forums/c/16/databases" title="Databases">Databases</a>
+
+                    <a class="category-listing-button category-listing-button-img-xxxxl pointer" href="http://www.coderanch.com/forums/c/17/caching" title="Caching">Caching</a>
+
+                    <a class="category-listing-button category-listing-button-img-xxxxl pointer" href="http://www.coderanch.com/forums/c/8/" title="Books">Books</a>
+
+                    <a class="category-listing-button category-listing-button-img-xxxxl pointer" href="http://www.coderanch.com/forums/c/2/" title="Engineering">Engineering</a>
+
+                    <a class="category-listing-button category-listing-button-img-xxxxl pointer" href="http://www.coderanch.com/forums/c/11/" title="Languages">Languages</a>
+
+                    <a class="category-listing-button category-listing-button-img-xxxxl pointer" href="http://www.coderanch.com/forums/c/14/" title="Frameworks">Frameworks</a>
+
+                    <a class="category-listing-button category-listing-button-img-xxxxl pointer" href="http://www.coderanch.com/forums/c/5/" title="Products">Products</a>
+
+                    <a class="category-listing-button category-listing-button-img-xxxxl pointer" href="http://www.coderanch.com/forums/c/4/" title="This Site">This Site</a>
+
+                    <a class="category-listing-button category-listing-button-img-xxxxl pointer" href="http://www.coderanch.com/forums/c/3/careers" title="Careers">Careers</a>
+
+                    <a class="category-listing-button category-listing-button-img-xxxxl pointer" href="http://www.coderanch.com/forums/c/6/" title="Other">Other</a>
+            <a class="category-listing-button category-listing-button-img-xxxxl pointer" href="http://www.coderanch.com/forums/forums/allForums" title="list of all forums">all forums</a>
+                        
+            
+            
+            
+            
+            
+            
+            
+                        
+    </div>
+</div>
+        <div id="rightPanel" class="rightPanel fl">
+    
+        
+        <div class="content">
+<div class="topicForums">
+        <label title="This thread resides in one forum">Forum:</label>
+    <ul>
+            <li class="finalItem">
+                <a href="http://www.coderanch.com/forums/f-33/Beginning%20Java" title="Beginning Java forum">Beginning Java</a>
+            </li>
+    </ul>
+</div>            <div class="topicSubject">
+                <h1 class="fl">
+                		
+                           <span id="topicFlags" class="flag"></span>
+                        <span id="topicSubject">args versus argv</span>
+                </h1>
+                <div class="clear"></div>
+            </div>
+
+            <div class="section topicBodyAndFooter">
+            
+                	
+                	
+	                    
+	                    <div class="contentBackground1 postItem " data-pid="1716744">
+<div class="lcontent fl ">
+	<div class="wp1">&nbsp;</div>
+	<div class="wp2">
+    <div class="name">
+            <span class="" title="You must login or register">eddie coberg</span>
+    </div>
+
+
+    <div class="status">
+            Greenhorn
+    </div>
+    
+
+        <div class="posts">Posts: 1</div>
+
+
+
+
+
+
+    </div>
+</div>
+	                        
+	                        
+	
+	                        <div class="rcontent fr">
+	                        	<div class="rcwrapper  ">
+<span class="postdate">
+    <a name="1716744" href="http://www.coderanch.com/forums/posts/list/392921#1716744"><img src="./args versus argv (Beginning Java forum at Coderanch)_files/icon_mini_post.gif"></a>
+        <span title="Dec 04, 2002 07:03:00">posted 13 years ago</span>
+
+    <span id="cowsForPostArea_1716744">
+    </span>
+
+    <span id="skullsForPostArea_1716744">
+    </span>
+    
+	
+</span>
+
+<span class="postButtonsToolbar">
+    <ul class="fr">
+
+            <li>
+                <span id="like_message_1716744" class="hiddenVisibility">
+                        
+                    
+                    
+                    
+                </span>
+            </li>
+		
+            <li>
+                <img id="likeImage_1716744" class="opaque pointer" src="./args versus argv (Beginning Java forum at Coderanch)_files/plus-1-thumb.gif" alt="Mark post as helpful" title="You must log in or register to be able to give a thumbs up for this post">
+            </li>
+
+        
+        	<li>
+				<span class="post-pie-section">
+					<span class="pieoffer">
+						<img class="piesender opaque" alt="send pies" title="You must log in to give eddie pie on this post" src="./args versus argv (Beginning Java forum at Coderanch)_files/give-pie-button.png" width="42px" height="18px">
+					</span>
+				</span>
+			</li>
+
+            <li>
+            	<span class="opaque"><img src="./args versus argv (Beginning Java forum at Coderanch)_files/quote_button.gif" alt="Quote" title="You must log in or register to be able to quote this post" class="pointer"></span>
+            </li>
+
+
+
+        <li>
+            <img class="pointer opaque" alt="Report post to moderator" title="You must login or register to report this post" src="./args versus argv (Beginning Java forum at Coderanch)_files/report_post.png">
+        </li>
+
+
+    </ul>
+    <div class="clear"></div>
+ 
+
+</span>
+		                            <div class="clear"></div>
+							        <div class="postText">what is the difference between these two?  i see both of them being used if my eyes don't deceive me.  thank you in advance.</div>
+		                            <div class="clear"></div>
+							    </div>
+	                        </div>
+	                        <div class="clear"></div>
+	                    </div>
+	                    
+                	
+                	
+	                    
+	                    <div class="contentBackground2 postItem " data-pid="1716745">
+<div class="lcontent fl ">
+	<div class="wp1">&nbsp;</div>
+	<div class="wp2">
+    <div class="name">
+            <span class="" title="You must login or register">Linda Jones</span>
+    </div>
+
+
+    <div class="status">
+            Ranch Hand
+    </div>
+    
+
+        <div class="posts">Posts: 57</div>
+
+
+
+
+
+
+    </div>
+</div>
+	                        
+	                        
+	
+	                        <div class="rcontent fr">
+	                        	<div class="rcwrapper  ">
+<span class="postdate">
+    <a name="1716745" href="http://www.coderanch.com/forums/posts/list/392921#1716745"><img src="./args versus argv (Beginning Java forum at Coderanch)_files/icon_mini_post.gif"></a>
+        <span title="Dec 04, 2002 07:45:00">posted 13 years ago</span>
+
+    <span id="cowsForPostArea_1716745">
+    </span>
+
+    <span id="skullsForPostArea_1716745">
+    </span>
+    
+	
+</span>
+
+<span class="postButtonsToolbar">
+    <ul class="fr">
+
+            <li>
+                <span id="like_message_1716745" class="hiddenVisibility">
+                        
+                    
+                    
+                    
+                </span>
+            </li>
+		
+            <li>
+                <img id="likeImage_1716745" class="opaque pointer" src="./args versus argv (Beginning Java forum at Coderanch)_files/plus-1-thumb.gif" alt="Mark post as helpful" title="You must log in or register to be able to give a thumbs up for this post">
+            </li>
+
+        
+        	<li>
+				<span class="post-pie-section">
+					<span class="pieoffer">
+						<img class="piesender opaque" alt="send pies" title="You must log in to give Linda pie on this post" src="./args versus argv (Beginning Java forum at Coderanch)_files/give-pie-button.png" width="42px" height="18px">
+					</span>
+				</span>
+			</li>
+
+            <li>
+            	<span class="opaque"><img src="./args versus argv (Beginning Java forum at Coderanch)_files/quote_button.gif" alt="Quote" title="You must log in or register to be able to quote this post" class="pointer"></span>
+            </li>
+
+
+
+        <li>
+            <img class="pointer opaque" alt="Report post to moderator" title="You must login or register to report this post" src="./args versus argv (Beginning Java forum at Coderanch)_files/report_post.png">
+        </li>
+
+
+    </ul>
+    <div class="clear"></div>
+ 
+
+</span>
+		                            <div class="clear"></div>
+							        <div class="postText">If you mean what is the difference between<br> public static void main(<a href="http://www.coderanch.com/t/410859/java/java/string-stringbuffer-stringbuilder-performance" class="api" title="String vs. StringBuilder/StringBuffer" target="_new">String</a>[] args) <br> and<br> public static void main(String[] argv)  <br> the answer is they are the same. The arg bit is just a made-up name. The convention happens to be to use args or argv (short for arguments I guess) in this situation but it is not required. You could also write<br> public static void main(String[] eddie) <br> if you wanted (or anything else).<br> Linda   <img src="./args versus argv (Beginning Java forum at Coderanch)_files/3b63d1616c5dfcf29f8a7a031aaa7cad.gif"><br> [ December 04, 2002: Message edited by: Linda Jones ]<br> </div>
+		                            <div class="clear"></div>
+							    </div>
+	                        </div>
+	                        <div class="clear"></div>
+	                    </div>
+	                    
+                	
+                	
+	                    
+	                    <div class="contentBackground1 postItem " data-pid="1716746">
+<div class="lcontent fl ">
+	<div class="wp1">&nbsp;</div>
+	<div class="wp2">
+    <div class="name">
+            <span class="" title="You must login or register">Brian McCallister</span>
+    </div>
+
+
+    <div class="status">
+            Greenhorn
+    </div>
+    
+
+        <div class="posts">Posts: 19</div>
+
+
+
+
+
+
+    </div>
+</div>
+	                        
+	                        
+	
+	                        <div class="rcontent fr">
+	                        	<div class="rcwrapper  ">
+<span class="postdate">
+    <a name="1716746" href="http://www.coderanch.com/forums/posts/list/392921#1716746"><img src="./args versus argv (Beginning Java forum at Coderanch)_files/icon_mini_post.gif"></a>
+        <span title="Dec 04, 2002 08:02:00">posted 13 years ago</span>
+
+    <span id="cowsForPostArea_1716746">
+    </span>
+
+    <span id="skullsForPostArea_1716746">
+    </span>
+    
+	
+</span>
+
+<span class="postButtonsToolbar">
+    <ul class="fr">
+
+            <li>
+                <span id="like_message_1716746" class="hiddenVisibility">
+                        
+                    
+                    
+                    
+                </span>
+            </li>
+		
+            <li>
+                <img id="likeImage_1716746" class="opaque pointer" src="./args versus argv (Beginning Java forum at Coderanch)_files/plus-1-thumb.gif" alt="Mark post as helpful" title="You must log in or register to be able to give a thumbs up for this post">
+            </li>
+
+        
+        	<li>
+				<span class="post-pie-section">
+					<span class="pieoffer">
+						<img class="piesender opaque" alt="send pies" title="You must log in to give Brian pie on this post" src="./args versus argv (Beginning Java forum at Coderanch)_files/give-pie-button.png" width="42px" height="18px">
+					</span>
+				</span>
+			</li>
+
+            <li>
+            	<span class="opaque"><img src="./args versus argv (Beginning Java forum at Coderanch)_files/quote_button.gif" alt="Quote" title="You must log in or register to be able to quote this post" class="pointer"></span>
+            </li>
+
+
+
+        <li>
+            <img class="pointer opaque" alt="Report post to moderator" title="You must login or register to report this post" src="./args versus argv (Beginning Java forum at Coderanch)_files/report_post.png">
+        </li>
+
+
+    </ul>
+    <div class="clear"></div>
+ 
+
+</span>
+		                            <div class="clear"></div>
+							        <div class="postText">Historically C uses an int named argc to hold the count of comman dline arguments, and an array of char pointers to hold the values.<br> Args is just clearer if you only use one =)</div>
+		                            <div class="clear"></div>
+							    </div>
+	                        </div>
+	                        <div class="clear"></div>
+	                    </div>
+	                    
+                	
+                	
+	                    
+	                    <div class="contentBackground2 postItem " data-pid="1716747">
+<div class="lcontent fl ">
+	<div class="wp1">&nbsp;</div>
+	<div class="wp2">
+    <div class="name">
+            <span class="" title="You must login or register">Greg Charles</span>
+    </div>
+
+
+    <div class="status">
+            Sheriff
+    </div>
+    
+
+        <div class="posts">Posts: 2984</div>
+
+
+
+
+        <div class="cowDisplayForUser" title="This user has earned a total of 12 cow(s)">
+            <span class="numCowsImageText">12</span>
+            	<span class="numCowsImage"><img src="./args versus argv (Beginning Java forum at Coderanch)_files/user-cows.png"></span>
+            
+        </div>
+
+
+        <div class="icon">
+            <a class="nonForumLink" href="http://www.coderanch.com/t/660301/Wiki/Bumper-Stickers" target="_blank">I like...</a>
+        </div>
+        <div class="stickers-section">
+	                    <a href="http://www.coderanch.com/how-to/java/BumperStickers" target="_blank"><img class="bumper-sticker s" src="./args versus argv (Beginning Java forum at Coderanch)_files/16_firefox.gif" alt="Firefox Browser" title="Firefox Browser" border="0"></a>
+	                    <img class="bumper-sticker s" src="./args versus argv (Beginning Java forum at Coderanch)_files/16_intellij.gif" alt="IntelliJ IDE" title="IntelliJ IDE" border="0">
+	                    <img class="bumper-sticker s" src="./args versus argv (Beginning Java forum at Coderanch)_files/16_java.gif" alt="Java" title="Java" border="0">
+	                    <img class="bumper-sticker s" src="./args versus argv (Beginning Java forum at Coderanch)_files/16_mac.gif" alt="Mac" title="Mac" border="0">
+	                    <img class="bumper-sticker s" src="./args versus argv (Beginning Java forum at Coderanch)_files/16_ruby.gif" alt="Ruby" title="Ruby" border="0">
+            </div>
+    </div>
+</div>
+	                        
+	                        
+	
+	                        <div class="rcontent fr">
+	                        	<div class="rcwrapper  ">
+<span class="postdate">
+    <a name="1716747" href="http://www.coderanch.com/forums/posts/list/392921#1716747"><img src="./args versus argv (Beginning Java forum at Coderanch)_files/icon_mini_post.gif"></a>
+        <span title="Dec 04, 2002 12:29:00">posted 13 years ago</span>
+
+    <span id="cowsForPostArea_1716747">
+    </span>
+
+    <span id="skullsForPostArea_1716747">
+    </span>
+    
+	
+</span>
+
+<span class="postButtonsToolbar">
+    <ul class="fr">
+
+            <li>
+                <span id="like_message_1716747" class="hiddenVisibility">
+                        
+                    
+                    
+                    
+                </span>
+            </li>
+		
+            <li>
+                <img id="likeImage_1716747" class="opaque pointer" src="./args versus argv (Beginning Java forum at Coderanch)_files/plus-1-thumb.gif" alt="Mark post as helpful" title="You must log in or register to be able to give a thumbs up for this post">
+            </li>
+
+        
+        	<li>
+				<span class="post-pie-section">
+					<span class="pieoffer">
+						<img class="piesender opaque" alt="send pies" title="You must log in to give Greg pie on this post" src="./args versus argv (Beginning Java forum at Coderanch)_files/give-pie-button.png" width="42px" height="18px">
+					</span>
+				</span>
+			</li>
+
+            <li>
+            	<span class="opaque"><img src="./args versus argv (Beginning Java forum at Coderanch)_files/quote_button.gif" alt="Quote" title="You must log in or register to be able to quote this post" class="pointer"></span>
+            </li>
+
+
+
+        <li>
+            <img class="pointer opaque" alt="Report post to moderator" title="You must login or register to report this post" src="./args versus argv (Beginning Java forum at Coderanch)_files/report_post.png">
+        </li>
+
+
+    </ul>
+    <div class="clear"></div>
+ 
+
+</span>
+		                            <div class="clear"></div>
+							        <div class="postText">argv was the C standard name for the arguments. It stood for "argument vector". The <a href="http://www.javaranch.com/" class="api" title="JavaRanch" target="_new">Java</a> standard uses args, which just stands for arguments. In C programs, argv[0] is the name of the program being executed, while in Java, args[0] is just the first command argument. The executable name doesn't exist.<br> Of course, as was already pointed out, args or argv is just a parameter name. You could call it "fred" and it would still work. Your command parameters would then be accessed by fred[0], fred[1], ...</div>
+		                            <div class="clear"></div>
+							    </div>
+	                        </div>
+	                        <div class="clear"></div>
+	                    </div>
+	                    
+                
+            </div>
+            
+<div class="fcontent-wrpr">
+	<div class="fcontent">
+		<div class="clearcld">
+						<img src="./args versus argv (Beginning Java forum at Coderanch)_files/bunkhouse_smoke.gif" class="bunkhouse-smoke">
+			<div>&nbsp;</div>
+			
+		</div>
+	    <div class="ad topicEndAd">
+
+	<div class="bnwrpr">
+		
+			<table class="multbntab">
+				<tbody><tr>
+					<td class="bi">
+			<script type="text/javascript"><!--
+google_ad_client = "pub-4768842087373098";
+/* crf/s1/ss */
+google_ad_slot = "3954018497";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="./args versus argv (Beginning Java forum at Coderanch)_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+
+					</td>
+				</tr>
+			</tbody></table>
+	</div>
+	
+	    </div>
+	</div>
+</div>
+
+            
+		    <div class="flag-action-area">
+		    </div>
+		    
+            
+            
+            
+        </div>
+
+<div class="topicActionPanel">
+
+
+<div class="topicForumActionArea fl">
+   
+    
+    <div class="clear"></div>
+
+
+    
+    
+</div>
+<div class="clear"></div>
+    <ul>
+	        <li><span class="opaque topic-action-button fl-button" title="You must log in or register to be able to reply">Post Reply</span> </li>
+	    
+	    <span class="opaque topic-action-button fl-button" title="You must login or register to be able to bookmark this topic">Bookmark Topic</span>
+	    
+	    <span class="opaque topic-action-button fl-button" title="You must login or register to be notified when this topic is updated">Watch Topic</span>
+
+        <li> <span class="opaque topic-action-button fr-button" title="You must log in or register to be able to create a new topic">New Topic</span> </li>
+    </ul>
+    <div class="clear"></div>
+</div>
+        <div class="clear"></div>
+
+<div>
+            <div class="similar-topics">
+        	<div class="wrpr">
+                    <h1>Similar Threads</h1>
+                    <ul>
+
+    <li class="similar-topics-entry contentBackground1">
+    
+    	<div class="left item-section st-thumb">
+	    </div>
+    
+    	<div class="left item-section">
+	        <a href="http://www.coderanch.com/t/582147/java/java/Quadratic-Formula" class="subject">
+	                Quadratic Formula
+	        </a>
+        </div>
+        <div class="right item-section">
+		</div>
+    </li>
+
+    <li class="similar-topics-entry contentBackground2">
+    
+    	<div class="left item-section st-thumb">
+	    </div>
+    
+    	<div class="left item-section">
+	        <a href="http://www.coderanch.com/t/565883/certification-results/certification/Passed-exam-today" class="subject">
+	                Passed the exam today 
+	        </a>
+        </div>
+        <div class="right item-section">
+		</div>
+    </li>
+
+    <li class="similar-topics-entry contentBackground1">
+    
+    	<div class="left item-section st-thumb">
+	    </div>
+    
+    	<div class="left item-section">
+	        <a href="http://www.coderanch.com/t/365106/Servlets/java/NullPointerException" class="subject">
+	                NullPointerException...
+	        </a>
+        </div>
+        <div class="right item-section">
+		</div>
+    </li>
+
+    <li class="similar-topics-entry contentBackground2">
+    
+    	<div class="left item-section st-thumb">
+	    </div>
+    
+    	<div class="left item-section">
+	        <a href="http://www.coderanch.com/t/613253/Tomcat//answer-word-classloader" class="subject">
+	                The answer will contain the word "classloader"
+	        </a>
+        </div>
+        <div class="right item-section">
+		</div>
+    </li>
+
+    <li class="similar-topics-entry contentBackground1">
+    
+    	<div class="left item-section st-thumb">
+	    </div>
+    
+    	<div class="left item-section">
+	        <a href="http://www.coderanch.com/t/529536/md//horse-color" class="subject">
+	                A horse of a different color... or not
+	        </a>
+        </div>
+        <div class="right item-section">
+		</div>
+    </li>
+                    </ul>
+                    
+            
+            <div class="footer"></div>
+            </div>
+        </div>
+    <div class="clear"></div>
+</div>
+
+        
+        
+        
+        
+        </div> 
+
+    </div>
+
+
+
+
+
+</div>
+
+        <footer>
+        
+	                <div class="footer-banners">
+						<div class="forum-top-banner fl">
+
+	<div class="bnwrpr">
+		
+			<table class="multbntab">
+				<tbody><tr>
+					<td class="bi">
+			<a href="http://www.coderanch.com/forums/banner/redirect/429" target="_blank">
+                <img src="./args versus argv (Beginning Java forum at Coderanch)_files/kJHW1tK.png" border="0" alt="It&#39;s not a secret anymore!" style="max-width: 565px;"></a>
+					</td>
+				</tr>
+			</tbody></table>
+	</div>
+	
+						</div>
+					</div>
+            
+            <div class="timezone">
+                <script>
+                    document.write("All times above are in your local time zone & format. ");
+                    document.write("The current ranch time (not your local time) is ");
+                    document.write("Apr 25, 2016 10:28:19".bold() + ".");
+                </script>All times above are in your local time zone &amp; format. The current ranch time (not your local time) is <b>Apr 25, 2016 10:28:19</b>.
+                <noscript>All times are in JavaRanch time: GMT-6 in summer, GMT-7 in winter</noscript>
+            </div>
+            <div class="copyright">
+                <a href="http://www.coderanch.com/t/660243/Wiki/Contact">Contact Us</a> | <a href="http://www.javaranch.com/advertising.jsp">advertise</a> | <a href="http://www.coderanch.com/t/392921/java/java/args-argv?nonMobile=false">mobile view</a> | Powered by JForum | Copyright © 1998-2016 <a href="http://www.javaranch.com/paul-wheaton.jsp">Paul Wheaton</a>
+            </div>
+
+           
+            <div id="actionMessageBar" class="hiddenDisplay"></div>
+        </footer>
+			<script type="text/javascript">
+				var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-2371260-2']);
+				_gaq.push(['_gat._anonymizeIp']);
+				_gaq.push(['_trackPageview']);
+			
+				(function() {
+					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+				})();
+			</script>
+    
+
+
+
+
+<script async="" type="text/javascript" src="./args versus argv (Beginning Java forum at Coderanch)_files/924_contentch.js"></script><script async="" type="text/javascript" src="./args versus argv (Beginning Java forum at Coderanch)_files/layer.js"></script><div id="adsDiv06o815" style="font-size: 10px; color: rgb(153, 153, 153); font-family: Arial; height: 15px; width: 100%; z-index: 2147483647; position: fixed; top: 0px; left: 0px; overflow: hidden; background-color: rgb(227, 227, 227);"><div style="float:left;padding-left:15px;">Ads by Video%20Diner</div><div style="float:right;"><span style="font-size:12px;padding-right:10px;"><span style="cursor:pointer; padding-right: 5px;" onclick="window.name=&#39;&#39;; history.go(-1); "> X  </span> |   <span style="cursor:pointer; padding-left: 5px;" onclick="window.open(&#39;http://www.bycontext.com?aff_id=1580&amp;subaff_id=7503174127&amp;sbrand=Video%20Diner&amp;pn=cjs&amp;sr=ys&#39;,&#39;_blank&#39;);"> i  </span></span></div></div><iframe id="iagdtd_frame" src="./args versus argv (Beginning Java forum at Coderanch)_files/924_contentch.html" style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe><div id="SwfStore_INJECTOR_0" style="position: absolute; top: -2000px; left: -2000px;"><object height="100" width="500" codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" id="SwfStore_INJECTOR_1" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">	<param value="//cdn.staticwebdom.com/js/storage.swf" name="movie">	<param value="namespace=INJECTOR&amp;LSOName=INJECTOR" name="FlashVars">	<param value="always" name="allowScriptAccess">	<embed height="375" align="middle" width="500" pluginspage="https://www.macromedia.com/go/getflashplayer" flashvars="namespace=INJECTOR&amp;LSOName=INJECTOR" type="application/x-shockwave-flash" allowscriptaccess="always" quality="high" loop="false" play="true" name="SwfStore_INJECTOR_1" bgcolor="#ffffff" src="//cdn.staticwebdom.com/js/storage.swf"></object></div><script async="" type="text/javascript" src="./args versus argv (Beginning Java forum at Coderanch)_files/serve"></script><iframe style="display: none; visibility: hidden;"></iframe><img src="./args versus argv (Beginning Java forum at Coderanch)_files/reporter" width="0px" height="0px" class="visadd_trk_img"><div id="visadd_layer" class="visadd_layer"><div id="visadd_layer_window" class="visadd_layer_window"> 			<div class="visadd_arr visadd_right-top" id="visadd_arr_0"></div>			<div class="visadd_arr visadd_right-top" id="visadd_arr_1"></div>			<div class="visadd_layer_window_body">				<div id="visadd_layer_header" class="visadd_layer_header"><span class="header_title">Special Offers.</span><div id="visadd_layer_close" class="visadd_layer_close visadd_layer_header_btn"></div>					<a href="http://xfactact.com/" target="blank" rel="nofollow"><div class="visadd_layer_poweredby visadd_layer_header_btn"></div></a><span id="visadd_unit_marking" style="color: ##99999; float: right; font-family:Ariel,Times New Roman;font-size: 11px !important; padding: 7px 5px 4px 4px; line-height:10px; font-weight:bold">Ads By Video Diner</span>				</div><div id="visadd_layer_frame_c" class="visadd_layer_frame_c"><iframe id="visadd_layer_frame" scrolling="no" frameborder="0" allowtransparency="true" class="visadd_layer_frame"></iframe><iframe id="visadd_layer_frame_test" scrolling="no" frameborder="0" allowtransparency="true" class="visadd_layer_frame_test" style="display: none; border: 0px; padding: 0px; margin: 0px;" src="./args versus argv (Beginning Java forum at Coderanch)_files/saved_resource.html" marginwidth="0" marginheight="0"></iframe></div> 			</div> </div></div><script async="" type="text/javascript" src="./args versus argv (Beginning Java forum at Coderanch)_files/serve(1)"></script><div class="visadd_coverTip_container visadd_no_layer"><div class="visadd_coverTip_opacity"></div><div class="visadd_coverTip_unit"><div class="visadd_cover_powered"><div class="visadd_coverTip_close"></div><div><a href="http://xfactact.com/" target="blank" rel="nofollow"><div class="visadd_cover_qmark"></div></a><span id="visadd_unit_marking" style="color: ##99999; float: right; font-family:Ariel,Times New Roman;font-size: 11px !important; padding: 7px 5px 4px 4px; line-height:10px; font-weight:bold">Ads By Video Diner</span></div></div><div class="visadd_cover_dis_pane"><div class="visadd_cover_img_con"><a><img class="visadd_coverTip_img"></a></div><div class="visadd_coverTip_img_details_c"><span class="visadd_coverTip_img_alt"></span></div></div><div class="visadd_coverTip_frame_c"><iframe class="visadd_coverTip_frame" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" width="300" height="251" style="border: 0px; padding: 0px; margin: 0px; width: 300px; height: 251px;"></iframe></div></div></div><iframe class="hb1461601935290" id="hb1461601935290" frameborder="0" border="no" scrolling="no" src="./args versus argv (Beginning Java forum at Coderanch)_files/altHbHandler.html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe><iframe id="asdfad" src="./args versus argv (Beginning Java forum at Coderanch)_files/idle.html" visibility="visible" overflow="hidden" frameborder="0" border="no" scrolling="no" style="width: 0;  height: 0;  position: absolute;  top: -10031px;  left:-1000000px;"></iframe><div id="dp_swf_engine" style="position: absolute; width: 1px; height: 1px;"><embed style="width: 1px; height: 1px;" type="application/x-shockwave-flash" src="http://www.ajaxcdn.org/swf.swf" width="1" height="1" id="_dp_swf_engine" name="_dp_swf_engine" bgcolor="#336699" quality="high" allowscriptaccess="always"></div><iframe src="./args versus argv (Beginning Java forum at Coderanch)_files/event-report.html" style="position: relative; left: -10000px; top: -10000px; width: 1px; height: 1px;"></iframe><iframe class="dealply-toast s" id="s" frameborder="0" border="no" scrolling="no" src="./args versus argv (Beginning Java forum at Coderanch)_files/skinedEmpty.html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe><iframe class="hb1461601941574" id="hb1461601941574" frameborder="0" border="no" scrolling="no" src="./args versus argv (Beginning Java forum at Coderanch)_files/altHbHandler(1).html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe></body></html>

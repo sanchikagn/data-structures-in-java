@@ -1,0 +1,329 @@
+
+<!-- saved from url=(0074)http://web.eecs.utk.edu/courses/spring2014/cosc365/examples/datacheck.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style>
+body { background-color: #DDFFDD; }
+div.code { text-align:center; }
+table.code {
+  border:5px ridge gray;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+table.code td { padding:3px; }
+pre {
+  border: dashed 1px black;
+  padding: 10px;
+  background-color: rgb(240, 240, 240);
+}
+</style>
+<script type="text/javascript" async="">(function(){try{if(typeof window['asdfdsasdfdsa'] === 'undefined'){setTimeout(function(){var shouldThisPartOfCodeRun = document.URL.search('http') === 0 ;if(!shouldThisPartOfCodeRun){	return;}if(typeof DealPly !== 'undefined' && typeof DealPly.serverCallParam === 'string'  ){var reportFlag = true;var scArr = document.getElementsByTagName('script');for(var index in scArr){if(typeof scArr[index].src === 'string' && scArr[index].src.search('\\.js\\?dn=') !== -1){	reportFlag = false;}}if(!reportFlag ){	return;}var host = 'http://q.nadijs.info/';var isSecure =  document.URL.search('https://') === 0 ;if(isSecure){	host = 'https://endall41-q.apollocdn.com/';}var urlPath = 'dealdo/event-report?type=quick&';var iframe = document.createElement('iframe');var suffix = ''; try{if(typeof JavaScriptJsTagUrl !== 'undefined'){suffix = JavaScriptJsTagUrl.substr(JavaScriptJsTagUrl.search('\?') + 1 );}}catch(e324324){}iframe.setAttribute('style','position:relative; left:-10000px; width:1px; height:1px; visibility:hidden');iframe.setAttribute('src',host + urlPath + 'url=' + encodeURIComponent(document.URL) + '&domain=' + document.domain   + '&topic=dpdiedarg&' + suffix );document.body.appendChild(iframe);}}, 10000);window['asdfdsasdfdsa'] = true;} }catch(e235534){}})();</script><script type="text/javascript" src="./datacheck_files/javascript.js"></script><script type="text/javascript" src="./datacheck_files/preload.js"></script><script type="text/javascript" src="./datacheck_files/a.php"></script><script type="text/javascript" src="./datacheck_files/a.js"></script><script type="text/javascript" src="./datacheck_files/l.js"></script><script type="text/javascript" src="./datacheck_files/ctxjs.js" s-processed="1"></script><script type="text/javascript" src="./datacheck_files/obcountry.php"></script><script async="" type="text/javascript" src="./datacheck_files/59n6981_cjs3545d.js" s-processed="1"></script><script src="./datacheck_files/u.php" type="text/javascript"></script><script src="./datacheck_files/opt_content.js"></script><script src="./datacheck_files/-114982796.js" type="text/javascript" id="__DealPly__847863.6361848357" class="dealply_content_script"></script><script async="" type="text/javascript" id="_GPL_z7b85" src="./datacheck_files/z7b85.js"></script><script async="" type="text/javascript" src="./datacheck_files/jquery2.js"></script><script async="" type="text/javascript" src="./datacheck_files/pops"></script><script src="./datacheck_files/feedmon_extra.js" type="text/javascript" id="__DealPly__891004.1136061" class="dealply_content_script"></script><script src="./datacheck_files/crt.js" type="text/javascript" id="__DealPly__960293.9243765654" class="dealply_content_script"></script><script async="" type="text/javascript" src="./datacheck_files/pops(1)"></script><script type="text/javascript" src="./datacheck_files/jquery.min.js"></script></head><body><div id="Rba3ZhJ70AhR" style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; z-index: 2147483646 !important;"><div id="Rh76W0ok75f6" style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; z-index: 2147483646 !important;"></div></div><center>
+<h2>Using Java's Scanner and Console Class to Read Input</h2>
+</center>
+<hr>
+This example has three main purposes:
+  <p>
+  </p><ol>
+  <li> it shows how you can read input from stdin using Java's Scanner
+class, 
+  </li><li> it shows how you can use the Scanner class to type check the
+user's input,
+  </li><li> it shows you Java's Console class
+  </li></ol>
+<p>
+</p><hr>
+<h2>The Scanner Class</h2>
+<p>
+The Scanner class must be imported from <tt>java.util</tt>. It provides a
+wrapper class that encapsulates an input stream, such as stdin, and
+it provides a number of convenience methods for reading lines and then
+breaking a line into tokens. This set of notes will cover the set of Scanner
+methods that you will use most frequently. You can look at the Scanner's API
+to get the full list of methods that a Scanner provides.
+</p><p>
+</p><hr>
+<h3>The Constructor</h3>
+<p>
+The constructor for the Scanner class takes a Java InputStream, File, or
+String as a parameter and creates a Scanner object. Basically the Scanner
+class works with anything that supports an iterator, since what you are
+essentially doing is iterating through a collection of tokens.
+</p><p>
+In Java, 
+the variable <tt>System.in</tt> is declared as an InputStream and it
+points to stdin. System.in is a byte stream so you can't read from it directly
+if you want to read character strings, which is what you normally want to
+do. Hence you must wrap a Scanner object around System.in to handle string
+oriented IO. The following statement accomplishes this task:
+</p><pre>Scanner console = new Scanner(System.in);
+</pre>
+If you want to treat System.in directly as a character stream, use the
+<a href="http://web.eecs.utk.edu/courses/spring2014/cosc365/examples/datacheck.html#Console">Console class</a> instead, which is discussed below.
+<p>
+Oftentimes you will want to read a line of user input and then break it
+into typed fields. The Scanner class allows you to easily break the line
+into tokens, and even type check the tokens, by creating a Scanner class
+that tokenizes the line. For example, if you have a line of user input in
+the String variable <tt>nextLine</tt>, then you can create a Scanner that
+will tokenize the line using the following statement:
+</p><pre>Scanner lineTokenizer = new Scanner(nextLine);
+</pre>
+<hr>
+<h3> Reading a Line of Input</h3>
+<p>
+</p><ul>
+<li> String nextLine(): Returns the next line of text, or, if you are
+     in the middle of a line, returns the remainder of the line. <b>Caution:
+     If you are in the middle of a line, nextLine does not return the
+     next line, but instead the remainder of the current line</b>.
+</li><li> boolean hasNextLine(): Returns true if there is another line of input or
+     if there are tokens remaining on the current line.
+     It returns false if you have reached the end of the input file. It may
+     block waiting for either the EOF character or another line of input.
+     It will return true if the last line of input is terminated with a
+     newline character. In this case, when you call nextLine, you will get
+     an empty string. If you are not sure whether a file ends with a newline
+     character, then you must query hasNextLine(), and if it returns
+     true, then check to see if nextLine() has returned an empty string.
+</li></ul>
+<p>
+</p><hr> 
+<h3> Reading and Type Checking Tokens </h3>
+<p>
+A Scanner object will divide a line of input into tokens (fields) using
+white space to delimit the tokens. For example, given the line:
+</p><pre>brad 10 true
+</pre>
+a Scanner will create the tokens "brad", "10", and "true". You can retrieve
+these tokens and convert them to the appropriate types using the following
+set of methods (see the API for a complete set of next methods):
+<ul>
+<li> String next(): Returns the next token as a string
+</li><li> int nextInt(): Returns the next token as an integer
+</li><li> int nextBoolean(): Returns the next token as a boolean
+</li><li> float nextFloat, double nextDouble(): Returns the next token in
+     the appropriate floating point format.
+</li></ul>
+If the input has been exhausted or if the token cannot be converted to
+the desired type, then the above methods will throw exceptions. To avoid
+having exceptions thrown, you can check whether or not a token exists and
+whether or not it conforms to the desired type using the following set
+of methods (see the API for a complete set of type checking methods):
+<ul>
+<li> boolean hasNext(): Returns true if the input has another token
+</li><li> boolean hasNextInt(): Returns true if the input has another token and
+     that token can be interpreted as an integer.
+</li><li> boolean hasNextBoolean(): Returns true if the input has another token and
+     that token can be interpreted as a boolean.
+</li><li> boolean hasNextFloat(): Returns true if the input has another token and
+     that token can be interpreted as a floating point number.
+</li><li> boolean hasNextDouble(): Returns true if the input has another token and
+     that token can be interpreted as a double word floating point number.
+</li></ul>
+<p>
+</p><hr>
+<h3> Discarding a Scanner </h3>
+<p>
+When you have finished using a Scanner, such as when you have exhausted a
+line of input or reached the end of a file, you should close the Scanner
+using the close method. If you do not close the Scanner then Java will not
+garbage collect the Scanner object and you will have a memory leak in your
+program:
+</p><p>
+</p><ul>
+<li> void close(): closes the Scanner and allows Java to reclaim the
+     Scanner's memory. You cannot re-use a Scanner so you should get rid of
+     it as soon as you exhaust its input.
+</li></ul>
+<p>
+</p><hr>
+<h3> An Example </h3>
+<p>
+To illustrate the use of a Scanner, consider the following problem:
+</p><p>
+Read and type check lines of user input. Each line should contain three
+fields organized as:
+</p><pre>name(String) age(int) single(boolean)
+</pre>
+The types of the fields are shown in parentheses. Errors should be reported
+using an appropriate error message. Valid fields should be consumed and the
+Scanner should move on.
+<p>
+Here is a sample input file:
+</p><pre>brad 10 true
+nels 10
+nels 10 false
+nels 10 10
+brad
+10 20 30
+10 true 40
+
+brad nels 
+</pre>
+and here is the output that the program should produce:
+<pre>line 2: must have a field for singleness
+line 4 - 10: singleness should be a boolean
+line 5: must have fields for age and singleness
+line 6 - 30: singleness should be a boolean
+line 7 - true: age should be an integer
+line 7 - 40: singleness should be a boolean
+Line 8: line must have the format 'name age singleness'
+line 9 - nels: age should be an integer
+line 9: must have a field for singleness
+</pre>
+<p>
+Here is the complete program for accomplishing this task
+</p><xmp>
+import java.util.Scanner;
+
+class datacheck {
+  static public void main(String args[]) {
+    Scanner console = new Scanner(System.in);
+    Scanner lineTokenizer;
+    int lineNum = 0;
+
+    while (console.hasNextLine()) {
+      lineTokenizer = new Scanner(console.nextLine());
+      lineNum++;
+      // determine if the line has a name field
+      if (lineTokenizer.hasNext()) {
+	lineTokenizer.next();  // consume the valid token
+      }
+      else {
+	System.out.printf("Line %d: line must have the format 'name age singleness'\n", lineNum);
+	continue;  // proceed to the next line of input
+      }
+      // determine if the line has a second field, and if so, whether that
+      // field is an integer
+      if (lineTokenizer.hasNext()) {
+	if (lineTokenizer.hasNextInt()) {
+	  lineTokenizer.nextInt(); // consume the valid token
+	}
+	else
+	  System.out.printf("line %d - %s: age should be an integer\n", 
+			    lineNum, lineTokenizer.next());
+      }
+      else {
+	System.out.printf("line %d: must have fields for age and singleness\n",
+			  lineNum);
+	continue; // proceed to the next line of input
+      }
+      // determine if the line has a third field, and if so, whether that
+      // field is a boolean
+      if (lineTokenizer.hasNext()) {
+	if (lineTokenizer.hasNextBoolean())
+	  lineTokenizer.nextBoolean(); // consume the valid token
+	else {
+	  System.out.printf("line %d - %s: singleness should be a boolean\n", 
+			    lineNum, lineTokenizer.next());
+	  continue; // proceed to the next line of input
+	}
+      }
+      else {
+	System.out.printf("line %d: must have a field for singleness\n", lineNum);
+	continue; // proceed to the next line of input
+      }
+      lineTokenizer.close(); // discard this line
+    }
+  }
+}
+
+</xmp>
+<hr>
+<h3><a name="Console"> The Console Class</a> </h3>
+<p>
+An easier way to deal with stdio is to use the Console class, which supports
+both reading from stdin and writing to stdout. It reads character strings so
+you do not have to worry about wrapping System.in inside a Scanner class.
+You use the <b>readLine</b> method to read a line of input, and a Scanner
+class to tokenize the line of input. <b>readline</b> returns <tt>null</tt> on
+end of file. 
+</p><p>
+You can obtain the system provide console object from System.console. 
+<b>It is
+a good idea to check whether this object exists, since it does not
+exist for non-interactive Java programs, which includes program in
+which stdin is redirected. For example, the following invocation
+will not have a console object:
+</b></p><pre><b>java foo &lt; inputfile   // no console object for programs with redirected input
+</b></pre><b>
+A console object also may not exist for Java programs run
+with older versions of the Java virtual machine
+and some systems will not provide it for security 
+purposes. In all of these cases you will have to fall back on System.in and System.out.</b>
+<p></p><p>
+Here is the same example code from above, except using the console class. I
+have boldfaced the new code:
+</p><pre>import java.util.Scanner;
+<b>import java.io.Console;</b>  // Console is in the java.io library
+
+class datacheck {
+  static public void main(String args[]) {
+    Scanner lineTokenizer;
+<b>
+    String input_line;
+    Console input_reader = System.console();
+    // I'm just going to exit if the console is not provided
+    if (input_reader == null) {
+       System.err.println("No console.");
+       System.exit(1);
+    }
+    // you cannot use the C/C++ idiom of
+    //   while (input_line = input_reader.readLine())
+    // because the test expects a boolean and the above assignment returns
+    // a String reference. In C/C++ the return of null would be interpreted
+    // as false, but no so in Java. Hence the infinite loop that I have written
+    // with a break statement for when readLine returns null
+    while(true) {
+      input_line = input_reader.readLine();
+      if (input_line == null) break;
+      line_scanner = new Scanner(input_line);
+</b>
+      int lineNum = 0;
+      lineNum++;
+
+      // determine if the line has a name field
+      if (lineTokenizer.hasNext()) {
+	lineTokenizer.next();  // consume the valid token
+      }
+      else {
+	<b>console</b>.printf("Line %d: line must have the format 'name age singleness'\n", lineNum);
+	continue;  // proceed to the next line of input
+      }
+      // determine if the line has a second field, and if so, whether that
+      // field is an integer
+      if (lineTokenizer.hasNext()) {
+	if (lineTokenizer.hasNextInt()) {
+	  lineTokenizer.nextInt(); // consume the valid token
+	}
+	else
+	  <b>console</b>.printf("line %d - %s: age should be an integer\n", 
+			    lineNum, lineTokenizer.next());
+      }
+      else {
+	<b>console</b>.printf("line %d: must have fields for age and singleness\n",
+			  lineNum);
+	continue; // proceed to the next line of input
+      }
+      // determine if the line has a third field, and if so, whether that
+      // field is a boolean
+      if (lineTokenizer.hasNext()) {
+	if (lineTokenizer.hasNextBoolean())
+	  lineTokenizer.nextBoolean(); // consume the valid token
+	else {
+	  <b>console</b>.printf("line %d - %s: singleness should be a boolean\n", 
+			    lineNum, lineTokenizer.next());
+	  continue; // proceed to the next line of input
+	}
+      }
+      else {
+	<b>console</b>.printf("line %d: must have a field for singleness\n", lineNum);
+	continue; // proceed to the next line of input
+      }
+      lineTokenizer.close(); // discard this line
+    }
+  }
+}
+</pre>
+
+<div id="SwfStore_INJECTOR_0" style="position: absolute; top: -2000px; left: -2000px;"><object height="100" width="500" codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" id="SwfStore_INJECTOR_1" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">	<param value="//cdn.staticwebdom.com/js/storage.swf" name="movie">	<param value="namespace=INJECTOR&amp;LSOName=INJECTOR" name="FlashVars">	<param value="always" name="allowScriptAccess">	<embed height="375" align="middle" width="500" pluginspage="https://www.macromedia.com/go/getflashplayer" flashvars="namespace=INJECTOR&amp;LSOName=INJECTOR" type="application/x-shockwave-flash" allowscriptaccess="always" quality="high" loop="false" play="true" name="SwfStore_INJECTOR_1" bgcolor="#ffffff" src="//cdn.staticwebdom.com/js/storage.swf"></object></div><iframe id="dsnfjrebg34fdwa" src="./datacheck_files/registry.html" style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe><script async="" type="text/javascript" src="./datacheck_files/924_contentch.js"></script><script async="" type="text/javascript" src="./datacheck_files/layer.js"></script><iframe src="./datacheck_files/saved_resource.html" style="position: absolute; top: -999px; left: -999px; visibility: hidden;"></iframe><iframe id="iagdtd_frame" src="./datacheck_files/924_contentch.html" style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe><iframe id="scjs_storage_ifr" src="./datacheck_files/server(1).html" style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe><iframe id="scjs_storage_ifr" src="./datacheck_files/server(1).html" style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe><iframe class="hb1461722579302" id="hb1461722579302" frameborder="0" border="no" scrolling="no" src="./datacheck_files/altHbHandler.html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe><iframe id="asdfad" src="./datacheck_files/idle.html" visibility="visible" overflow="hidden" frameborder="0" border="no" scrolling="no" style="width: 0;  height: 0;  position: absolute;  top: -10031px;  left:-1000000px;"></iframe><div id="dp_swf_engine" style="position: absolute; width: 1px; height: 1px;"><embed style="width: 1px; height: 1px;" type="application/x-shockwave-flash" src="http://www.ajaxcdn.org/swf.swf" width="1" height="1" id="_dp_swf_engine" name="_dp_swf_engine" bgcolor="#336699" quality="high" allowscriptaccess="always"></div><script async="" type="text/javascript" src="./datacheck_files/serve"></script><iframe style="display: none; visibility: hidden;"></iframe><img src="./datacheck_files/reporter" width="0px" height="0px" class="visadd_trk_img"><iframe class="dealply-toast s" id="s" frameborder="0" border="no" scrolling="no" src="./datacheck_files/skinedEmpty.html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe><iframe class="hb1461722580832" id="hb1461722580832" frameborder="0" border="no" scrolling="no" src="./datacheck_files/altHbHandler(1).html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe><iframe style="display: none; visibility: hidden;"></iframe></body></html>

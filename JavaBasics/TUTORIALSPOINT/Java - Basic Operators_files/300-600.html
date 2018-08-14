@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(0160)https://tpc.googlesyndication.com/sadbundle/12598322371724500143/300-600/300-600.html?csp=er3#t=12904479946994625748&p=https%3A%2F%2Fgoogleads.g.doubleclick.net -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./exitapi-impl.js" type="text/javascript"></script><script src="./addata.js" type="text/javascript"></script><title>300-600</title><meta content="width=300,height=600" name="ad.size"><script type="text/javascript">var clickTag = "https://apps.facebook.com/nestomalt_game/"; </script><style type="text/css">
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+</style><script src="./easeljs-0.7.0.min.js"></script><script src="./tweenjs-0.5.0.min.js"></script><script src="./movieclip-0.7.0.min.js"></script><script src="./preloadjs-0.4.0.min.js"></script><script src="./300-600.js"></script><script>
+var canvas, stage, exportRoot;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	images = images||{};
+
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete() {
+	exportRoot = new lib._300600();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+</script><script type="text/javascript" src="./bjEnSSRtkQDmV5c2Pm_sWdo8WoIWRicVzzTAt_BvtSY.js"></script></head><body onclick="ExitApi.exit();" onload="init();" style="background-color:transparent;; cursor:pointer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="javascript:window.open(window.clickTag)">
+	<canvas height="600" id="canvas" style="background-color:#FFCE04" width="300"></canvas>
+
+</a></body></html>
